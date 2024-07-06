@@ -1,6 +1,1 @@
-Thanks for downloading this template!
-
-Template Name: Impact
-Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+# Sistem Pemasaran dan pemesanan barang berbasis WEB di CV. Samudera Abadi (SIPEPEW)
