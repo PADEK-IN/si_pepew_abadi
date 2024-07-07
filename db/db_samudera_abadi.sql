@@ -78,7 +78,7 @@ CREATE TABLE pesanan (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_admin) REFERENCES admin(id),
-    FOREIGN KEY (id_pelanggan) REFERENCES pelanggan(id),
+    FOREIGN KEY (id_pelanggan) REFERENCES pelanggan(id)
 );
 
 -- Tabel order_items
