@@ -63,7 +63,7 @@ CREATE TABLE produk (
     berat INT(11) NOT NULL,
     satuan VARCHAR(10) NOT NULL,
     harga DECIMAL(10,2) NOT NULL,
-    stock INT(11) NOT NULL,
+    stok INT(11) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_kategori) REFERENCES kategori(id)
@@ -74,14 +74,11 @@ CREATE TABLE pesanan (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
     id_admin INT(5) NOT NULL,
     id_pelanggan INT(5) NOT NULL,
-    id_produk INT(5) NOT NULL,
-    jumlah INT(7) NOT NULL,
     metode_kirim ENUM('diantar', 'dijemput') NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_admin) REFERENCES admin(id),
     FOREIGN KEY (id_pelanggan) REFERENCES pelanggan(id),
-    FOREIGN KEY (id_produk) REFERENCES produk(id)
 );
 
 -- Tabel order_items
@@ -90,7 +87,6 @@ CREATE TABLE pesanan_items (
     id_pesanan INT(5) NOT NULL,
     id_produk INT(5) NOT NULL,
     jumlah INT(7) NOT NULL,
-    harga DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (id_pesanan) REFERENCES pesanan(id),
     FOREIGN KEY (id_produk) REFERENCES produk(id)
 );
@@ -106,7 +102,7 @@ CREATE TABLE tagihan (
     total DECIMAL(20,2) NOT NULL,
     jumlah_bayar VARCHAR(30) NOT NULL,
     bukti_bayar VARCHAR(50),
-    status ENUM('paid', 'pending', 'canceled') DEFAULT 'pending',
+    status ENUM('lunas', 'tertunda', 'batal') DEFAULT 'tertunda',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_pesanan) REFERENCES pesanan(id)
@@ -119,7 +115,7 @@ CREATE TABLE pengiriman (
     tanggal DATE NOT NULL,
     alamat VARCHAR(100) NOT NULL,
     bukti VARCHAR(50),
-    status ENUM('shipped', 'in transit', 'delivered') DEFAULT 'in transit',
+    status ENUM('terkirim', 'diperjalanan', 'diproses') DEFAULT 'diproses',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_pesanan) REFERENCES pesanan(id)
