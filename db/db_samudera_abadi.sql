@@ -63,6 +63,7 @@ CREATE TABLE produk (
     berat INT(11) NOT NULL,
     satuan VARCHAR(10) NOT NULL,
     harga DECIMAL(10,2) NOT NULL,
+    stock INT(11) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_kategori) REFERENCES kategori(id)
@@ -83,6 +84,17 @@ CREATE TABLE pesanan (
     FOREIGN KEY (id_produk) REFERENCES produk(id)
 );
 
+-- Tabel order_items
+CREATE TABLE order_items (
+    id INT(5) AUTO_INCREMENT PRIMARY KEY,
+    id_pesanan INT(5) NOT NULL,
+    id_produk INT(5) NOT NULL,
+    jumlah INT(7) NOT NULL,
+    harga DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (id_pesanan) REFERENCES pesanan(id),
+    FOREIGN KEY (id_produk) REFERENCES produk(id)
+);
+
 -- Tabel tagihan
 CREATE TABLE tagihan (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
@@ -94,7 +106,7 @@ CREATE TABLE tagihan (
     total DECIMAL(20,2) NOT NULL,
     jumlah_bayar VARCHAR(30) NOT NULL,
     bukti_bayar VARCHAR(50),
-    isPaid BOOLEAN DEFAULT 0,
+    status ENUM('paid', 'pending', 'canceled') DEFAULT 'pending',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_pesanan) REFERENCES pesanan(id)
@@ -107,9 +119,8 @@ CREATE TABLE pengiriman (
     tanggal DATE NOT NULL,
     alamat VARCHAR(100) NOT NULL,
     bukti VARCHAR(50),
-    status BOOLEAN DEFAULT 0,
+    status ENUM('shipped', 'in transit', 'delivered') DEFAULT 'in transit',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_pesanan) REFERENCES pesanan(id)
 );
-
