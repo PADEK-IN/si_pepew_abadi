@@ -1,7 +1,7 @@
 <?php
 
 $db_host = 'localhost';
-$db_name = 'db_laundry';
+$db_name = 'db_samudera_abadi';
 $db_user = 'root';
 $db_pass = '';
 
