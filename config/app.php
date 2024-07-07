@@ -61,7 +61,7 @@ function renderView($view, $data = []) {
 
     // Set the paths for header, content, and footer
     $headerPath = $baseDir . "components/{$component}/header.php";
-    $contentPath = $baseDir . "pages/{$component}/{$view}.php";
+    $contentPath = $baseDir . "pages/{$view}.php";
     $footerPath = $baseDir . "components/{$component}/footer.php";
 
     // Include the files

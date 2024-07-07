@@ -2,7 +2,7 @@
 
 class IndexCtrl {
     public function home() {
-        renderView('home/index');
+        renderView('pelanggan/home/index');
     }
 
 }
