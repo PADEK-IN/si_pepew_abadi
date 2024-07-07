@@ -1,6 +1,6 @@
-CREATE DATABASE db_laundry;
+CREATE DATABASE db_samudera_abadi;
 
-USE db_laundry;
+USE db_samudera_abadi;
 
 -- Tabel users
 CREATE TABLE users (
