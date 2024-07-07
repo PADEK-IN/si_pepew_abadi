@@ -85,7 +85,7 @@ CREATE TABLE pesanan (
 );
 
 -- Tabel order_items
-CREATE TABLE order_items (
+CREATE TABLE pesanan_items (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
     id_pesanan INT(5) NOT NULL,
     id_produk INT(5) NOT NULL,
