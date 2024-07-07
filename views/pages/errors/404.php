@@ -1,4 +1,4 @@
 <div>
-    <h1>Error 404</h1>
-    <p>Page Not Found</p>
+    <h2>Error 404</h2>
+    <p>Halaman yang Anda cari tidak ditemukan.</p>
 </div>

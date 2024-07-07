@@ -2,11 +2,12 @@
 
 $routes = [];
 
-function addRoute($method, $route, $controller, $action) {
+function addRoute($method, $route, $controllerPath, $controller, $action) {
     global $routes;
     $routes[] = [
         'method' => $method,
         'route' => $route,
+        'controllerPath' => $controllerPath,
         'controller' => $controller,
         'action' => $action
     ];
@@ -21,18 +22,22 @@ function handleRequest($requestUri) {
             $pattern = str_replace(':id', '(\d+)', $route['route']); // Mengganti :id dengan regex untuk angka
             if (preg_match("#^{$pattern}$#", $requestUri, $matches)) {
                 array_shift($matches);
-                require_once "../controllers/{$route['controller']}.php";
-                $controller = new $route['controller'];
-                $action = $route['action'];
-                $controller->$action(...$matches); // Menyusun parameter ke action controller
-                return;
+                $controllerFilePath = "../controllers/{$route['controllerPath']}/{$route['controller']}.php";
+                if (file_exists($controllerFilePath)) {
+                    require_once $controllerFilePath;
+                    $controllerClass = $route['controller'];
+                    $controller = new $controllerClass();
+                    $action = $route['action'];
+                    $controller->$action(...$matches); // Menyusun parameter ke action controller
+                    return;
+                }
             }
         }
     }
 
     // If no route matched, show 404 page
     http_response_code(404);
-    echo "404 Not Found";
+    renderView('../errors/404');
 }
 
 function renderView($view, $data = []) {

@@ -1,5 +1,5 @@
 <?php 
 
-require_once 'auth.php';
-require_once 'admin.php';
-require_once 'pelanggan.php';
+require_once 'AuthRouter.php';
+require_once 'AdminRouter.php';
+require_once 'PelangganRouter.php';
