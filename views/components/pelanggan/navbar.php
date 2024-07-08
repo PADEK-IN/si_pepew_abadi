@@ -29,8 +29,9 @@
         <li class="dropdown">
             <a href="#"><span>Login</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="/admin/dashboard">Admin Page</a></li>
+                <li><a href="/register">Register</a></li>
+                <li><a href="/login">Login</a></li>
             </ul>
         </li>
         </ul>
