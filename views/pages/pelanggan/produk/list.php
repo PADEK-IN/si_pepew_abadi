@@ -31,7 +31,6 @@
                 <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
                 <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
                 <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
-                <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
             </div>
 
             <div class="blog-pagination">
