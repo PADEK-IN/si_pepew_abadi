@@ -15,22 +15,23 @@
 
 <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-    <a href="index.html" class="logo d-flex align-items-center">
+    <a href="/" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="../../assets/img/logo.png" alt="">
         <h1>Impact<span>.</span></h1>
     </a>
     <nav id="navbar" class="navbar">
         <ul>
-        <li><a href="#">Beranda</a></li>
-        <li><a href="#">Tentang Kami</a></li>
-        <li><a href="#">Product</a></li>
-        <li><a href="#">Kontak</a></li>
+        <li><a href="/">Beranda</a></li>
+        <li><a href="tentang-kami">Tentang Kami</a></li>
+        <li><a href="/produk">Produk</a></li>
+        <li><a href="/kontak">Kontak</a></li>
         <li class="dropdown">
             <a href="#"><span>Login</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="/admin/dashboard">Admin Page</a></li>
+                <li><a href="/register">Register</a></li>
+                <li><a href="/login">Login</a></li>
             </ul>
         </li>
         </ul>

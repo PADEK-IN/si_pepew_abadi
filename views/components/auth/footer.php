@@ -1,18 +1,21 @@
-
-        <div id="preloader"></div>
-
-        <!-- Vendor JS Files -->
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/vendor/aos/aos.js"></script>
-        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-        <script src="assets/vendor/php-email-form/validate.js"></script>
-
-        <!-- Template Main JS File -->
-        <script src="assets/js/main.js"></script>
-
-    </body>
+<!--   Core JS Files   -->
+<script src="assets/auth/js/core/popper.min.js"></script>
+  <script src="assets/auth/js/core/bootstrap.min.js"></script>
+  <script src="assets/auth/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="assets/auth/js/plugins/smooth-scrollbar.min.js"></script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="assets/auth/js/material-dashboard.min.js?v=3.1.0"></script>
+</body>
 
 </html>
