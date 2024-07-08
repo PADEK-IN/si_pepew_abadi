@@ -2,7 +2,7 @@
 
 class IndexAdminCtrl {
     public function dashboard() {
-        renderView('admin/dashboard');
+        renderView('admin/dashboard/index');
     }
 
 }
