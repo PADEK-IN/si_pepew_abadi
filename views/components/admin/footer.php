@@ -22,7 +22,7 @@
                         </div>
                     </footer>
                 </div>
-                <?php require_once 'custom-template.php' ?>
+                
 
             </div>
         <?php require_once 'scripts.php'?>

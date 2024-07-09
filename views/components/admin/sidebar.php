@@ -3,9 +3,8 @@
     <div class="sidebar-logo">
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
-            <a href="#" class="logo">
-                <img src="../../assets/admin/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand"
-                height="20" >
+            <a href="/admin/dashboard" class="logo">
+                <img src="../../assets/admin/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20" >
             </a>
             <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar"><i class="gg-menu-right"></i></button>
@@ -21,20 +20,10 @@
         <div class="sidebar-content">
             <ul class="nav nav-secondary">
                 <li class="nav-item active">
-                    <a data-bs-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+                    <a href="/admin/dashboard" class="collapsed" aria-expanded="false">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
-                        <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="dashboard">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="../demo1/index.html">
-                                <span class="sub-item">Dashboard 1</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
@@ -42,85 +31,61 @@
                     </span>
                     <h4 class="text-section">Components</h4>
                 </li>
-                <!-- base -->
+                <!-- Admin -->
                 <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#base">
+                    <a href="/admin/anggota">
+                        <i class="fas fa-user"></i>
+                        <p>Admin</p>
+                    </a>
+                </li>
+                <!-- Costumer -->
+                <li class="nav-item">
+                    <a href="/admin/pelanggan">
                         <i class="fas fa-layer-group"></i>
-                        <p>Base</p>
-                        <span class="caret"></span>
+                        <p>Costumer</p>
                     </a>
-                    <div class="collapse" id="base">
-                        <ul class="nav nav-collapse">
-                        <li>
-                            <a href="components/avatars.html">
-                                <span class="sub-item">Avatars</span>
-                            </a>
-                        </li>
-                    </div>
                 </li>
-                <!-- sidebar Layout -->
+                <!-- Product -->
                 <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#sidebarLayouts">
+                    <a href="/admin/produk">
                         <i class="fas fa-th-list"></i>
-                        <p>Sidebar Layouts</p>
-                        <span class="caret"></span>
+                        <p>Products</p>
                     </a>
-                    <div class="collapse" id="sidebarLayouts">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="sidebar-style-2.html">
-                                <span class="sub-item">Sidebar Style 2</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
-                <!-- forms -->
+                <!-- Pesanan -->
                 <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#forms">
+                    <a href="/admin/pesanan">
                         <i class="fas fa-pen-square"></i>
-                        <p>Forms</p>
-                        <span class="caret"></span>
+                        <p>Pesanan</p>
                     </a>
-                    <div class="collapse" id="forms">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="forms/forms.html">
-                                <span class="sub-item">Basic Form</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
-                <!-- Tables -->
-                <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#tables">
-                        <i class="fas fa-table"></i>
-                        <p>Tables</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="tables">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="tables/tables.html">
-                                <span class="sub-item">Basic Table</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <!-- charts -->
+                <!-- Laporan -->
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#charts">
                         <i class="far fa-chart-bar"></i>
-                        <p>Charts</p>
+                        <p>Laporan</p>
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="charts">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="charts/charts.html">
-                                <span class="sub-item">Chart Js</span>
+                                <a href="/admin/laporan/pengiriman">
+                                <span class="sub-item">Laporan Dagang</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/laporan/anngota">
+                                <span class="sub-item">Laporan Anggota</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/laporan/pesanan">
+                                <span class="sub-item">Laporan Pesanan</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/laporan/pengiriman">
+                                <span class="sub-item">Laporan Pengiriman</span>
                                 </a>
                             </li>
                         </ul>
@@ -128,10 +93,9 @@
                 </li>
                 <!-- widgets -->
                 <li class="nav-item">
-                    <a href="#">
-                        <i class="fas fa-desktop"></i>
-                        <p>Widgets</p>
-                        <span class="badge badge-success">4</span>
+                    <a href="/login">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <p>LogOut</p>
                     </a>
                 </li>
             </ul>

@@ -5,4 +5,8 @@ class IndexAdminCtrl {
         renderView('admin/dashboard/index');
     }
 
+    public function anggota() {
+        renderView('admin/dashboard/list');
+    }
+
 }
