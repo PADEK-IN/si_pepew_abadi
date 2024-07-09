@@ -25,6 +25,6 @@
                 <?php require_once 'custom-template.php' ?>
 
             </div>
-        <?php require_once 'footer.php'?>
+        <?php require_once 'scripts.php'?>
     </body>
 </html>
