@@ -15,6 +15,7 @@
 <!-- Navbar Header -->
 <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
     <div class="container-fluid">
+        <h3 class="fw-bold mb-3">CV. Samudera Abadi</h3>
         <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
             <!-- profile -->
             <li class="nav-item topbar-user dropdown hidden-caret">

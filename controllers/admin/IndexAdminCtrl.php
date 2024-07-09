@@ -9,4 +9,12 @@ class IndexAdminCtrl {
         renderView('admin/anggota/list');
     }
 
+    public function tambahAnggota() {
+        renderView('admin/anggota/create');
+    }
+
+    public function editAnggota() {
+        renderView('admin/anggota/edit');
+    }
+
 }
