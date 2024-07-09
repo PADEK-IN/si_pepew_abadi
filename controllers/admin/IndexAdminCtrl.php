@@ -6,7 +6,7 @@ class IndexAdminCtrl {
     }
 
     public function anggota() {
-        renderView('admin/dashboard/list');
+        renderView('admin/anggota/list');
     }
 
 }

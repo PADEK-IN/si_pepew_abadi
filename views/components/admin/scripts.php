@@ -35,30 +35,37 @@
 <script src="../../assets/admin/js/setting-demo.js"></script>
 <script src="../../assets/admin/js/demo.js"></script>
 <script>
-  $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
-    type: "line",
-    height: "70",
-    width: "100%",
-    lineWidth: "2",
-    lineColor: "#177dff",
-    fillColor: "rgba(23, 125, 255, 0.14)",
-  });
+    $(document).ready(function () {
+      $("#multi-filter-select").DataTable({
+          pageLength: 5,
+          initComplete: function () {
+          this.api()
+              .columns()
+              .every(function () {
+              var column = this;
+              var select = $(
+                  '<select class="form-select"><option value=""></option></select>'
+              )
+                  .appendTo($(column.footer()).empty())
+                  .on("change", function () {
+                  var val = $.fn.dataTable.util.escapeRegex($(this).val());
 
-  $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
-    type: "line",
-    height: "70",
-    width: "100%",
-    lineWidth: "2",
-    lineColor: "#f3545d",
-    fillColor: "rgba(243, 84, 93, .14)",
-  });
+                  column
+                      .search(val ? "^" + val + "$" : "", true, false)
+                      .draw();
+                  });
 
-  $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
-    type: "line",
-    height: "70",
-    width: "100%",
-    lineWidth: "2",
-    lineColor: "#ffa534",
-    fillColor: "rgba(255, 165, 52, .14)",
-  });
+              column
+                  .data()
+                  .unique()
+                  .sort()
+                  .each(function (d, j) {
+                  select.append(
+                      '<option value="' + d + '">' + d + "</option>"
+                  );
+                  });
+              });
+          },
+      });
+    });
 </script>
