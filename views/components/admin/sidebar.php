@@ -40,7 +40,7 @@
                 </li>
                 <!-- Costumer -->
                 <li class="nav-item">
-                    <a href="/admin/pelanggan">
+                    <a href="/admin/costumer">
                         <i class="fas fa-layer-group"></i>
                         <p>Costumer</p>
                     </a>
@@ -69,23 +69,28 @@
                     <div class="collapse" id="charts">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="/admin/laporan/pengiriman">
+                                <a href="/admin/laporan-barang">
                                 <span class="sub-item">Laporan Dagang</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/admin/laporan/anngota">
+                                <a href="/admin/laporan-anggota">
                                 <span class="sub-item">Laporan Anggota</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/admin/laporan/pesanan">
-                                <span class="sub-item">Laporan Pesanan</span>
+                                <a href="/admin/laporan-pemesanan">
+                                <span class="sub-item">Laporan Pemesanan</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/admin/laporan/pengiriman">
+                                <a href="/admin/laporan-pengiriman">
                                 <span class="sub-item">Laporan Pengiriman</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/laporan-tagihan">
+                                <span class="sub-item">Laporan Tagihan</span>
                                 </a>
                             </li>
                         </ul>

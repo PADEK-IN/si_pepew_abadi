@@ -6,6 +6,7 @@
                         </div>
                     </footer>
                 </div>
+                <!-- costume tamplate -->
                 
             </div>
         <?php require_once 'scripts.php'?>
