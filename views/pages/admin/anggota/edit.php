@@ -11,7 +11,7 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/anggota">Admin</a>
+                    <a href="/admin/anggota">Karyawan</a>
                 </li>
                 <li class="separator">
                     <i class="icon-arrow-right"></i>

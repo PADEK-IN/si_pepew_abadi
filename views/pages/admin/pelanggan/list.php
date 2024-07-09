@@ -1,2 +1,90 @@
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas tenetur voluptatum temporibus suscipit, provident aspernatur laboriosam ad obcaecati reprehenderit, atque vero quam repellat nostrum nisi dolorem. Neque cum facere, id tempora incidunt dolore, praesentium perferendis facilis soluta modi autem ducimus inventore minus quasi iusto unde aliquid quibusdam vel at. Officia ducimus sequi saepe, minima unde illum, architecto aut quia sapiente itaque aperiam velit rem accusantium. Ab natus facilis suscipit voluptatum repellendus cumque labore consequatur soluta excepturi at minima nesciunt officia doloremque, eligendi, eos velit incidunt aperiam iure sequi? Fuga repudiandae laboriosam tempora provident quidem? Libero at repudiandae iste, rerum alias sequi. Sit consectetur nesciunt quibusdam, laboriosam doloremque ipsum, fugit inventore suscipit modi provident nobis enim iusto illum vel dignissimos, earum amet aspernatur. Corrupti consectetur dolorum exercitationem nihil, sequi at qui ut iste architecto! Ex asperiores rem minus consectetur odit nostrum mollitia vel voluptas fugiat ab, sit, ratione officiis laborum non error et recusandae! Nihil voluptates repellat alias cupiditate quis consequuntur magni laudantium, a, eum ratione iusto repudiandae labore esse impedit! Ipsa, ut est. Dolorem perspiciatis voluptatibus voluptas blanditiis sit ducimus eveniet dignissimos, facilis dolores mollitia ratione molestiae unde magnam enim repudiandae deleniti doloremque. Magnam qui omnis optio libero sunt nobis!</p>   
-<p>ini list pelanggan</p>
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header">
+            <ul class="breadcrumbs" style="margin:0;">
+                <li class="nav-home">
+                    <a href="/admin/dashboard">
+                    <i class="icon-home"></i>
+                    </a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <b>Costumer</b>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <h4 class="card-title">Daftar List Costumer</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="multi-filter-select" class="display table table-striped table-hover text-center">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Perusahaan</th>
+                                        <th>Alamat</th>
+                                        <th>Nama</th>
+                                        <th>Telepon</th>
+                                        <th>Tanggal</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Perusahaan</th>
+                                        <th>Alamat</th>
+                                        <th>Nama</th>
+                                        <th>Telepon</th>
+                                        <th>Tanggal</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>PT. Wings</td>
+                                        <td>Jln. Semangka</td>
+                                        <td>
+                                            <a href="costumer/detail">
+                                                Tiger Nixon
+                                            </a>
+                                        </td>
+                                        <td>084536274</td>
+                                        <td>12, Juli 2024</td>
+                                        <td>
+                                            <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>PT. Wings</td>
+                                        <td>Jln. Semangka</td>
+                                        <td>
+                                            <a href="/costumer/detail">
+                                                Tiger Nixon
+                                            </a>
+                                        </td>
+                                        <td>084536274</td>
+                                        <td>12, Juli 2024</td>
+                                        <td>
+                                            <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
