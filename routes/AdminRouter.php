@@ -14,7 +14,9 @@ addRoute('GET', "/{$adminPath}/costumer", $adminPath, 'IndexAdminCtrl', 'costume
 addRoute('GET', "/{$adminPath}/costumer/detail", $adminPath, 'IndexAdminCtrl', 'detailCostumer');
 // product
 addRoute('GET', "/{$adminPath}/produk", $adminPath, 'IndexAdminCtrl', 'produk');
-addRoute('GET', "/{$adminPath}/produk/edit", $adminPath, 'IndexAdminCtrl', 'detailProduk');
+addRoute('GET', "/{$adminPath}/produk/tambah", $adminPath, 'IndexAdminCtrl', 'createProduk');
+addRoute('GET', "/{$adminPath}/produk/detail", $adminPath, 'IndexAdminCtrl', 'detailProduk');
+addRoute('GET', "/{$adminPath}/produk/edit", $adminPath, 'IndexAdminCtrl', 'editProduk');
 // pesanan
 addRoute('GET', "/{$adminPath}/pesanan", $adminPath, 'IndexAdminCtrl', 'pesanan');
 addRoute('GET', "/{$adminPath}/pesanan/edit", $adminPath, 'IndexAdminCtrl', 'detailPesanan');

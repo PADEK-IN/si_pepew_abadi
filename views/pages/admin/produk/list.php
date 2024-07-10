@@ -1,2 +1,90 @@
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat eaque modi illum voluptatum. Adipisci eveniet impedit inventore laudantium repellat, temporibus excepturi commodi recusandae. Aspernatur, distinctio rem voluptatum minus hic maiores magni error quia, totam, aperiam non placeat? Ex ad voluptas sed vero quis tenetur quibusdam modi incidunt delectus laborum dolores consequatur dolorem aliquam reprehenderit earum, doloremque eveniet, unde nobis facilis sapiente assumenda minima? Officia reprehenderit ipsam quae culpa. Ab necessitatibus, ducimus exercitationem modi rem quo eum? Nisi excepturi perspiciatis ullam nobis amet. Error ipsam commodi id cumque, vitae modi dolorum quam, quis quos in nesciunt beatae suscipit fugiat sint ab maiores et voluptatem quaerat incidunt. Aspernatur numquam minus atque. Quod quaerat excepturi recusandae quia nisi repudiandae molestias suscipit, quibusdam dicta maiores sed earum facere fuga ratione doloribus atque accusamus et, asperiores dolor impedit error nemo quo labore! Obcaecati porro totam accusamus animi, similique, minima vel placeat, fugit adipisci quasi vero nesciunt. Corrupti saepe, neque, aspernatur cumque non magni laborum obcaecati facilis ducimus rerum eveniet consequatur quia? Porro earum molestias facere doloremque consequatur non. Assumenda, enim. Quaerat quis iste consectetur atque maiores voluptatibus quasi dolores itaque soluta nam adipisci, dolor alias voluptas minus aliquid vitae voluptate, iusto beatae nesciunt laboriosam! Itaque.</p>
-<p>ini list produk</p>
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header">
+            <ul class="breadcrumbs" style="margin:0;">
+                <li class="nav-home">
+                    <a href="/admin/dashboard">
+                    <i class="icon-home"></i>
+                    </a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <b>Products</b>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <h4 class="card-title">Daftar List Products</h4>
+                        <a class="btn btn-primary btn-round ms-auto" href="/admin/produk/tambah">
+                        <i class="fa fa-plus"></i>
+                            Tambah Produk
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="multi-filter-select" class="display table table-striped table-hover text-center">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Kode</th>
+                                        <th>Nama Barang</th>
+                                        <th>Harga</th>
+                                        <th>Image</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Kode</th>
+                                        <th>Nama Barang</th>
+                                        <th>Harga</th>
+                                        <th>Image</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <a href="/admin/produk/detail">5FGH432H</a>
+                                        </td>
+                                        <td>Sarung Bantal</td>
+                                        <td>Rp. 20.000</td>
+                                        <td>
+                                            <img src="../../assets/auth/img/register.jpg" alt="produk1" width="100px">
+                                        </td>
+                                        <td>
+                                            <a href="/admin/produk/edit" class="btn btn-sm btn-warning">Edit</a>
+                                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>
+                                            <a href="/admin/produk/detail">5FGH432H</a>
+                                        </td>
+                                        <td>Sarung Bantal</td>
+                                        <td>Rp. 20.000</td>
+                                        <td>
+                                            <img src="../../assets/auth/img/register.jpg" alt="produk1" width="100px">
+                                        </td>
+                                        <td>
+                                            <a href="/admin/produk/edit" class="btn btn-sm btn-warning">Edit</a>
+                                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -64,7 +64,7 @@
                                 <!-- button -->
                                 <div class="card-action">
                                     <button class="btn btn-success">Buat</button>
-                                    <a href="/admin/anggota" class="btn btn-danger">Kembali</a href="/admin/anggota">
+                                    <a href="/admin/anggota" class="btn btn-danger">Kembali</a>
                                 </div>
                             </form>
                         </div>
