@@ -19,7 +19,7 @@ addRoute('GET', "/{$adminPath}/produk/detail", $adminPath, 'IndexAdminCtrl', 'de
 addRoute('GET', "/{$adminPath}/produk/edit", $adminPath, 'IndexAdminCtrl', 'editProduk');
 // pesanan
 addRoute('GET', "/{$adminPath}/pesanan", $adminPath, 'IndexAdminCtrl', 'pesanan');
-addRoute('GET', "/{$adminPath}/pesanan/edit", $adminPath, 'IndexAdminCtrl', 'detailPesanan');
+addRoute('GET', "/{$adminPath}/pesanan/detail", $adminPath, 'IndexAdminCtrl', 'detailPesanan');
 // laporan
 addRoute('GET', "/{$adminPath}/laporan-barang", $adminPath, 'IndexAdminCtrl', 'laporanBarang');
 addRoute('GET', "/{$adminPath}/laporan-anggota", $adminPath, 'IndexAdminCtrl', 'laporanAnggota');
