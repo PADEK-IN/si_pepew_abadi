@@ -75,7 +75,6 @@
 
         <div class="section-header">
             <h2>Contact</h2>
-            <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem dolore earum</p>
         </div>
 
         <div class="row gx-lg-0 gy-4">
