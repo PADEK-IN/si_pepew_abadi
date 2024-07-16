@@ -1,8 +1,8 @@
 <div class="col-xl-4 col-md-6">
     <article>
 
-        <div class="post-img">
-        <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+        <div class="post-img text-center">
+        <img src="assets/img/product/pupuk.jpeg" alt="" class="img-fluid">
         </div>
 
         <h2 class="title">
