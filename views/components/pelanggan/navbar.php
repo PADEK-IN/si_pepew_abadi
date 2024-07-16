@@ -1,8 +1,8 @@
 <section id="topbar" class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
     <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">cvsamuderaabadi@gmail.com</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+62 8123 4567 8900</span></i>
+        <i class="bi bi-envelope d-flex align-items-center"><a href="">samuderaabadi@gmail.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+62 822 7805 0707</span></i>
     </div>
     <div class="social-links d-none d-md-flex align-items-center">
         <a href="https://www.facebook.com" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -33,6 +33,7 @@
         <li class="dropdown">
             <a href="#"><span>Login</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
+                <li><a href="/profile">Profile</a></li>
                 <li><a href="/admin/dashboard">Admin Page</a></li>
                 <li><a href="/register">Register</a></li>
                 <li><a href="/login">Login</a></li>
