@@ -23,8 +23,13 @@
         <ul>
         <li><a href="/">Beranda</a></li>
         <li><a href="/tentang-kami">Tentang Kami</a></li>
-        <li><a href="/produk">Produk</a></li>
-        <li><a href="/kontak">Kontak</a></li>
+        <li class="dropdown">
+            <a href="#"><span>Produk</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+                <li><a href="/produk">List Produk</a></li>
+                <li><a href="/keranjang">Keranjangku</a></li>
+            </ul>
+        </li>
         <li class="dropdown">
             <a href="#"><span>Login</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>

@@ -11,3 +11,6 @@ addRoute('GET', '/produk', $pelangganPath, 'IndexCtrl', 'produk');
 addRoute('GET', '/produk/:id', $pelangganPath, 'IndexCtrl', 'detailProduk');
 // kontak
 addRoute('GET', '/kontak', $pelangganPath, 'IndexCtrl', 'kontak');
+// pemesanan
+addRoute('GET', '/keranjang', $pelangganPath, 'IndexCtrl', 'keranjang');
+addRoute('GET', '/checkout', $pelangganPath, 'IndexCtrl', 'checkout');

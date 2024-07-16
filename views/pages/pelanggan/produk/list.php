@@ -21,26 +21,33 @@
         </nav>
     </div>
 
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog">
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio sections-bg">
         <div class="container" data-aos="fade-up">
-            <div class="row gy-4 posts-list">
-                <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
-                <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
-                <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
-                <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
-                <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
-                <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
-            </div>
 
-            <div class="blog-pagination">
-                <ul class="justify-content-center">
-                <li><a href="#">1</a></li>
-                <li class="active"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                </ul>
-            </div>
+            <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+                <div>
+                    <ul class="portfolio-flters">
+                        <li data-filter="*" class="filter-active">All</li>
+                        <li data-filter=".pupuk">Pupuk</li>
+                        <li data-filter=".racun">Racun</li>
+                        <li data-filter=".Mesin">Mesin</li>
+                    </ul><!-- End Portfolio Filters -->
+                </div>
 
+                <div class="row gy-4 portfolio-container">
+                    <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
+                    <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
+                    <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
+                    <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
+                    <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
+                    <?php include __DIR__ . '/../../../components/pelanggan/card-produk.php'; ?>
+
+
+                </div><!-- End Portfolio Container -->
+            </div>
         </div>
-    </section>
+    </section><!-- End Portfolio Section -->
+
+
 </main>

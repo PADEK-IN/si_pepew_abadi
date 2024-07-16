@@ -5,7 +5,7 @@
         <div class="container position-relative">
             <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
-                <h2>Keranjang</h2>
+                <h2>CheckOut</h2>
             </div>
             </div>
         </div>
@@ -15,7 +15,7 @@
                 <ol>
                 <li><a href="/">Home</a></li>
                 <li><a href="/produk">Produk</a></li>
-                <li>Keranjang</li>
+                <li>Checkout</li>
                 </ol>
             </div>
         </nav>

@@ -22,4 +22,12 @@ class IndexCtrl {
         renderView('pelanggan/home/kontak');
     }
 
+    // pemesanan
+    public function keranjang() {
+        renderView('pelanggan/pesanan/list');
+    }
+    public function checkout() {
+        renderView('pelanggan/pesanan/checkout');
+    }
+
 }
