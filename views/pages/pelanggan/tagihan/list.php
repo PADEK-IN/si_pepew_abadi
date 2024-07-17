@@ -96,7 +96,29 @@
                                         <table class="table text-center">
                                             <tr>
                                                 <th colspan="2">Tambah Bukti</th>
-                                                <td><button class="btn btn-success">Tambah</button></td>
+                                                <td><button class="btn btn-success" data-toggle="modal" data-target="#tambah">Tambah</button></td>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="tambahLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="tambahLabel">Tambah Bukti</h5>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="input-group mb-3">
+                                                                <div class="custom-file">
+                                                                    <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                                            <button type="button" class="btn btn-primary">Simpan</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </tr>
                                             <tr>
                                                 <td><i class="bi bi-menu-button"></i>Pupuk</td>
@@ -141,7 +163,7 @@
                             <div id="chekout-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                                 <div class="accordion-body d-flex align-items-center">
                                     <div class="col-lg-3 text-center">
-                                        <img src="../assets/img/product/pupuk.jpeg" class="m-5" style="width: 80px;" alt="">
+                                        <img src="../assets/img/product/pupuk.jpeg" class="m-5" style="width: 100px;" alt="">
                                         <br>
                                         <span class="alert alert-danger">Bukti Tidak Valid</span>
                                     </div>
@@ -149,7 +171,31 @@
                                         <table class="table text-center">
                                             <tr>
                                                 <th colspan="2">Edit Bukti</th>
-                                                <td><button class="btn btn-success">Edit</button></td>
+                                                <td><button class="btn btn-success" data-toggle="modal" data-target="#edit">Edit</button></td>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="editLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="editLabel">Edit Bukti</h5>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="modal-body">
+                                                                <div class="input-group mb-3">
+                                                                    <div class="custom-file">
+                                                                        <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                                                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                                            <button type="button" class="btn btn-primary">Simpan</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </tr>
                                             <tr>
                                                 <td><i class="bi bi-menu-button"></i>Pupuk</td>
