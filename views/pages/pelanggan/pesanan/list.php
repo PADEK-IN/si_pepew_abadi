@@ -176,7 +176,28 @@
                         <div class="m-4">
                             <span>Total Harga <strong>Rp. 60.000</strong></span>
                         </div>
-                        <button type="button" class="btn btn-success">CheckOut</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#checkOut">CheckOut</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="checkOut" tabindex="-1" role="dialog" aria-labelledby="checkOutLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="checkOutLabel">Form CheckOut</h5>
+                                </div>
+                                <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="alamat" class="form-label">Alamat</label>
+                                    <input type="text" class="form-control" id="alamat" aria-describedby="alamatH">
+                                    <div id="alamatH" class="form-text">Masukan Alamat Anda</div>
+                                </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                    <button type="button" class="btn btn-primary">CheckOut</button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

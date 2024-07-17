@@ -108,7 +108,6 @@
                                                             <div class="input-group mb-3">
                                                                 <div class="custom-file">
                                                                     <input type="file" class="custom-file-input" id="inputGroupFile01">
-                                                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -180,12 +179,9 @@
                                                             <h5 class="modal-title" id="editLabel">Edit Bukti</h5>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <div class="modal-body">
-                                                                <div class="input-group mb-3">
-                                                                    <div class="custom-file">
-                                                                        <input type="file" class="custom-file-input" id="inputGroupFile01">
-                                                                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                                                                    </div>
+                                                            <div class="input-group mb-3">
+                                                                <div class="custom-file">
+                                                                    <input type="file" class="custom-file-input" id="inputGroupFile01">
                                                                 </div>
                                                             </div>
                                                         </div>
