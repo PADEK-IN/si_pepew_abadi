@@ -38,6 +38,7 @@
                                 <li class="d-flex align-items-center"><i class="bi bi-menu-button"></i> <a href="#">Pupuk</a></li>
                                 <li class="d-flex align-items-center"><i class="bi bi-basket"></i> <a href="#">456</a></li>
                                 <li class="d-flex align-items-center"><i class="bi bi-bucket"></i> <a href="#">20 LT</a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-tags"></i> <a href="#">Rp. 30.000</a></li>
                             </ul>
                         </div>
                         <div class="content">
