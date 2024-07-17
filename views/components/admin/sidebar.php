@@ -3,9 +3,10 @@
     <div class="sidebar-logo">
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
-            <a href="/admin/dashboard" class="logo">
-                <img src="../../assets/admin/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20" >
+            <a href="/admin/dashboard" class="text-light m-3 logo">
+                <b>CV. Samudera Abadi</b>
             </a>
+            <hr>
             <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar"><i class="gg-menu-right"></i></button>
                 <button class="btn btn-toggle sidenav-toggler"><i class="gg-menu-left"></i></button>

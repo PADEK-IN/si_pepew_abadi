@@ -15,13 +15,13 @@
 <!-- Navbar Header -->
 <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
     <div class="container-fluid">
-        <h3 class="fw-bold mb-3">CV. Samudera Abadi</h3>
+        <!-- <h3 class="fw-bold mb-3">CV. Samudera Abadi</h3> -->
         <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
             <!-- profile -->
             <li class="nav-item topbar-user dropdown hidden-caret">
                 <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
                     <div class="avatar-sm">
-                        <img src="../../assets/admin/img/user.png" alt="..." class="avatar-img rounded-circle"/>
+                        <img src="../../assets/img/profile/profile-1.jpg" alt="..." class="avatar-img rounded-circle"/>
                     </div>  
                     <span class="profile-username">
                         <span class="op-7">Hi,</span>
@@ -33,22 +33,17 @@
                         <li>
                             <div class="user-box">
                                 <div class="avatar-lg">
-                                    <img src="../../assets/admin/img/profile.jpg" alt="image profile" class="avatar-img rounded"/>
+                                    <img src="../../assets/img/profile/profile-1.jpg" alt="image profile" class="avatar-img rounded"/>
                                 </div>
                                 <div class="u-text">
                                     <h4>Hizrian</h4>
                                     <p class="text-muted">hello@example.com</p>
-                                    <a href="" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
                                 </div>
                             </div>
                         </li>
                         <li>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">My Profile</a>
-                        <a class="dropdown-item" href="#">My Balance</a>
-                        <a class="dropdown-item" href="#">Inbox</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Account Setting</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Logout</a>
                         </li>
