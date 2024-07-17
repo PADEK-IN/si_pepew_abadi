@@ -9,6 +9,10 @@ class IndexCtrl {
         renderView('pelanggan/home/tentang-kami');
     }
 
+    public function profile() {
+        renderView('pelanggan/home/profile');
+    }
+
     // Product
     public function produk() {
         renderView('pelanggan/produk/list');
@@ -28,6 +32,11 @@ class IndexCtrl {
     }
     public function checkout() {
         renderView('pelanggan/pesanan/checkout');
+    }
+
+    // tagihan
+    public function tagihan() {
+        renderView('pelanggan/tagihan/list');
     }
 
 }
