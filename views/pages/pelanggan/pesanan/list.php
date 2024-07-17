@@ -26,8 +26,6 @@
         <div class="container" data-aos="fade-up">
             <div class="row gy-4">
 
-                <button type="button" class="btn btn-success">CheckOut</button>
-
                 <div class="col-lg-4">
                     <div class="content px-xl-5">
                         <h3>Yuk... <br><strong>ChekOut</strong></h3>
@@ -117,8 +115,77 @@
                     </div>
                 </div>
 
+
+
+                <button type="button" class="btn btn-success" data-bs-toggle="collapse" data-bs-target="#hitung">Hitung</button>
+                <div id="hitung" class="accordion-collapse collapse">
+                    <!-- Item 1 -->
+                    <div class="accordion-body d-flex align-items-center">
+                        <div class="col-lg-3 text-center">
+                            <img src="../assets/img/product/pupuk.jpeg" style="width: 150px;" alt="">
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="d-flex">
+                                <span class="col-lg-2"><i class="bi bi-menu-button"></i>Pupuk</span>
+                                <span class="col-lg-2"><i class="bi bi-bucket"></i>20 LT</span>
+                                <span class="col-lg-3"><i class="bi bi-tags"></i>Rp. 30.000</span>
+                            </div>
+                            <hr>
+                            <div class="content">
+                                <p>INI DESKRIPSI</p>
+                                <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas molestias numquam nulla adipisci a repellat voluptatum. Quae sint alias vero eius illo fugiat inventore debitis illum aliquam! Nihil, quia excepturi?</P>
+                            </div>
+                            <hr>
+                            <div class="meta-bottom d-flex">
+                                <input type="checkbox" class="col-lg-1">
+                                <div class="cats">
+                                    Checkout
+                                    <i class="bi bi-bag"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Item 1 -->
+                    <div class="accordion-body d-flex align-items-center">
+                        <div class="col-lg-3 text-center">
+                            <img src="../assets/img/product/pupuk.jpeg" style="width: 150px;" alt="">
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="d-flex">
+                                <span class="col-lg-2"><i class="bi bi-menu-button"></i>Pupuk</span>
+                                <span class="col-lg-2"><i class="bi bi-bucket"></i>20 LT</span>
+                                <span class="col-lg-3"><i class="bi bi-tags"></i>Rp. 30.000</span>
+                            </div>
+                            <hr>
+                            <div class="content">
+                                <p>INI DESKRIPSI</p>
+                                <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas molestias numquam nulla adipisci a repellat voluptatum. Quae sint alias vero eius illo fugiat inventore debitis illum aliquam! Nihil, quia excepturi?</P>
+                            </div>
+                            <hr>
+                            <div class="meta-bottom d-flex">
+                                <input type="checkbox" class="col-lg-1">
+                                <div class="cats">
+                                    Checkout
+                                    <i class="bi bi-bag"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <div class="m-4">
+                            <span>Total Harga <strong>Rp. 60.000</strong></span>
+                        </div>
+                        <button type="button" class="btn btn-success">CheckOut</button>
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
     </section><!-- End Frequently Asked Questions Section -->
+
 
 </main>
