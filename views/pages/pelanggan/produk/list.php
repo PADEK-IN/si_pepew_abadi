@@ -5,7 +5,7 @@
         <div class="container position-relative">
             <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
-                <h2>Produk</h2>
+                <h2>Barang</h2>
                 <p>Temukan berbagai produk berkualitas untuk mendukung pertanian Anda. Dari pupuk organik hingga mesin pertanian modern, kami memiliki semua yang Anda butuhkan.</p>
             </div>
             </div>
@@ -15,10 +15,10 @@
             <div class="container d-flex justify-content-between">
                 <ol>
                 <li><a href="/">Home</a></li>
-                <li>Produk</li>
+                <li>Barang</li>
                 </ol>
                 <div>
-                    <a href="/keranjang">
+                    <a href="/keranjang" class="btn btn-warning">
                     <i class="bi bi-cart4"></i> Keranjang
                     </a>
                 </div>

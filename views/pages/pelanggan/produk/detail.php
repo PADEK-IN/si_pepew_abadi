@@ -6,7 +6,7 @@
         <div class="container position-relative">
             <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
-                <h2>Produk Detail</h2>
+                <h2>Barang Detail</h2>
             </div>
             </div>
         </div>
@@ -15,7 +15,7 @@
             <div class="container">
                 <ol>
                 <li><a href="/">Home</a></li>
-                <li>Produk</li>
+                <li>Barang</li>
                 </ol>
             </div>
         </nav>
@@ -50,14 +50,14 @@
                         </div>
                         <div class="meta-bottom">
                             <ul class="cats">
-                                <a href="/keranjang" class="btn-get-started">
+                                <a href="/keranjang" class="btn btn-primary text-white">
                                     <i class="bi bi-cart-plus"></i>
                                     Masuk Keranjang
                                 </a>
                             </ul>
                             
                             <ul class="tags">
-                                <a href="/checkout" class="btn-get-started">
+                                <a href="/checkout" class="btn btn-warning">
                                     <i class="bi bi-bag"></i>
                                     Beli Sekarang
                                 </a>
