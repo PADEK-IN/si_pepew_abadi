@@ -6,7 +6,7 @@
             <h2>Selamat Datang Di <span>Samudera Abadi</span></h2>
             <p>Solusi Terbaik untuk Kebutuhan Pertanian Anda. Kami menyediakan pupuk, pestisida, dan mesin tani modern untuk mendukung keberhasilan pertanian Anda.</p>
             <div class="d-flex justify-content-center justify-content-lg-start">
-                <a href="#" class="btn-get-started">Jelajahi Produk Kami</a>
+                <a href="/produk" class="btn-get-started">Jelajahi Produk Kami</a>
             </div>
             </div>
             <div class="col-lg-6 order-1 order-lg-2">
