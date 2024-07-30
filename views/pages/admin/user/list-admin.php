@@ -11,7 +11,13 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <b>Karyawan</b>
+                    User
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <b>Admin</b>
                 </li>
             </ul>
         </div>
@@ -19,10 +25,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
-                        <h4 class="card-title">Daftar List Karyawan</h4>
+                        <h4 class="card-title">Daftar List Admin</h4>
                         <a class="btn btn-primary btn-round ms-auto" href="/admin/anggota/tambah">
                         <i class="fa fa-plus"></i>
-                            Tambah Karyawan
+                            Tambah Admin
                         </a>
                     </div>
                     <div class="card-body">

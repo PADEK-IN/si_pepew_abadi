@@ -32,12 +32,27 @@
                     </span>
                     <h4 class="text-section">Components</h4>
                 </li>
-                <!-- Admin -->
+                <!-- User -->
                 <li class="nav-item">
-                    <a href="/admin/anggota">
-                        <i class="fas fa-user"></i>
-                        <p>Admin</p>
+                    <a data-bs-toggle="collapse" href="#charts">
+                    <i class="fas fa-user"></i>
+                        <p>User</p>
+                        <span class="caret"></span>
                     </a>
+                    <div class="collapse" id="charts">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="/admin/user/admin">
+                                <span class="sub-item">Admin</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/user/pelanggan">
+                                <span class="sub-item">Pelanggan</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <!-- Costumer -->
                 <li class="nav-item">

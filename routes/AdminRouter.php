@@ -5,10 +5,9 @@ require_once '../controllers/admin/IndexAdminCtrl.php';
 $adminPath = 'admin';
 
 addRoute('GET', "/{$adminPath}/dashboard", $adminPath, 'IndexAdminCtrl', 'dashboard');
-// anggota
-addRoute('GET', "/{$adminPath}/anggota", $adminPath, 'IndexAdminCtrl', 'anggota');
-addRoute('GET', "/{$adminPath}/anggota/tambah", $adminPath, 'IndexAdminCtrl', 'tambahAnggota');
-addRoute('GET', "/{$adminPath}/anggota/edit", $adminPath, 'IndexAdminCtrl', 'editAnggota');
+// user
+addRoute('GET', "/{$adminPath}/user/admin", $adminPath, 'IndexAdminCtrl', 'admin');
+addRoute('GET', "/{$adminPath}/user/pelanggan", $adminPath, 'IndexAdminCtrl', 'pelanggan');
 // costumer
 addRoute('GET', "/{$adminPath}/costumer", $adminPath, 'IndexAdminCtrl', 'costumer');
 addRoute('GET', "/{$adminPath}/costumer/detail", $adminPath, 'IndexAdminCtrl', 'detailCostumer');

@@ -5,16 +5,14 @@ class IndexAdminCtrl {
         renderView('admin/dashboard/index');
     }
 
-// anggota
-    public function anggota() {
-        renderView('admin/anggota/list');
+// user
+    public function admin() {
+        renderView('admin/user/list-admin');
     }
-    public function tambahAnggota() {
-        renderView('admin/anggota/create');
+    public function pelanggan() {
+        renderView('admin/user/list-pelanggan');
     }
-    public function editAnggota() {
-        renderView('admin/anggota/edit');
-    }
+
 
 // costumer
     public function costumer() {
