@@ -1,4 +1,4 @@
-# Sistem Pemasaran dan pemesanan barang berbasis WEB di CV. Samudera Abadi (SIPEPEW)
+# Sistem Pemasaran dan pemesanan barang berbasis WEB di CV. Samudera Abadi
 
 Langkah menjalankan
 1. Clone repository project atau extrack (jika rar) ke htdocs
