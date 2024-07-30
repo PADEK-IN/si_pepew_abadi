@@ -11,13 +11,13 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/produk">Products</a>
+                    <a href="/admin/produk">Barang</a>
                 </li>
                 <li class="separator">
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <b>Tambah Produk</b>
+                    <b>Tambah Barang</b>
                 </li>
             </ul>
         </div>
@@ -25,7 +25,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
-                        <h4 class="card-title">Buat Product Baru</h4>
+                        <h4 class="card-title">Buat Barang Baru</h4>
                     </div>
                     <div class="card-body">
                         <div class="col-md-8 col-lg-6">
@@ -36,6 +36,18 @@
                                     <label for="nama">Nama Barang</label>
                                     <input type="text" class="form-control" id="nama" placeholder="Masukan Nama Barang"/>
                                     <small id="nama" class="form-text text-muted text-success">Silahkan Masukan Nama Barang</small>
+                                </div>
+
+                                <!-- Kategori -->
+                                <div class="form-group">
+                                    <label for="defaultSelect">Kategori</label>
+                                    <select
+                                        class="form-select form-control"
+                                        id="defaultSelect">
+                                        <option value="">Pupuk</option>
+                                        <option value="">Racun- Tanaman</option>
+                                        <option value="">Mesin</option>
+                                    </select>
                                 </div>
 
                                 <!-- harga -->
@@ -64,8 +76,8 @@
 
                                 <!-- button -->
                                 <div class="card-action">
-                                    <button class="btn btn-success">Buat</button>
-                                    <a href="/admin/produk" class="btn btn-danger">Kembali</a>
+                                    <button class="btn btn-sm btn-success">Buat</button>
+                                    <a href="/admin/produk" class="btn btn-sm btn-danger">Kembali</a>
                                 </div>
                             </form>
                         </div>

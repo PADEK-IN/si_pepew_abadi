@@ -22,7 +22,7 @@
                         <h4 class="card-title">Daftar List Admin</h4>
                         <div>
                         <a class="btn btn-sm btn-warning btn-round ms-auto" href="">
-                                <i class="fas fa-fax"></i>
+                                <i class="fas fa-file-alt"></i>
                                 Print
                             </a>
                             <a class="btn btn-sm btn-primary btn-round ms-auto" href="/admin/create/admin">

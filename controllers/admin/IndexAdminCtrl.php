@@ -27,29 +27,6 @@ class IndexAdminCtrl {
         renderView('admin/user/edit-pelanggan');
     }
 
-
-// costumer
-    public function costumer() {
-        renderView('admin/pelanggan/list');
-    }
-    public function detailCostumer() {
-        renderView('admin/pelanggan/detail');
-    }
-
-// product
-    public function produk() {
-        renderView('admin/produk/list');
-    }
-    public function createProduk() {
-        renderView('admin/produk/create');
-    }
-    public function detailProduk() {
-        renderView('admin/produk/detail');
-    }
-    public function editProduk() {
-        renderView('admin/produk/edit');
-    }
-
 // pesanan
     public function pesanan() {
         renderView('admin/pesanan/list');

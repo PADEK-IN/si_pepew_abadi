@@ -11,7 +11,7 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <b>Products</b>
+                    <b>Barang</b>
                 </li>
             </ul>
         </div>
@@ -19,11 +19,21 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
-                        <h4 class="card-title">Daftar List Products</h4>
-                        <a class="btn btn-primary btn-round ms-auto" href="/admin/produk/tambah">
-                        <i class="fa fa-plus"></i>
-                            Tambah Produk
-                        </a>
+                        <h4 class="card-title">Daftar List Barang</h4>
+                        <div>
+                            <a class="btn btn-sm btn-warning btn-round ms-auto" href="">
+                                <i class="fas fa-file-alt"></i>
+                                Print
+                            </a>
+                            <a class="btn btn-sm btn-success btn-round ms-auto" href="">
+                                <i class="fas fa-bars"></i>
+                                Kategori
+                            </a>
+                            <a class="btn btn-primary btn-sm btn-round ms-auto" href="/admin/produk/tambah">
+                            <i class="fa fa-plus"></i>
+                                Tambah Barang
+                            </a>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -33,6 +43,7 @@
                                         <th>No</th>
                                         <th>Kode</th>
                                         <th>Nama Barang</th>
+                                        <th>Kategori</th>
                                         <th>Harga</th>
                                         <th>Image</th>
                                         <th>Action</th>
@@ -43,6 +54,7 @@
                                         <th>No</th>
                                         <th>Kode</th>
                                         <th>Nama Barang</th>
+                                        <th>Kategori</th>
                                         <th>Harga</th>
                                         <th>Image</th>
                                         <th>Action</th>
@@ -55,13 +67,19 @@
                                             <a href="/admin/produk/detail">5FGH432H</a>
                                         </td>
                                         <td>Sarung Bantal</td>
+                                        <td>Pupuk</td>
                                         <td>Rp. 20.000</td>
                                         <td>
                                             <img src="../../assets/auth/img/register.jpg" alt="produk1" width="100px">
                                         </td>
                                         <td>
-                                            <a href="/admin/produk/edit" class="btn btn-sm btn-warning">Edit</a>
-                                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                            <a href="/admin/produk/edit" class="btn btn-sm btn-warning m-1">Edit</a>
+                                            <button 
+                                            type="button" 
+                                            class="btn btn-sm btn-danger" 
+                                            onclick="confirmDeleteUser(this, 'Ingin Menghapus Barang 2 ini!')">
+                                                Hapus
+                                            </button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -70,13 +88,19 @@
                                             <a href="/admin/produk/detail">5FGH432H</a>
                                         </td>
                                         <td>Sarung Bantal</td>
+                                        <td>Racun Tanaman</td>
                                         <td>Rp. 20.000</td>
                                         <td>
                                             <img src="../../assets/auth/img/register.jpg" alt="produk1" width="100px">
                                         </td>
                                         <td>
-                                            <a href="/admin/produk/edit" class="btn btn-sm btn-warning">Edit</a>
-                                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                            <a href="/admin/produk/edit" class="btn btn-sm btn-warning m-1">Edit</a>
+                                            <button 
+                                            type="button" 
+                                            class="btn btn-sm btn-danger" 
+                                            onclick="confirmDeleteUser(this, 'Ingin Menghapus Barang 2 ini!')">
+                                                Hapus
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>

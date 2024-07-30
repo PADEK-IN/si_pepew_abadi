@@ -1,6 +1,7 @@
 <?php 
 
 require_once '../controllers/admin/IndexAdminCtrl.php';
+require_once '../controllers/admin/productController.php';
 
 $adminPath = 'admin';
 
@@ -12,14 +13,11 @@ addRoute('GET', "/{$adminPath}/dashboard", $adminPath, 'IndexAdminCtrl', 'dashbo
     addRoute('GET', "/{$adminPath}/create/pelanggan", $adminPath, 'IndexAdminCtrl', 'createPelanggan');
     addRoute('GET', "/{$adminPath}/edit/admin", $adminPath, 'IndexAdminCtrl', 'editAdmin');
     addRoute('GET', "/{$adminPath}/edit/pelanggan", $adminPath, 'IndexAdminCtrl', 'editPelanggan');
-// costumer
-    addRoute('GET', "/{$adminPath}/costumer", $adminPath, 'IndexAdminCtrl', 'costumer');
-    addRoute('GET', "/{$adminPath}/costumer/detail", $adminPath, 'IndexAdminCtrl', 'detailCostumer');
 // product
-    addRoute('GET', "/{$adminPath}/produk", $adminPath, 'IndexAdminCtrl', 'produk');
-    addRoute('GET', "/{$adminPath}/produk/tambah", $adminPath, 'IndexAdminCtrl', 'createProduk');
-    addRoute('GET', "/{$adminPath}/produk/detail", $adminPath, 'IndexAdminCtrl', 'detailProduk');
-    addRoute('GET', "/{$adminPath}/produk/edit", $adminPath, 'IndexAdminCtrl', 'editProduk');
+    addRoute('GET', "/{$adminPath}/produk", $adminPath, 'productController', 'produk');
+    addRoute('GET', "/{$adminPath}/produk/tambah", $adminPath, 'productController', 'createProduk');
+    addRoute('GET', "/{$adminPath}/produk/detail", $adminPath, 'productController', 'detailProduk');
+    addRoute('GET', "/{$adminPath}/produk/edit", $adminPath, 'productController', 'editProduk');
 // pesanan
     addRoute('GET', "/{$adminPath}/pesanan", $adminPath, 'IndexAdminCtrl', 'pesanan');
     addRoute('GET', "/{$adminPath}/pesanan/detail", $adminPath, 'IndexAdminCtrl', 'detailPesanan');

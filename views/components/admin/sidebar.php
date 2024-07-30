@@ -54,18 +54,11 @@
                         </ul>
                     </div>
                 </li>
-                <!-- Costumer -->
-                <li class="nav-item">
-                    <a href="/admin/costumer">
-                        <i class="fas fa-layer-group"></i>
-                        <p>Costumer</p>
-                    </a>
-                </li>
                 <!-- Product -->
                 <li class="nav-item">
                     <a href="/admin/produk">
-                        <i class="fas fa-th-list"></i>
-                        <p>Products</p>
+                        <i class="far fa-window-restore"></i>
+                        <p>Barang</p>
                     </a>
                 </li>
                 <!-- Pesanan -->
