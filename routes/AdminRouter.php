@@ -6,8 +6,10 @@ $adminPath = 'admin';
 
 addRoute('GET', "/{$adminPath}/dashboard", $adminPath, 'IndexAdminCtrl', 'dashboard');
 // user
-addRoute('GET', "/{$adminPath}/user/admin", $adminPath, 'IndexAdminCtrl', 'admin');
-addRoute('GET', "/{$adminPath}/user/pelanggan", $adminPath, 'IndexAdminCtrl', 'pelanggan');
+addRoute('GET', "/{$adminPath}/admin-list", $adminPath, 'IndexAdminCtrl', 'admin');
+addRoute('GET', "/{$adminPath}/pelanggan-list", $adminPath, 'IndexAdminCtrl', 'pelanggan');
+addRoute('GET', "/{$adminPath}/create/admin", $adminPath, 'IndexAdminCtrl', 'createAdmin');
+addRoute('GET', "/{$adminPath}/create/pelanggan", $adminPath, 'IndexAdminCtrl', 'createPelanggan');
 // costumer
 addRoute('GET', "/{$adminPath}/costumer", $adminPath, 'IndexAdminCtrl', 'costumer');
 addRoute('GET', "/{$adminPath}/costumer/detail", $adminPath, 'IndexAdminCtrl', 'detailCostumer');

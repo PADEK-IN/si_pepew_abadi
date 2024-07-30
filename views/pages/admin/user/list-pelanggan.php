@@ -26,7 +26,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <h4 class="card-title">Daftar List Pelanggan</h4>
-                        <a class="btn btn-primary btn-round ms-auto" href="/admin/anggota/tambah">
+                        <a class="btn btn-sm btn-primary btn-round ms-auto" href="/admin/create/pelanggan">
                         <i class="fa fa-plus"></i>
                             Tambah Pelanggan
                         </a>

@@ -11,13 +11,13 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/anggota">Karyawan</a>
+                    <a href="/admin/pelanggan-list">Pelanggan</a>
                 </li>
                 <li class="separator">
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <b>Tambah Karyawan</b>
+                    <b>Tambah Pelanggan</b>
                 </li>
             </ul>
         </div>
@@ -25,7 +25,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
-                        <h4 class="card-title">Buat Karyawan Baru</h4>
+                        <h4 class="card-title">Buat Pelanggan Baru</h4>
                     </div>
                     <div class="card-body">
                         <div class="col-md-8 col-lg-6">
@@ -63,8 +63,8 @@
                                 </div>
                                 <!-- button -->
                                 <div class="card-action">
-                                    <button class="btn btn-success">Buat</button>
-                                    <a href="/admin/anggota" class="btn btn-danger">Kembali</a>
+                                    <button class="btn btn-sm btn-success">Buat</button>
+                                    <a href="/admin/pelanggan-list" class="btn btn-sm btn-danger">Kembali</a>
                                 </div>
                             </form>
                         </div>

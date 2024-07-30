@@ -42,12 +42,12 @@
                     <div class="collapse" id="charts">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="/admin/user/admin">
+                                <a href="/admin/admin-list">
                                 <span class="sub-item">Admin</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/admin/user/pelanggan">
+                                <a href="/admin/pelanggan-list">
                                 <span class="sub-item">Pelanggan</span>
                                 </a>
                             </li>
