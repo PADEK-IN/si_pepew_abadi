@@ -14,6 +14,8 @@ addRoute('GET', "/{$adminPath}/dashboard", $adminPath, 'IndexAdminCtrl', 'dashbo
     addRoute('GET', "/{$adminPath}/create/pelanggan", $adminPath, 'IndexAdminCtrl', 'createPelanggan');
     addRoute('GET', "/{$adminPath}/edit/admin", $adminPath, 'IndexAdminCtrl', 'editAdmin');
     addRoute('GET', "/{$adminPath}/edit/pelanggan", $adminPath, 'IndexAdminCtrl', 'editPelanggan');
+// kategori
+    addRoute('GET', "/{$adminPath}/kategori", $adminPath, 'productController', 'kategori');
 // product
     addRoute('GET', "/{$adminPath}/produk", $adminPath, 'productController', 'produk');
     addRoute('GET', "/{$adminPath}/produk/tambah", $adminPath, 'productController', 'createProduk');
