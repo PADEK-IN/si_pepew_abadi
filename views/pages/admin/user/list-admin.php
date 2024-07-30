@@ -11,12 +11,6 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    User
-                </li>
-                <li class="separator">
-                    <i class="icon-arrow-right"></i>
-                </li>
-                <li class="nav-item">
                     <b>Admin</b>
                 </li>
             </ul>
@@ -26,10 +20,16 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <h4 class="card-title">Daftar List Admin</h4>
-                        <a class="btn btn-sm btn-primary btn-round ms-auto" href="/admin/create/admin">
-                        <i class="fa fa-plus"></i>
-                            Tambah Admin
-                        </a>
+                        <div>
+                        <a class="btn btn-sm btn-warning btn-round ms-auto" href="">
+                                <i class="fas fa-fax"></i>
+                                Print
+                            </a>
+                            <a class="btn btn-sm btn-primary btn-round ms-auto" href="/admin/create/admin">
+                                <i class="fa fa-plus"></i>
+                                Tambah Admin
+                            </a>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -61,7 +61,7 @@
                                             <span class="badge badge-success">Admin</span>
                                         </td>
                                         <td>
-                                            <a href="/admin/anggota/edit" class="btn btn-sm btn-warning">Edit</a>
+                                            <a href="/admin/edit/admin" class="btn btn-sm btn-warning">Edit</a>
                                             <button 
                                             type="button" 
                                             class="btn btn-sm btn-danger" 
@@ -78,7 +78,7 @@
                                             <span class="badge badge-primary">User</span>
                                         </td>
                                         <td>
-                                            <a href="/admin/anggota/edit" class="btn btn-sm btn-warning">Edit</a>
+                                            <a href="/admin/edit/admin" class="btn btn-sm btn-warning">Edit</a>
                                             <button 
                                             type="button" 
                                             class="btn btn-sm btn-danger" 

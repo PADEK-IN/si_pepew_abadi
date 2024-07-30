@@ -11,13 +11,13 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/anggota">Karyawan</a>
+                    <a href="/admin/admin-list">Admin</a>
                 </li>
                 <li class="separator">
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <b>Edit Karyawan</b>
+                    <b>Edit Admin</b>
                 </li>
             </ul>
         </div>
@@ -25,7 +25,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
-                        <h4 class="card-title">Form Edit Karyawan</h4>
+                        <h4 class="card-title">Form Edit Admin</h4>
                     </div>
                     <div class="card-body">
                         <div class="col-md-8 col-lg-6">
@@ -64,8 +64,8 @@
                                 </div>
                                 <!-- button -->
                                 <div class="card-action">
-                                    <button class="btn btn-success">Ubah</button>
-                                    <a href="/admin/anggota" class="btn btn-danger">Kembali</a href="/admin/anggota">
+                                    <button class="btn btn-sm btn-success">Ubah</button>
+                                    <a href="/admin/admin-list" class="btn btn-sm btn-danger">Kembali</a href="/admin/anggota">
                                 </div>
                             </form>
                         </div>

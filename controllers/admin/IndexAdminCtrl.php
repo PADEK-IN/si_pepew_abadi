@@ -20,6 +20,13 @@ class IndexAdminCtrl {
         renderView('admin/user/create-pelanggan');
     }
 
+    public function editAdmin() {
+        renderView('admin/user/edit-admin');
+    }
+    public function editPelanggan() {
+        renderView('admin/user/edit-pelanggan');
+    }
+
 
 // costumer
     public function costumer() {
