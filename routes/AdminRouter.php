@@ -21,5 +21,6 @@ addRoute('GET', "/{$adminPath}/dashboard", $adminPath, 'IndexAdminCtrl', 'dashbo
     addRoute('GET', "/{$adminPath}/produk/edit", $adminPath, 'productController', 'editProduk');
 // transaksi
     addRoute('GET', "/{$adminPath}/pemesanan", $adminPath, 'transactionController', 'pemesanan');
+    addRoute('GET', "/{$adminPath}/pemesanan/:id", $adminPath, 'transactionController', 'detailPemesanan');
     addRoute('GET', "/{$adminPath}/tagihan", $adminPath, 'transactionController', 'tagihan');
     addRoute('GET', "/{$adminPath}/pengiriman", $adminPath, 'transactionController', 'pengiriman');

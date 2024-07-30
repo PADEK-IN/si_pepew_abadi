@@ -20,6 +20,10 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <h4 class="card-title">Daftar List Pesanan</h4>
+                        <a class="btn btn-sm btn-warning btn-round ms-auto" href="">
+                                <i class="fas fa-file-alt"></i>
+                                Print
+                            </a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -50,7 +54,7 @@
                                     <tr>
                                         <td>1</td>
                                         <td>
-                                            <a href="/admin/pesanan/detail">GFDYT237</a>
+                                            <a href="/admin/pemesanan/32">GFDYT237</a>
                                         </td>
                                         <td>Santorio widodo</td>
                                         <td>Selimut</td>
@@ -61,7 +65,7 @@
                                     <tr>
                                         <td>2</td>
                                         <td>
-                                            <a href="/admin/pesanan/detail">73D82H2</a>
+                                            <a href="/admin/pemesanan/43">73D82H2</a>
                                         </td>
                                         <td>Santorio widodo</td>
                                         <td>Selimut</td>

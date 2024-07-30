@@ -11,8 +11,8 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/pesanan">
-                        Pesanan
+                    <a href="/admin/pemesanan">
+                        pemesanan
                     </a>
                 </li>
                 <li class="separator">
@@ -35,7 +35,7 @@
                                 <div class="row">
                                     <div class="col-md-4 text-center">
                                         <div class="">
-                                            <img src="../../assets/auth/img/register.jpg" alt="..." class="avatar-img rounded-circle" style="max-width: 50%; height: auto; margin: 0 auto; object-fit: cover;">
+                                            <img src="../../assets/auth/img/register.jpg" alt="..." class="avatar-img rounded" style="max-width: 50%; height: auto; margin: 0 auto; object-fit: cover;">
                                         </div>
                                     </div>
                                     <div class="col-md-8">
