@@ -62,7 +62,12 @@
                                         </td>
                                         <td>
                                             <a href="/admin/anggota/edit" class="btn btn-sm btn-warning">Edit</a>
-                                            <a href="/admin/anggota/delete" class="btn btn-sm btn-danger">Delete</a>
+                                            <button 
+                                            type="button" 
+                                            class="btn btn-sm btn-danger" 
+                                            onclick="confirmDeleteUser(this, 'Ingin Menghapus pengguna 1 ini!')">
+                                                Hapus
+                                            </button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -74,7 +79,12 @@
                                         </td>
                                         <td>
                                             <a href="/admin/anggota/edit" class="btn btn-sm btn-warning">Edit</a>
-                                            <a href="/admin/anggota/delete" class="btn btn-sm btn-danger">Delete</a>
+                                            <button 
+                                            type="button" 
+                                            class="btn btn-sm btn-danger" 
+                                            onclick="confirmDeleteUser(this, 'Ingin Menghapus pengguna 1 ini!')">
+                                                Hapus
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>

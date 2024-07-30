@@ -68,4 +68,46 @@
           },
       });
     });
+
+    function confirmDeleteUser(button, message) {
+        swal({
+            title: "Apakah Kamu Yakin?",
+            text: message,
+            icon: "warning",
+            buttons: {
+                cancel: {
+                    visible: true,
+                    text: "Tidak!",
+                    className: "btn btn-danger",
+                },
+                confirm: {
+                    text: "Ya, Tentu!",
+                    className: "btn btn-success",
+                },
+            },
+        }).then((willDelete) => {
+            if (willDelete) {
+                swal("Berhasil! Akun Pengguna Berhasil Di Hapus!", {
+                    icon: "success",
+                    buttons: {
+                        confirm: {
+                            className: "btn btn-success",
+                        },
+                    },
+                });
+                // Logika tambahan untuk menghapus pengguna
+                // Bisa tambah AJAX call di sini
+                const row = button.closest('tr');
+                row.remove(); // Menghapus baris dari tabel
+            } else {
+                swal("Akun Pengguna tidak jadi di hapus!", {
+                    buttons: {
+                        confirm: {
+                            className: "btn btn-success",
+                        },
+                    },
+                });
+            }
+        });
+    }
 </script>
