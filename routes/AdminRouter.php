@@ -2,6 +2,7 @@
 
 require_once '../controllers/admin/IndexAdminCtrl.php';
 require_once '../controllers/admin/productController.php';
+require_once '../controllers/admin/transactionController.php';
 
 $adminPath = 'admin';
 
@@ -18,12 +19,7 @@ addRoute('GET', "/{$adminPath}/dashboard", $adminPath, 'IndexAdminCtrl', 'dashbo
     addRoute('GET', "/{$adminPath}/produk/tambah", $adminPath, 'productController', 'createProduk');
     addRoute('GET', "/{$adminPath}/produk/detail", $adminPath, 'productController', 'detailProduk');
     addRoute('GET', "/{$adminPath}/produk/edit", $adminPath, 'productController', 'editProduk');
-// pesanan
-    addRoute('GET', "/{$adminPath}/pesanan", $adminPath, 'IndexAdminCtrl', 'pesanan');
-    addRoute('GET', "/{$adminPath}/pesanan/detail", $adminPath, 'IndexAdminCtrl', 'detailPesanan');
-// laporan
-    addRoute('GET', "/{$adminPath}/laporan-barang", $adminPath, 'IndexAdminCtrl', 'laporanBarang');
-    addRoute('GET', "/{$adminPath}/laporan-anggota", $adminPath, 'IndexAdminCtrl', 'laporanAnggota');
-    addRoute('GET', "/{$adminPath}/laporan-pemesanan", $adminPath, 'IndexAdminCtrl', 'laporanPemesanan');
-    addRoute('GET', "/{$adminPath}/laporan-pengiriman", $adminPath, 'IndexAdminCtrl', 'laporanPengiriman');
-    addRoute('GET', "/{$adminPath}/laporan-tagihan", $adminPath, 'IndexAdminCtrl', 'laporanTagihan');
+// transaksi
+    addRoute('GET', "/{$adminPath}/pemesanan", $adminPath, 'transactionController', 'pemesanan');
+    addRoute('GET', "/{$adminPath}/tagihan", $adminPath, 'transactionController', 'tagihan');
+    addRoute('GET', "/{$adminPath}/pengiriman", $adminPath, 'transactionController', 'pengiriman');

@@ -30,16 +30,16 @@
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
-                    <h4 class="text-section">Components</h4>
+                    <h4 class="text-section">menu</h4>
                 </li>
                 <!-- User -->
                 <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#charts">
+                    <a data-bs-toggle="collapse" href="#user">
                     <i class="fas fa-user"></i>
                         <p>User</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="charts">
+                    <div class="collapse" id="user">
                         <ul class="nav nav-collapse">
                             <li>
                                 <a href="/admin/admin-list">
@@ -61,45 +61,28 @@
                         <p>Barang</p>
                     </a>
                 </li>
-                <!-- Pesanan -->
+                <!-- transaksi -->
                 <li class="nav-item">
-                    <a href="/admin/pesanan">
-                        <i class="fas fa-pen-square"></i>
-                        <p>Pesanan</p>
-                    </a>
-                </li>
-                <!-- Laporan -->
-                <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#charts">
+                    <a data-bs-toggle="collapse" href="#transaksi">
                         <i class="far fa-chart-bar"></i>
-                        <p>Laporan</p>
+                        <p>Transaksi</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="charts">
+                    <div class="collapse" id="transaksi">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="/admin/laporan-barang">
-                                <span class="sub-item">Laporan Dagang</span>
+                                <a href="/admin/pemesanan">
+                                <span class="sub-item">Pemesanan</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/admin/laporan-anggota">
-                                <span class="sub-item">Laporan Anggota</span>
+                                <a href="/admin/tagihan">
+                                <span class="sub-item">Tagihan</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/admin/laporan-pemesanan">
-                                <span class="sub-item">Laporan Pemesanan</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/admin/laporan-pengiriman">
-                                <span class="sub-item">Laporan Pengiriman</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/admin/laporan-tagihan">
-                                <span class="sub-item">Laporan Tagihan</span>
+                                <a href="/admin/pengiriman">
+                                <span class="sub-item">Pengiriman</span>
                                 </a>
                             </li>
                         </ul>
