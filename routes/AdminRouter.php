@@ -20,7 +20,12 @@ addRoute('GET', "/{$adminPath}/dashboard", $adminPath, 'IndexAdminCtrl', 'dashbo
     addRoute('GET', "/{$adminPath}/produk/detail", $adminPath, 'productController', 'detailProduk');
     addRoute('GET', "/{$adminPath}/produk/edit", $adminPath, 'productController', 'editProduk');
 // transaksi
+    // pesanan
     addRoute('GET', "/{$adminPath}/pemesanan", $adminPath, 'transactionController', 'pemesanan');
     addRoute('GET', "/{$adminPath}/pemesanan/:id", $adminPath, 'transactionController', 'detailPemesanan');
+    // tagihan
     addRoute('GET', "/{$adminPath}/tagihan", $adminPath, 'transactionController', 'tagihan');
+    addRoute('GET', "/{$adminPath}/tagihan/:id", $adminPath, 'transactionController', 'detailTagihan');
+    addRoute('GET', "/{$adminPath}/tagihan-validasi-list", $adminPath, 'transactionController', 'validasiTagihan');
+    // pengiriman
     addRoute('GET', "/{$adminPath}/pengiriman", $adminPath, 'transactionController', 'pengiriman');
