@@ -6,4 +6,4 @@ $ctrlPath = 'guest';
 
 addRoute('GET', '/', $ctrlPath, 'IndexGuestCtrl', 'guest');
 addRoute('GET', '/public/barang', $ctrlPath, 'IndexGuestCtrl', 'barang');
-addRoute('GET', '/public/detail-barang', $ctrlPath, 'IndexGuestCtrl', 'detail');
+addRoute('GET', '/public/detail-barang/:id', $ctrlPath, 'IndexGuestCtrl', 'detail');
