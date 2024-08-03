@@ -29,22 +29,22 @@
                 </div>
               </div>
               <div class="card-body">
-                <form role="form" class="text-start">
+                <form action="/login" method="post" role="form" class="text-start">
                   <div class="input-group input-group-outline my-3">
                     <label class="form-label">Email</label>
-                    <input type="email" class="form-control">
+                    <input type="email" name="email" class="form-control">
                   </div>
                   <div class="input-group input-group-outline mb-3">
                     <label class="form-label">Password</label>
-                    <input type="password" class="form-control">
+                    <input type="password" name="password" class="form-control">
                   </div>
                   <div class="form-check form-switch d-flex align-items-center mb-3">
-                    <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+                    <input class="form-check-input" type="checkbox" id="rememberMe">
                     <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
                   </div>
                   <div class="text-center">
                     <!-- <button type="button" class="btn bg-gradient-primary w-100 my-4 mb-2">Sign in</button> -->
-                    <a href="/" class="btn bg-gradient-success w-100 my-4 mb-2">Sign In</a>
+                    <button type="submit" onclick="login()" class="btn bg-gradient-success w-100 my-4 mb-2">Sign In</button>
                   </div>
                   <p class="mt-4 text-sm text-center">
                     Don't have an account?

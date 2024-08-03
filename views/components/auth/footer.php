@@ -16,6 +16,20 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="assets/auth/js/material-dashboard.min.js?v=3.1.0"></script>
+  <script src="assets/admin/js/plugin/sweetalert/sweetalert.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const flash = <?php echo json_encode(getFlash() ?? null); ?>;
+
+        if (flash) {
+          swal(
+            flash.type.charAt(0).toUpperCase() + flash.type.slice(1), 
+            flash.message, 
+            flash.type
+          );
+        }
+    });
+  </script>
 </body>
 
 </html>

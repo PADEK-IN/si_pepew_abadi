@@ -35,6 +35,18 @@
 <script src="../../assets/admin/js/setting-demo.js"></script>
 <script src="../../assets/admin/js/demo.js"></script>
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const flash = <?php echo json_encode(getFlash() ?? null); ?>;
+
+        if (flash) {
+          swal(
+            flash.type.charAt(0).toUpperCase() + flash.type.slice(1), 
+            flash.message, 
+            flash.type
+          );
+        }
+    });
+
     $(document).ready(function () {
       $("#multi-filter-select").DataTable({
           pageLength: 5,

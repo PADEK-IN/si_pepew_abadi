@@ -13,22 +13,21 @@ function addRoute($method, $route, $controllerPath, $controller, $action) {
     ];
 }
 
-function handleRequest($requestUri) {
+function handleRequest($requestUri, $pdo) {
     global $routes;
 
     foreach ($routes as $route) {
-        // Menangani rute dengan parameter
         if ($_SERVER['REQUEST_METHOD'] == $route['method']) {
-            $pattern = str_replace(':id', '(\d+)', $route['route']); // Mengganti :id dengan regex untuk angka
+            $pattern = str_replace(':id', '(\d+)', $route['route']);
             if (preg_match("#^{$pattern}$#", $requestUri, $matches)) {
                 array_shift($matches);
                 $controllerFilePath = "../controllers/{$route['controllerPath']}/{$route['controller']}.php";
                 if (file_exists($controllerFilePath)) {
                     require_once $controllerFilePath;
                     $controllerClass = $route['controller'];
-                    $controller = new $controllerClass();
+                    $controller = new $controllerClass($pdo); // Pass PDO here
                     $action = $route['action'];
-                    $controller->$action(...$matches); // Menyusun parameter ke action controller
+                    $controller->$action(...$matches); // Pass parameters to action
                     return;
                 }
             }

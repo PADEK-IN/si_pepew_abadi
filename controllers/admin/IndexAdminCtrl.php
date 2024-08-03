@@ -1,6 +1,14 @@
 <?php
+require_once '../helpers/isAuth.php';
 
 class IndexAdminCtrl {
+    private $isAuth;
+
+    public function __construct() {
+        $this->isAuth = new MiddlewareAuth();
+        $this->isAuth->isAdmin();
+    }
+
     public function dashboard() {
         renderView('admin/dashboard/index');
     }

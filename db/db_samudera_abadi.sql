@@ -5,12 +5,10 @@ USE db_samudera_abadi;
 -- Tabel users
 CREATE TABLE users (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(20) NOT NULL,
     email VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL,
-    role ENUM('admin', 'pelanggan') NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'pelanggan') NOT NULL DEFAULT 'pelanggan',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Tabel admin
@@ -24,7 +22,6 @@ CREATE TABLE admin (
     foto VARCHAR(50),
     isValid BOOLEAN DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_user) REFERENCES users(id)
 );
 
@@ -43,7 +40,6 @@ CREATE TABLE pelanggan (
     no_telp VARCHAR(15) NOT NULL,
     foto VARCHAR(50),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_user) REFERENCES users(id)
 );
 
@@ -65,7 +61,6 @@ CREATE TABLE produk (
     harga DECIMAL(10,2) NOT NULL,
     stok INT(11) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_kategori) REFERENCES kategori(id)
 );
 
@@ -76,7 +71,6 @@ CREATE TABLE pesanan (
     id_pelanggan INT(5) NOT NULL,
     metode_kirim ENUM('diantar', 'dijemput') NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_admin) REFERENCES admin(id),
     FOREIGN KEY (id_pelanggan) REFERENCES pelanggan(id)
 );
@@ -104,7 +98,6 @@ CREATE TABLE tagihan (
     bukti_bayar VARCHAR(50),
     status ENUM('lunas', 'tertunda', 'batal') DEFAULT 'tertunda',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_pesanan) REFERENCES pesanan(id)
 );
 
@@ -117,6 +110,5 @@ CREATE TABLE pengiriman (
     bukti VARCHAR(50),
     status ENUM('terkirim', 'diperjalanan', 'diproses') DEFAULT 'diproses',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_pesanan) REFERENCES pesanan(id)
 );
