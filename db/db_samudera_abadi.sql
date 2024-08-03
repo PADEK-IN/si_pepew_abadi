@@ -49,8 +49,8 @@ CREATE TABLE kategori (
     nama VARCHAR(15) NOT NULL
 );
 
--- Tabel produk
-CREATE TABLE produk (
+-- Tabel barang
+CREATE TABLE barang (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
     id_kategori INT(5) NOT NULL,
     nama VARCHAR(30) NOT NULL,
@@ -79,10 +79,10 @@ CREATE TABLE pesanan (
 CREATE TABLE pesanan_items (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
     id_pesanan INT(5) NOT NULL,
-    id_produk INT(5) NOT NULL,
+    id_barang INT(5) NOT NULL,
     jumlah INT(7) NOT NULL,
     FOREIGN KEY (id_pesanan) REFERENCES pesanan(id),
-    FOREIGN KEY (id_produk) REFERENCES produk(id)
+    FOREIGN KEY (id_barang) REFERENCES barang(id)
 );
 
 -- Tabel tagihan
