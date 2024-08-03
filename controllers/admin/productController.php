@@ -1,11 +1,6 @@
 <?php
 
 class productController{
-    // kategori
-        public function kategori() {
-            renderView('admin/kategori/list');
-        }
-
     // produk
         public function produk() {
             renderView('admin/produk/list');
