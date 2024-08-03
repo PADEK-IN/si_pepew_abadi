@@ -1,5 +1,5 @@
         <footer id="footer" class="footer">
-            <div class="container">
+            <div class="container mt-4">
                 <div class="row gy-4">
                     <div class="col-lg-6 col-md-12 footer-info">
                     <a href="index.html" class="logo d-flex align-items-center">
