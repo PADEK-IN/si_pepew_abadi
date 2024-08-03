@@ -1,6 +1,10 @@
 <?php
 
 class IndexCtrl {
+    public function guest() {
+        renderView('guest/index');
+    }
+
     public function home() {
         renderView('pelanggan/home/index');
     }

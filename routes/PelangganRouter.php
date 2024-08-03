@@ -4,7 +4,7 @@ require_once '../controllers/pelanggan/IndexCtrl.php';
 
 $pelangganPath = 'pelanggan';
 
-addRoute('GET', '/', $pelangganPath, 'IndexCtrl', 'home');
+addRoute('GET', '/home', $pelangganPath, 'IndexCtrl', 'home');
 addRoute('GET', '/tentang-kami', $pelangganPath, 'IndexCtrl', 'tentangKami');
 addRoute('GET', '/profile', $pelangganPath, 'IndexCtrl', 'profile');
 // product

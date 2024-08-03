@@ -56,6 +56,8 @@ function renderView($view, $data = []) {
         $component = 'auth';
     } elseif (strpos($requestUri, "/admin") === 0) {
         $component = 'admin';
+    } elseif ($requestUri == "/" || strpos($requestUri, "/public") === 0) {
+        $component = 'guest';
     } else {
         $component = 'pelanggan';
     }
