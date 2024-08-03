@@ -14,14 +14,9 @@
         <nav>
             <div class="container d-flex justify-content-between">
                 <ol>
-                <li><a href="/">Home</a></li>
-                <li>Barang</li>
+                    <li><a href="/">Home</a></li>
+                    <li>Barang</li>
                 </ol>
-                <div>
-                    <a href="/keranjang" class="btn btn-warning">
-                    <i class="bi bi-cart4"></i> Keranjang
-                    </a>
-                </div>
             </div>
         </nav>
     </div>

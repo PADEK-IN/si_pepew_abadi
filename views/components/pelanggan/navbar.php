@@ -14,14 +14,14 @@
 
 <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-    <a href="/" class="logo d-flex align-items-center">
+    <a href="/home" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="../../assets/img/logo.png" alt="">
         <h1>Samudera Abadi<span>.</span></h1>
     </a>
     <nav id="navbar" class="navbar">
         <ul>
-            <li><a href="/">Beranda</a></li>
+            <li><a href="/home">Beranda</a></li>
             <li><a href="/produk">Barang</a></li>
             <li class="dropdown">
                 <a href="#"><span>Pesanan</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>

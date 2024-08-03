@@ -1,6 +1,13 @@
 <?php
 
 class IndexCtrl {
+    private $isAuth;
+
+    public function __construct() {
+        $this->isAuth = new MiddlewareAuth();
+        $this->isAuth->isUser();
+    }
+
     public function guest() {
         renderView('guest/index');
     }

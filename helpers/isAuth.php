@@ -3,7 +3,7 @@ class MiddlewareAuth {
     public function isAuth(){
         if(isset($_SESSION['user'])){
             if($_SESSION['user']['role'] !== 'admin'){
-                redirect('/');
+                redirect('/home');
             }
             if($_SESSION['user']['role'] !== 'pelanggan'){
                 redirect('/admin/dashboard');
@@ -17,7 +17,7 @@ class MiddlewareAuth {
             redirect('/login');
         } else {
             if($_SESSION['user']['role'] !== 'admin'){
-                redirect('/');
+                redirect('/home');
             }
         }
     }
