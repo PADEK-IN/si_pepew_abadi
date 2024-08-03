@@ -21,10 +21,10 @@ addRoute('POST', "/{$adminPath}/kategori/create", $adminPath, 'KategoriCtrl', 'c
 addRoute('POST', "/{$adminPath}/kategori/update/:id", $adminPath, 'KategoriCtrl', 'update');
 addRoute('GET', "/{$adminPath}/kategori/delete/:id", $adminPath, 'KategoriCtrl', 'destroy');
 // product
-addRoute('GET', "/{$adminPath}/produk", $adminPath, 'productController', 'produk');
-addRoute('GET', "/{$adminPath}/produk/tambah", $adminPath, 'productController', 'createProduk');
-addRoute('GET', "/{$adminPath}/produk/detail", $adminPath, 'productController', 'detailProduk');
-addRoute('GET', "/{$adminPath}/produk/edit", $adminPath, 'productController', 'editProduk');
+addRoute('GET', "/{$adminPath}/barang", $adminPath, 'productController', 'produk');
+addRoute('GET', "/{$adminPath}/barang/tambah", $adminPath, 'productController', 'createProduk');
+addRoute('GET', "/{$adminPath}/barang/detail", $adminPath, 'productController', 'detailProduk');
+addRoute('GET', "/{$adminPath}/barang/edit", $adminPath, 'productController', 'editProduk');
 // transaksi
 // pesanan
 addRoute('GET', "/{$adminPath}/pemesanan", $adminPath, 'transactionController', 'pemesanan');
