@@ -36,7 +36,9 @@ function handleRequest($requestUri, $pdo) {
 
     // If no route matched, show 404 page
     http_response_code(404);
-    renderView('../errors/404');
+    require_once '../views/components/auth/header.php';
+    require_once '../views/pages/errors/404.php';
+    require_once '../views/components/auth/footer.php';
 }
 
 function renderView($view, $data = []) {
