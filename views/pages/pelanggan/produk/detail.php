@@ -30,7 +30,7 @@
                     <!-- Artikel -->
                     <article class="blog-details">
                         <div class="post-img text-center">
-                            <img src="../assets/img/product/pupuk.jpeg" alt="" class="img-fluid">
+                            <img src="../assets/img/barang/pupuk.jpeg" alt="" class="img-fluid">
                         </div>
                         <h2 class="title">CPN 15-0-14/KNO3 Merah</h2>
                         <div class="meta-top">

@@ -2,7 +2,7 @@
     <!-- Logo Header -->
     <div class="logo-header" data-background-color="dark">
         <a href="#" class="logo">
-            <img src="../../assets/admin/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20"/>
+            <img src="/assets/admin/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20"/>
         </a>
         <div class="nav-toggle">
             <button class="btn btn-toggle toggle-sidebar"><i class="gg-menu-right"></i></button>
@@ -21,7 +21,7 @@
             <li class="nav-item topbar-user dropdown hidden-caret">
                 <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
                     <div class="avatar-sm">
-                        <img src="../../assets/img/profile/user.png" alt="..." class="avatar-img rounded-circle"/>
+                        <img src="/assets/img/profile/user.png" alt="..." class="avatar-img rounded-circle"/>
                     </div>  
                     <span class="profile-username">
                         <span class="op-7">Hi,</span>
@@ -33,7 +33,7 @@
                         <li>
                             <div class="user-box">
                                 <div class="avatar-lg">
-                                    <img src="../../assets/img/profile/user.png" alt="image profile" class="avatar-img rounded"/>
+                                    <img src="/assets/img/profile/user.png" alt="image profile" class="avatar-img rounded"/>
                                 </div>
                                 <div class="u-text">
                                     <h4>User</h4>

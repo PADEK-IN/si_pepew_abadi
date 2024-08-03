@@ -11,15 +11,15 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/produk">
-                        Products
+                    <a href="/admin/barang">
+                        Barang
                     </a>
                 </li>
                 <li class="separator">
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <b>Detail Products</b>
+                    <b>Detail Barang</b>
                 </li>
             </ul>
         </div>
@@ -27,10 +27,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
-                        <h4 class="card-title">Detail Product</h4>
-                        <a class="btn btn-primary btn-round ms-auto" href="/admin/produk/edit">
+                        <h4 class="card-title">Detail Barang</h4>
+                        <a class="btn btn-primary btn-round ms-auto" href="/admin/barang/edit/<?= $barang['id'] ?>">
                         <i class="fas fa-pen mr-2"></i>
-                            Edit Produk
+                            Edit Barang
                         </a>
                     </div>
                     <div class="card-body">
@@ -39,26 +39,38 @@
                                 <div class="row">
                                     <div class="col-md-4 text-center">
                                         <div class="">
-                                            <img src="../../assets/auth/img/register.jpg" alt="..." class="avatar-img rounded-circle" style="max-width: 50%; height: auto; margin: 0 auto; object-fit: cover;">
+                                            <img src="/assets/img/barang/<?= $barang['gambar'] ?>" alt="gambar_barang" class="avatar-img rounded-circle" style="max-width: 50%; height: auto; margin: 0 auto; object-fit: cover;">
                                         </div>
                                     </div>
                                     <div class="col-md-8">
                                         <table class="table table-striped">
                                             <tr>
-                                                <td>Kode</td>
-                                                <td>5FGH432H</td>
+                                                <td>Nama Barang</td>
+                                                <td><b><?= $barang['nama'] ?></b></td>
                                             </tr>
                                             <tr>
-                                                <td>Nama Barang</td>
-                                                <td><b>Sarung Bantal</b></td>
+                                                <td>Kategori Barang</td>
+                                                <td><b><?= $barang['kategori_nama'] ?></b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Satuan Barang</td>
+                                                <td><b><?= $barang['satuan'] ?></b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Berat Barang</td>
+                                                <td><b><?= $barang['berat'] ?></b></td>
                                             </tr>
                                             <tr>
                                                 <td>Harga</td>
-                                                <td>Rp. 20.000</td>
+                                                <td>Rp. <?= $barang['harga'] ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Stok Barang</td>
+                                                <td><b><?= $barang['stok'] ?></b></td>
                                             </tr>
                                             <tr>
                                                 <td>Description</td>
-                                                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, dolores iste numquam adipisci impedit nisi quasi voluptas, ducimus minima dicta recusandae delectus cumque commodi voluptate voluptatibus explicabo illo ratione sapiente! Sunt, cum incidunt facilis sequi, nemo eligendi repudiandae excepturi optio corporis voluptatem expedita voluptate, nobis id iusto. Exercitationem, voluptatibus assumenda!</td>
+                                                <td><?= $barang['deskripsii'] ?></td>
                                             </tr>
                                         </table>
                                     </div>

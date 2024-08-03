@@ -56,10 +56,10 @@ CREATE TABLE barang (
     nama VARCHAR(30) NOT NULL,
     deskripsi VARCHAR(70),
     gambar VARCHAR(50),
-    berat INT(11) NOT NULL,
+    berat INT(11),
     satuan VARCHAR(10) NOT NULL,
     harga DECIMAL(10,2) NOT NULL,
-    stok INT(11) NOT NULL,
+    stok INT(11) NOT NULL DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_kategori) REFERENCES kategori(id)
 );

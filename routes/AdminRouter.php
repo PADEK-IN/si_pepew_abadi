@@ -2,7 +2,7 @@
 
 require_once '../controllers/admin/IndexAdminCtrl.php';
 require_once '../controllers/admin/KategoriCtrl.php';
-require_once '../controllers/admin/productController.php';
+require_once '../controllers/admin/BarangCtrl.php';
 require_once '../controllers/admin/transactionController.php';
 
 $adminPath = 'admin';
@@ -21,10 +21,13 @@ addRoute('POST', "/{$adminPath}/kategori/create", $adminPath, 'KategoriCtrl', 'c
 addRoute('POST', "/{$adminPath}/kategori/update/:id", $adminPath, 'KategoriCtrl', 'update');
 addRoute('GET', "/{$adminPath}/kategori/delete/:id", $adminPath, 'KategoriCtrl', 'destroy');
 // product
-addRoute('GET', "/{$adminPath}/barang", $adminPath, 'productController', 'produk');
-addRoute('GET', "/{$adminPath}/barang/tambah", $adminPath, 'productController', 'createProduk');
-addRoute('GET', "/{$adminPath}/barang/detail", $adminPath, 'productController', 'detailProduk');
-addRoute('GET', "/{$adminPath}/barang/edit", $adminPath, 'productController', 'editProduk');
+addRoute('GET', "/{$adminPath}/barang", $adminPath, 'BarangCtrl', 'list');
+addRoute('GET', "/{$adminPath}/barang/detail/:id", $adminPath, 'BarangCtrl', 'detail');
+addRoute('GET', "/{$adminPath}/barang/create", $adminPath, 'BarangCtrl', 'create');
+addRoute('POST', "/{$adminPath}/barang/store", $adminPath, 'BarangCtrl', 'store');
+addRoute('GET', "/{$adminPath}/barang/edit/:id", $adminPath, 'BarangCtrl', 'edit');
+addRoute('POST', "/{$adminPath}/barang/update/:id", $adminPath, 'BarangCtrl', 'update');
+addRoute('GET', "/{$adminPath}/barang/delete/:id", $adminPath, 'BarangCtrl', 'destroy');
 // transaksi
 // pesanan
 addRoute('GET', "/{$adminPath}/pemesanan", $adminPath, 'transactionController', 'pemesanan');
