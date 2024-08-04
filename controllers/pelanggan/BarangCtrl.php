@@ -1,17 +1,20 @@
 <?php
+require_once '../helpers/isAuth.php';
 require_once '../models/Kategori.php';
 require_once '../models/Barang.php';
 require_once '../helpers/flash.php'; 
 require_once '../helpers/redirect.php'; 
 
 class BarangCtrl {
-
+    private $isAuth;
     private $kategori;
     private $barang;
 
     public function __construct($pdo = null) {
         $this->barang = new Barang($pdo);
         $this->kategori = new Kategori($pdo);
+        $this->isAuth = new MiddlewareAuth();
+        $this->isAuth->isUser();
     }
 
     // Daftar barang

@@ -1,5 +1,5 @@
 <?php
-
+require_once '../helpers/isAuth.php';
 class PesananCtrl {
     private $isAuth;
 
