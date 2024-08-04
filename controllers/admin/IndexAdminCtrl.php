@@ -3,16 +3,19 @@ require_once '../helpers/isAuth.php';
 require_once '../models/User.php';
 require_once '../models/Admin.php';
 require_once '../models/Pelanggan.php';
+require_once '../helpers/ImageHandler.php';
 
 class IndexAdminCtrl {
     private $isAuth;
     private $user;
     private $admin;
     private $pelanggan;
+    private $imageHelper;
 
     public function __construct($pdo = null) {
         $this->isAuth = new MiddlewareAuth();
         $this->isAuth->isAdmin();
+        $this->imageHelper = new ImageHandler();
         $this->user = new User($pdo);
         $this->admin = new Admin($pdo);
         $this->pelanggan = new Pelanggan($pdo);
@@ -28,7 +31,7 @@ class IndexAdminCtrl {
         
         renderView('admin/user/list-admin', compact('adminUser'));
     }
-    
+
     public function createAdmin() {
         renderView('admin/user/create-admin');
     }
@@ -79,12 +82,51 @@ class IndexAdminCtrl {
             }
         }
     }
-    
-    public function editAdmin() {
-        renderView('admin/user/edit-admin');
+
+    public function editAdmin($id) {
+        $adminUser = $this->admin->getById($id);
+        renderView('admin/user/edit-admin', compact('adminUser'));
     }
 
+    public function updateAdmin($id) {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            try {
+                $nama = filter_input(INPUT_POST, 'nama', FILTER_DEFAULT);
+                $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+                $jenis_kelamin = filter_input(INPUT_POST, 'jenis_kelamin', FILTER_DEFAULT);
+                $alamat = filter_input(INPUT_POST, 'alamat', FILTER_DEFAULT);
+                $no_telp = filter_input(INPUT_POST, 'no_telp', FILTER_DEFAULT);
+
+                // Tangani upload foto
+                $foto = $_FILES['foto'] ?? null; // Ambil foto dari input file
+                if ($foto && $foto['error'] === UPLOAD_ERR_OK) {
+                    $result = $this->imageHelper->uploadImageProfile($foto);
+                    if (!$result['success']) {
+                        setFlash('error', $result['message']);
+                        redirect('/admin/admin-list');
+                        return;
+                    }
+                    $fotoFileName = $result['filename'];
+                } else {
+                    // Ambil foto lama jika tidak ada foto baru
+                    $fotoFileName = $this->admin->getById($id)['foto'] ?? null;
+                }
+                $this->admin->update($id, $email, $nama, $jenis_kelamin, $alamat, $no_telp, $fotoFileName);
+                setFlash('success', 'Data Admin berhasil diubah!');
+                redirect('/admin/admin-list');
+            } catch (\Exception $e) {
+                setFlash('error', 'Server error, gagal mengubah Data Admin!'.$e->getMessage());
+                redirect('/admin/admin-list');
+            }
+        }
+    }
+    
 // pelangganData
+    public function pelanggan() {
+        $pelangganUser = $this->pelanggan->getAll();
+        renderView('admin/user/list-pelanggan', compact('pelangganUser'));
+    }
+
     public function createPelanggan() {
         renderView('admin/user/create-pelanggan');
     }
@@ -136,12 +178,9 @@ class IndexAdminCtrl {
         }
     }
 
-    public function pelanggan() {
-        $pelangganUser = $this->pelanggan->getAll();
-        renderView('admin/user/list-pelanggan', compact('pelangganUser'));
-    }
-    public function editPelanggan() {
-        renderView('admin/user/edit-pelanggan');
+    public function editPelanggan($id) {
+        $pelangganUser = $this->pelanggan->getById($id);
+        renderView('admin/user/edit-pelanggan', compact('pelangganUser'));
     }
 
 }

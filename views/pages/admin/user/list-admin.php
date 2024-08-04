@@ -69,7 +69,7 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                <a href="/admin/edit/admin" class="btn btn-sm btn-warning">Edit</a>
+                                                <a href="/admin/edit/admin/<?php echo $item['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
                                                 <button 
                                                     type="button" 
                                                     class="btn btn-sm btn-danger" 
