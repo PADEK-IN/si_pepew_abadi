@@ -67,9 +67,11 @@ CREATE TABLE barang (
 -- Tabel keranjang
 CREATE TABLE keranjang (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
+    id_user INT(5) NOT NULL,
     id_barang INT(5) NOT NULL,
     jumlah INT(5) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_user) REFERENCES users(id),
     FOREIGN KEY (id_barang) REFERENCES barang(id)
 );
 
