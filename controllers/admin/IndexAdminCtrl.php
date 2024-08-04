@@ -183,5 +183,43 @@ class IndexAdminCtrl {
         renderView('admin/user/edit-pelanggan', compact('pelangganUser'));
     }
 
+    public function updatePelanggan($id) {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            try {
+                $nama = filter_input(INPUT_POST, 'nama', FILTER_DEFAULT);
+                $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+                $jenis_kelamin = filter_input(INPUT_POST, 'jenis_kelamin', FILTER_DEFAULT);
+                $alamat = filter_input(INPUT_POST, 'alamat', FILTER_DEFAULT);
+                $no_telp = filter_input(INPUT_POST, 'no_telp', FILTER_DEFAULT);
+                $kota = filter_input(INPUT_POST, 'kota', FILTER_DEFAULT);
+                $kode_pos = filter_input(INPUT_POST, 'kode_pos', FILTER_DEFAULT);
+                $pekerjaan = filter_input(INPUT_POST, 'pekerjaan', FILTER_DEFAULT);
+                $perusahaan = filter_input(INPUT_POST, 'perusahaan', FILTER_DEFAULT);
+                $npwp = filter_input(INPUT_POST, 'npwp', FILTER_DEFAULT);
+
+                // Tangani upload foto
+                $foto = $_FILES['foto'] ?? null; // Ambil foto dari input file
+                if ($foto && $foto['error'] === UPLOAD_ERR_OK) {
+                    $result = $this->imageHelper->uploadImageProfile($foto);
+                    if (!$result['success']) {
+                        setFlash('error', $result['message']);
+                        redirect('/admin/pelanggan-list');
+                        return;
+                    }
+                    $fotoFileName = $result['filename'];
+                } else {
+                    // Ambil foto lama jika tidak ada foto baru
+                    $fotoFileName = $this->pelanggan->getById($id)['foto'] ?? null;
+                }
+                $this->pelanggan->update($id, $email, $nama, $jenis_kelamin, $alamat, $no_telp,  $kota, $kode_pos, $pekerjaan, $perusahaan, $npwp, $fotoFileName);
+                setFlash('success', 'Data Pelanggan berhasil diubah!');
+                redirect('/admin/pelanggan-list');
+            } catch (\Exception $e) {
+                setFlash('error', 'Server error, gagal mengubah Data Pelanggan!'.$e->getMessage());
+                redirect('/admin/pelanggan-list');
+            }
+        }
+    }
+
 }
 
