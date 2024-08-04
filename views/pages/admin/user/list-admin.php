@@ -99,9 +99,9 @@
             },
             dangerMode: true
         }).then((willDelete) => {
-            // if (willDelete) {
-            //     window.location.href = `/admin/admin/delete/${id}`;
-            // }
+            if (willDelete) {
+                window.location.href = `/admin/admin/delete/${id}`;
+            }
         });
     }
 </script>

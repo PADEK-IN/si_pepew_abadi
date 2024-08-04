@@ -120,6 +120,17 @@ class IndexAdminCtrl {
             }
         }
     }
+
+    public function destroyAdmin($id) {
+        try {
+            $this->admin->delete($id);
+            setFlash('success', 'Admin berhasil dihapus!');
+            redirect('/admin/admin-list');
+        } catch (\Exception $e) {
+            setFlash('error', 'Server error, gagal menghapus Admin!');
+            redirect('/admin/admin-list');
+        }
+    }
     
 // pelangganData
     public function pelanggan() {
@@ -218,6 +229,17 @@ class IndexAdminCtrl {
                 setFlash('error', 'Server error, gagal mengubah Data Pelanggan!'.$e->getMessage());
                 redirect('/admin/pelanggan-list');
             }
+        }
+    }
+
+    public function destroyPelanggan($id) {
+        try {
+            $this->pelanggan->delete($id);
+            setFlash('success', 'Pelanggan berhasil dihapus!');
+            redirect('/admin/pelanggan-list');
+        } catch (\Exception $e) {
+            setFlash('error', 'Server error, gagal menghapus Pelanggan!');
+            redirect('/admin/pelanggan-list');
         }
     }
 
