@@ -2663,3 +2663,13 @@ section {
 .footer .credits a {
   color: #fff;
 }
+
+.text-limit {
+  text-align: left;
+  height: 45px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit text to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
