@@ -70,7 +70,7 @@
                                             </tr>
                                             <tr>
                                                 <td>Description</td>
-                                                <td><?= $barang['deskripsii'] ?></td>
+                                                <td><?= $barang['deskripsi'] ?></td>
                                             </tr>
                                         </table>
                                     </div>

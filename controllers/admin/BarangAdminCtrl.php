@@ -66,7 +66,7 @@ class BarangAdminCtrl {
                 setFlash('success', 'Barang berhasil ditambahkan!');
                 redirect('/admin/barang');
             } catch (\Exception $e) {
-                setFlash('error', 'Server error, gagal menambahkan barang!');
+                setFlash('error', 'Server error, gagal menambahkan barang!'. $e->getMessage());
                 redirect('/admin/barang');
             }
         }
@@ -111,7 +111,7 @@ class BarangAdminCtrl {
                 setFlash('success', 'Barang berhasil diubah!');
                 redirect('/admin/barang');
             } catch (\Exception $e) {
-                setFlash('error', 'Server error, gagal mengubah barang!');
+                setFlash('error', 'Server error, gagal mengubah barang!'.$e->getMessage());
                 redirect('/admin/barang');
             }
         }
