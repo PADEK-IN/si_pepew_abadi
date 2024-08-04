@@ -6,7 +6,7 @@
             <h2>Selamat Datang <span><?= $_SESSION['nama'] ?></span></h2>
             <p>Senang melihat anda kembali, semoga hari mu menyenangkan dan selamat berbelanja.</p>
             <div class="d-flex justify-content-center justify-content-lg-start">
-                <a href="/produk" class="btn-get-started">Lihat Barang</a>
+                <a href="/barang" class="btn-get-started">Lihat Barang</a>
             </div>
             </div>
             <div class="col-lg-6 order-1 order-lg-2">
