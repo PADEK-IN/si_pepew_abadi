@@ -57,7 +57,7 @@
 
                                 <!-- select kelamin -->
                                 <div class="form-group">
-                                    <label for="role" >Role</label>
+                                    <label for="jenis-kelamin" >Jenis Kelamin</label>
                                     <select name="jenis_kelamin" class="form-control" required>
                                         <option>Pilih Jenis Kelamin</option>
                                         <option value="laki-laki">Laki-laki</option>
