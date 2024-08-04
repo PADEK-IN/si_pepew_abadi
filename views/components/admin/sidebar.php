@@ -56,7 +56,7 @@
                 </li>
                 <!-- Product -->
                 <li class="nav-item">
-                    <a href="/admin/produk">
+                    <a href="/admin/barang">
                         <i class="far fa-window-restore"></i>
                         <p>Barang</p>
                     </a>
