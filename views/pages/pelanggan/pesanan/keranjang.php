@@ -31,11 +31,18 @@
                         <p>Barang Numpuk di keranjangmu? Yuk segera checkout sekarang juga!</p>
                     </div>
                 </div>
-
+    
                 <div class="col-lg-7">
+                    <div class="container my-2 d-flex align-items-center gap-2 rounded-lg shadow py-3 px-5 position-relative">
+                        <input type="checkbox" id="check-all" onclick="toggleAll()">
+                        <label for="check-all" class="ms-2">Pilih Semua</label>
+                    </div>
                     <?php foreach($barang as $item): ?>
-                        <div class="container my-2 d-flex align-items-center gap-2 rounded-lg shadow py-3 px-5">
-                            <input type="checkbox" id="check-<?= $item['id'] ?>" onclick="updateTotal()">
+                        <div class="container my-2 d-flex align-items-center gap-2 rounded-lg shadow py-3 px-5 position-relative">
+                            <span class="position-absolute top-0 end-0 p-2" style="cursor: pointer;" onclick="deleteItem('<?= $item['id'] ?>','<?= $item['nama'] ?>')">
+                                <i class="bi bi-trash text-danger fs-4"></i>
+                            </span>
+                            <input type="checkbox" class="checkbox-cart" id="check-<?= $item['id'] ?>" onclick="updateTotal()">
                             <div class="col-lg-3 text-center">
                                 <img src="/assets/img/barang/<?= $item['gambar'] ?>" height="150px" width="150px" style="object-fit: cover;">
                             </div>
@@ -60,13 +67,41 @@
                     <h3>Total Belanja: <span id="totalBelanja">Rp. 0</span></h3>
                 </div>
 
-                <button type="button" class="btn btn-success" data-bs-toggle="collapse" data-bs-target="#hitung">Checkout</button>
+                <button type="button" class="btn btn-success">Checkout</button>
             </div>
         </div>
     </section><!-- End Frequently Asked Questions Section -->
 </main>
 
+<!-- Include Font Awesome for icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
 <script>
+    function toggleAll() {
+        var checkboxes = document.getElementsByClassName('checkbox-cart');
+        var checkAll = document.getElementById('check-all');
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = checkAll.checked;
+        }
+        updateTotal();
+    }
+
+    function deleteItem(id, name) {
+        swal({
+            title: `Yakin ingin menghapus ${name} dari keranjang?`,
+            icon: "warning",
+            buttons: {
+                cancel: "Cancel",
+                confirm: "Confirm"
+            },
+            dangerMode: true
+        }).then((willDelete) => {
+            if (willDelete) {
+                window.location.href = `/keranjang/delete/${id}`;
+            }
+        });
+    }
+
     function plus(id) {
         var jumlahInput = document.getElementById('jumlah-' + id);
         var jumlah = parseInt(jumlahInput.value) || 0;
