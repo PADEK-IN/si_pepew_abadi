@@ -52,7 +52,7 @@ class AuthCtrl {
                 $_SESSION['nama'] = $profile['nama'];
                 $_SESSION['foto'] = $profile['foto'];
                 setFlash('success', 'Login berhasil!');
-                redirect('/home');
+                redirect('/barang');
             } else {
                 setFlash('error', 'Email atau password salah!');
                 redirect('/login');

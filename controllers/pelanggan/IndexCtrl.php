@@ -1,4 +1,5 @@
 <?php
+require_once '../helpers/isAuth.php';
 require_once '../models/Pelanggan.php';
 require_once '../models/User.php';
 require_once '../helpers/flash.php'; 
@@ -6,16 +7,14 @@ require_once '../helpers/redirect.php';
 require_once '../helpers/ImageHandler.php';
 class IndexCtrl {
     private $isAuth;
-    private $user;
     private $pelanggan;
     private $imageHelper;
 
     public function __construct($pdo = null) {
-        $this->isAuth = new MiddlewareAuth();
-        $this->user = new User($pdo);
         $this->pelanggan = new Pelanggan($pdo);
-        $this->isAuth->isUser();
         $this->imageHelper = new ImageHandler();
+        $this->isAuth = new MiddlewareAuth();
+        $this->isAuth->isUser();
     }
 
     public function guest() {
