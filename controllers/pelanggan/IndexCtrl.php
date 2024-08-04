@@ -25,7 +25,7 @@ class IndexCtrl {
 
     public function profile() {
         $user = $this->user->getById($_SESSION['user']['id']);
-        $profile = $this->pelanggan->getByUserId($_SESSION['user']['id']);
+        $profile = $this->pelanggan->getByUserEmail($_SESSION['user']['email']);
         renderView('pelanggan/home/profile', compact('user'));
     }
 

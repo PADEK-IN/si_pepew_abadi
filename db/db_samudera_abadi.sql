@@ -5,7 +5,7 @@ USE db_samudera_abadi;
 -- Tabel users
 CREATE TABLE users (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     role ENUM('admin', 'pelanggan') NOT NULL DEFAULT 'pelanggan',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -14,7 +14,7 @@ CREATE TABLE users (
 -- Tabel admin
 CREATE TABLE admin (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
-    id_user INT(5) NOT NULL,
+    email VARCHAR(50) NOT NULL UNIQUE,
     nama VARCHAR(30) NOT NULL,
     jenis_kelamin ENUM('laki-laki', 'perempuan') NOT NULL,
     alamat VARCHAR(100) NOT NULL,
@@ -22,25 +22,25 @@ CREATE TABLE admin (
     foto VARCHAR(50),
     isValid BOOLEAN DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_user) REFERENCES users(id)
+    FOREIGN KEY (email) REFERENCES users(email)
 );
 
 -- Tabel pelanggan
 CREATE TABLE pelanggan (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
-    id_user INT(5) NOT NULL,
-    nama VARCHAR(30) NOT NULL,
+    email VARCHAR(50) NOT NULL UNIQUE,
+    nama VARCHAR(50) NOT NULL,
     jenis_kelamin ENUM('laki-laki', 'perempuan') NOT NULL,
-    alamat VARCHAR(100) NOT NULL,
-    kota VARCHAR(10) NOT NULL,
-    kode_pos VARCHAR(5) NOT NULL,
-    pekerjaan VARCHAR(20) NOT NULL,
+    alamat VARCHAR(150) NOT NULL,
+    kota VARCHAR(25),
+    kode_pos VARCHAR(5),
+    pekerjaan VARCHAR(20),
     perusahaan VARCHAR(25),
     npwp VARCHAR(16),
     no_telp VARCHAR(15) NOT NULL,
     foto VARCHAR(50),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_user) REFERENCES users(id)
+    FOREIGN KEY (email) REFERENCES users(email)
 );
 
 -- Tabel kategori

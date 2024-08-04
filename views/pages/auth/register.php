@@ -18,11 +18,30 @@
                   <form action="/register" method="post" role="form">
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Email</label>
-                      <input type="email" name="email" class="form-control">
+                      <input type="email" name="email" class="form-control" required>
                     </div>
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control">
+                      <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="input-group input-group-outline mb-3">
+                      <label class="form-label">Nama</label>
+                      <input type="text" name="nama" class="form-control" required>
+                    </div>
+                    <div class="input-group input-group-outline mb-3">
+                      <select name="jenis_kelamin" class="form-control" required>
+                        <option>Pilih Jenis Kelamin</option>
+                        <option value="laki-laki">Laki-laki</option>
+                        <option value="perempuan">Perempuan</option>
+                      </select>
+                    </div>
+                    <div class="input-group input-group-outline mb-3">
+                      <label class="form-label">Alamat Lengkap</label>
+                      <input type="text" name="alamat" class="form-control" required>
+                    </div>
+                    <div class="input-group input-group-outline mb-3">
+                      <label class="form-label">Nomor Telepon</label>
+                      <input type="text" name="no_telp" class="form-control" required>
                     </div>
                     <div class="form-check form-check-info text-start ps-0">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
