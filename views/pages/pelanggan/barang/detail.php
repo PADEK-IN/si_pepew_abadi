@@ -51,7 +51,7 @@
                         </div>
                         <div class="meta-bottom">
                             <ul class="cats">
-                                <a href="/keranjang" class="btn btn-primary text-white">
+                                <a href="/keranjang/<?= $barang['id'] ?>" class="btn btn-primary text-white">
                                     <i class="bi bi-cart-plus"></i>
                                     Masuk Keranjang
                                 </a>
