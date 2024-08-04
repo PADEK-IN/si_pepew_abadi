@@ -2,7 +2,7 @@
 
 class ImageHandler {
     private $target_dir = "assets/img/barang/";
-    private $max_file_size = 500000; // Maksimum ukuran file dalam byte (500KB)
+    private $max_file_size = 2000000; // Maksimum ukuran file dalam byte (500KB)
     private $allowed_file_types = ['jpg', 'jpeg', 'png', 'gif']; // Jenis file yang diperbolehkan
 
     public function uploadImage($file) {

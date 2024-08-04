@@ -62,7 +62,7 @@
                                             <td><?php echo $index + 1; ?></td>
                                             <td><a href="/admin/barang/detail/<?php echo $item['id']; ?>"><?php echo $item['nama']; ?></a></td>
                                             <td><?php echo $item['kategori_nama']; ?></td>
-                                            <td>Rp. <?php echo $item['harga']; ?></td>
+                                            <td>Rp. <?= number_format($item['harga'], 2, ',', '.'); ?></td>
                                             <td><?php echo htmlspecialchars($item['stok']);  ?></td>
                                             <td>
                                                 <img src="/assets/img/barang/<?php echo $item['gambar']; ?>" alt="barang1" width="50px">
