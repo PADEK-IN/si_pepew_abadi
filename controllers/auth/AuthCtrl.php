@@ -39,10 +39,10 @@ class AuthCtrl {
                 $_SESSION['user'] = [
                     'id' => $user['id'],
                     'email' => $user['email'],
-                    'nama' => $profile['nama'],
-                    'foto' => $profile['foto'],
                     'role' => $user['role']
                 ];
+                $_SESSION['nama'] = $profile['nama'];
+                $_SESSION['foto'] = $profile['foto'];
                 setFlash('success', 'Login berhasil!');
                 redirect('/admin/dashboard');
             } else {

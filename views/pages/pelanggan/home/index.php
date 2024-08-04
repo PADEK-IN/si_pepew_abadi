@@ -3,14 +3,14 @@
     <div class="container position-relative">
         <div class="row gy-5" data-aos="fade-in">
             <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-            <h2>Selamat Datang <span>User</span></h2>
+            <h2>Selamat Datang <span><?= $_SESSION['nama'] ?></span></h2>
             <p>Senang melihat anda kembali, semoga hari mu menyenangkan dan selamat berbelanja.</p>
             <div class="d-flex justify-content-center justify-content-lg-start">
                 <a href="/produk" class="btn-get-started">Lihat Barang</a>
             </div>
             </div>
             <div class="col-lg-6 order-1 order-lg-2">
-            <img src="../../assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
+            <img src="/assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
             </div>
         </div>
         </div>

@@ -39,8 +39,8 @@
             </li>
             <li class="dropdown">
                 <a class="nav-link nav-user-img gap-2" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="text-white">User</span>    
-                    <img src="/assets/img/profile/user.png" width="31px" alt="user-profile" class="user-avatar-lg rounded-circle border border-1">
+                    <span class="text-white"><?= $_SESSION['nama'] ?></span>    
+                    <img src="/assets/img/profile/<?= $_SESSION['foto'] ?>" width="31px" alt="user-profile" class="user-avatar-lg rounded-circle border border-1">
                 </a>
                 <ul>
                     <li><a href="/profile">Profile</a></li>
