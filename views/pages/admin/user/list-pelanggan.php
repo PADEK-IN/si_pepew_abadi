@@ -39,6 +39,7 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Email</th>
+                                        <th>Jenis Kelamin</th>
                                         <th>Nomor Handphone</th>
                                         <th>Action</th>
                                     </tr>
@@ -48,6 +49,7 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Email</th>
+                                        <th>Jenis Kelamin</th>
                                         <th>Nomor Handphone</th>
                                         <th>Action</th>
                                     </tr>
@@ -60,13 +62,21 @@
                                             <a href=""><?php echo $item['nama']; ?></a>
                                         </td>
                                         <td><?php echo $item['email']; ?></td>
+                                        <td>
+                                            <?php if ($item['jenis_kelamin'] == 'laki-laki') {
+                                                echo '<span class="badge badge-primary">Laki-Laki</span>';
+                                            } else {
+                                                echo '<span class="badge badge-success">Perempuan</span>';
+                                            }
+                                            ?>
+                                        </td>
                                         <td><?php echo $item['no_telp']; ?></td>
                                         <td>
                                             <a href="/admin/edit/pelanggan" class="btn btn-sm btn-warning">Edit</a>
                                             <button 
                                             type="button" 
                                             class="btn btn-sm btn-danger" 
-                                            onclick="deletePengguna('<?php echo $item['id']; ?>','<?php echo $item['nama']; ?>')">
+                                            onclick="deletePelanggan('<?php echo $item['id']; ?>','<?php echo $item['nama']; ?>')">
                                                 Hapus
                                             </button>
                                         </td>
@@ -82,9 +92,9 @@
     </div>
 </div>
 <script>
-    function deletePengguna(id, name) {
+    function deletePelanggan(id, name) {
         swal({
-            title: `Yakin ingin menghapus akun ${name}?`,
+            title: `Yakin ingin menghapus Pelanggan ${name}?`,
             icon: "warning",
             buttons: {
                 cancel: "Cancel",
@@ -93,7 +103,7 @@
             dangerMode: true
         }).then((willDelete) => {
             // if (willDelete) {
-            //     window.location.href = `/admin/barang/delete/${id}`;
+            //     window.location.href = `/admin/pelanggan/delete/${id}`;
             // }
         });
     }

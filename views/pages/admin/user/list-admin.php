@@ -39,7 +39,7 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Email</th>
-                                        <th>Role</th>
+                                        <th>Jenis Kelamin</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -48,7 +48,7 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Email</th>
-                                        <th>Role</th>
+                                        <th>Jenis Kelamin</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
@@ -56,19 +56,26 @@
                                     <?php foreach ($adminUser as $index => $item): ?>
                                         <tr>
                                             <td><?php echo $index + 1; ?></td>
-                                            <td><?php echo $item['nama']; ?></td>
-                                            <td>Architect</td>
                                             <td>
-                                                <span class="badge badge-success">Admin</span>
+                                                <a href=""><?php echo $item['nama']; ?></a>
+                                            </td>
+                                            <td><?php echo $item['email']; ?></td>
+                                            <td>
+                                                <?php if ($item['jenis_kelamin'] == 'laki-laki') {
+                                                    echo '<span class="badge badge-primary">Laki-Laki</span>';
+                                                } else {
+                                                    echo '<span class="badge badge-success">Perempuan</span>';
+                                                }
+                                                ?>
                                             </td>
                                             <td>
                                                 <a href="/admin/edit/admin" class="btn btn-sm btn-warning">Edit</a>
                                                 <button 
-                                                type="button" 
-                                                class="btn btn-sm btn-danger" 
-                                                onclick="confirmDeleteUser(this, 'Ingin Menghapus pengguna 1 ini!')">
-                                                    Hapus
-                                                </button>
+                                                    type="button" 
+                                                    class="btn btn-sm btn-danger" 
+                                                    onclick="deleteAdmin('<?php echo $item['id']; ?>','<?php echo $item['nama']; ?>')">
+                                                        Hapus
+                                                    </button>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -81,3 +88,20 @@
         </div>
     </div>
 </div>
+<script>
+    function deleteAdmin(id, name) {
+        swal({
+            title: `Yakin ingin menghapus Admin ${name}?`,
+            icon: "warning",
+            buttons: {
+                cancel: "Cancel",
+                confirm: "Confirm"
+            },
+            dangerMode: true
+        }).then((willDelete) => {
+            // if (willDelete) {
+            //     window.location.href = `/admin/admin/delete/${id}`;
+            // }
+        });
+    }
+</script>
