@@ -64,6 +64,15 @@ CREATE TABLE barang (
     FOREIGN KEY (id_kategori) REFERENCES kategori(id)
 );
 
+-- Tabel keranjang
+CREATE TABLE keranjang (
+    id INT(5) AUTO_INCREMENT PRIMARY KEY,
+    id_barang INT(5) NOT NULL,
+    jumlah INT(5) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_barang) REFERENCES barang(id)
+);
+
 -- Tabel pesanan
 CREATE TABLE pesanan (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
