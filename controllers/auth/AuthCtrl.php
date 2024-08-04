@@ -2,6 +2,7 @@
 //Pada controller, pemanggilannya anggap posisi berada di routes
 require_once '../models/User.php';
 require_once '../models/Pelanggan.php';
+require_once '../models/Admin.php';
 require_once '../helpers/flash.php'; 
 require_once '../helpers/redirect.php'; 
 require_once '../helpers/validatePhone.php'; 
@@ -9,11 +10,13 @@ class AuthCtrl {
 
     private $user;
     private $pelanggan;
+    private $admin;
     private $middleware;
 
     public function __construct($pdo = null) {
         $this->user = new User($pdo);
         $this->pelanggan = new Pelanggan($pdo);
+        $this->admin = new Admin($pdo);
         $this->middleware = new MiddlewareAuth();
     }
 
@@ -33,7 +36,12 @@ class AuthCtrl {
 
             // Ambil data pengguna dari model
             $user = $this->user->getByEmail($email);
-            $profile = $this->pelanggan->getByUserEmail($email);
+
+            if($user['role']=='admin'){
+                $profile = $this->admin->getByUserEmail($email);
+            }else{
+                $profile = $this->pelanggan->getByUserEmail($email);
+            }
 
             if ($user && password_verify($password, $user['password'])) {
                 $_SESSION['user'] = [
@@ -44,7 +52,7 @@ class AuthCtrl {
                 $_SESSION['nama'] = $profile['nama'];
                 $_SESSION['foto'] = $profile['foto'];
                 setFlash('success', 'Login berhasil!');
-                redirect('/admin/dashboard');
+                redirect('/home');
             } else {
                 setFlash('error', 'Email atau password salah!');
                 redirect('/login');

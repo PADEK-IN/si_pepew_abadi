@@ -7,11 +7,11 @@
                 <h2>Selamat Datang Di <span>Samudera Abadi</span></h2>
                 <p>Solusi Terbaik untuk Kebutuhan Pertanian Anda. Kami menyediakan pupuk, pestisida, dan mesin tani modern untuk mendukung keberhasilan pertanian Anda.</p>
                 <div class="d-flex justify-content-center justify-content-lg-start">
-                    <a href="/produk" class="btn-get-started">Jelajahi Produk Kami</a>
+                    <a href="/public/barang" class="btn-get-started">Jelajahi Barang Kami</a>
                 </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
-                <img src="../../assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
+                <img src="/assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
                 </div>
             </div>
             </div>
@@ -66,7 +66,7 @@
 
             <div class="row gy-4">
             <div class="col-lg-6">
-                <img src="../../assets/img/page/bg.png" class="img-fluid rounded-4 mb-4" alt="">
+                <img src="/assets/img/page/bg.png" class="img-fluid rounded-4 mb-4" alt="">
             </div>
             <div class="col-lg-6">
                 <div class="content ps-0 ps-lg-5">
@@ -102,7 +102,7 @@
                 <div class="col-lg-6">
                     <div class="text-center">
                         <h3>CV.SAMUDERA ABADI</h3>
-                        <img src="../../assets/img/page/logo.png" class="img-fluid rounded-4 mb-4" alt="">
+                        <img src="/assets/img/page/logo.png" class="img-fluid rounded-4 mb-4" alt="">
                         <p><b>CV. Samudera Abadi</b> di dirikan pada tahun 2020 sebagai perusahaan yang bergerak di bidang pengadaan barang dan jasa. Kami mensupply barang-barang industri dan kontruksi. Memenuhi permintaan costumer dengan barang dan pelayanan yang terbaik.</p>
                         <hr>
                             <h5 class="fst-italic">Kami Melayani Kualitas Layanan Yang Terbaik</h5>
