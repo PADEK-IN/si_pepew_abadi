@@ -3,7 +3,7 @@ require_once '../models/Kategori.php';
 require_once '../helpers/flash.php'; 
 require_once '../helpers/redirect.php'; 
 
-class KategoriCtrl{
+class KategoriAdminCtrl{
 
     private $kategori;
     public function __construct($pdo = null) {

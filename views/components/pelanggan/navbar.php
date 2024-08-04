@@ -16,13 +16,13 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
     <a href="/home" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="../../assets/img/logo.png" alt="">
+        <img src="/assets/img/logo.png" alt="">
         <h1>Samudera Abadi<span>.</span></h1>
     </a>
     <nav id="navbar" class="navbar">
         <ul>
             <li><a href="/home">Beranda</a></li>
-            <li><a href="/produk">Barang</a></li>
+            <li><a href="/barang">Barang</a></li>
             <li class="dropdown">
                 <a href="#"><span>Pesanan</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
@@ -40,7 +40,7 @@
             <li class="dropdown">
                 <a class="nav-link nav-user-img gap-2" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="text-white">User</span>    
-                    <img src="../../assets/img/profile/user.png" width="31px" alt="user-profile" class="user-avatar-lg rounded-circle border border-1">
+                    <img src="/assets/img/profile/user.png" width="31px" alt="user-profile" class="user-avatar-lg rounded-circle border border-1">
                 </a>
                 <ul>
                     <li><a href="/profile">Profile</a></li>

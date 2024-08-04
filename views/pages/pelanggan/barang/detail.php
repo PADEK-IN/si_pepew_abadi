@@ -14,8 +14,9 @@
         <nav>
             <div class="container">
                 <ol>
-                <li><a href="/">Home</a></li>
-                <li>Barang</li>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/barang">Barang</a></li>
+                    <li>Detail</li>
                 </ol>
             </div>
         </nav>
@@ -29,24 +30,21 @@
                 <div class="col-lg-8">
                     <!-- Artikel -->
                     <article class="blog-details">
-                        <div class="post-img text-center">
-                            <img src="../assets/img/barang/pupuk.jpeg" alt="" class="img-fluid">
+                        <div class="post-img text-center mt-1">
+                            <img src="/assets/img/barang/<?= $barang['gambar'] ?>" alt="gambar_barang" class="img-fluid">
                         </div>
-                        <h2 class="title">CPN 15-0-14/KNO3 Merah</h2>
+                        <h2 class="title"><?= $barang['nama'] ?></h2>
                         <div class="meta-top">
                             <ul>
-                                <li class="d-flex align-items-center"><i class="bi bi-menu-button"></i> <a href="#">Pupuk</a></li>
-                                <li class="d-flex align-items-center"><i class="bi bi-basket"></i> <a href="#">456</a></li>
-                                <li class="d-flex align-items-center"><i class="bi bi-bucket"></i> <a href="#">20 LT</a></li>
-                                <li class="d-flex align-items-center"><i class="bi bi-tags"></i> <a href="#">Rp. 30.000</a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-menu-button"></i> <a href="#"><?= $barang['kategori_nama'] ?></a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-basket"></i> <a href="#"><?= $barang['stok'] ?></a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-bucket"></i> <a href="#"><?= $barang['stok'] ?> <?= $barang['satuan'] ?></a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-tags"></i> <a href="#">Rp. <?= number_format($barang['harga'], 2, ',', '.'); ?></a></li>
                             </ul>
                         </div>
                         <div class="content">
                             <p>INI DESKRIPSI</p>
-                            <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas molestias numquam nulla adipisci a repellat voluptatum. Quae sint alias vero eius illo fugiat inventore debitis illum aliquam! Nihil, quia excepturi?</P>
-                            <blockquote>
-                                <p>Lorem ipsum</p>
-                            </blockquote>
+                            <P><?= $barang['deskripsi'] ?></P>
                         </div>
                         <div class="meta-bottom">
                             <ul class="cats">
@@ -73,17 +71,16 @@
                         <div class="sidebar-item categories">
                             <h3 class="sidebar-title">Categories</h3>
                             <ul class="mt-3">
-                                <li><a href="#">Pupuk <span>(25)</span></a></li>
-                                <li><a href="#">Racun <span>(12)</span></a></li>
-                                <li><a href="#">Mesin <span>(12)</span></a></li>
+                                <?php foreach($kategori as $item):?>
+                                    <li><a href="<?= $item['id'] ?>"><?= $item['nama'] ?> <span>(25)</span></a></li>
+                                <?php endforeach ?>
                             </ul>
                         </div>
 
                         <!-- recent post list -->
-                        <div class="sidebar-item recent-posts">
+                        <!-- <div class="sidebar-item recent-posts">
                             <h3 class="sidebar-title">Produk Yang Sejenis</h3>
                             <div class="mt-3">
-                                <!-- recent post item -->
                                 <div class="post-item mt-3">
                                     <img src="../assets/img/product/pupuk.jpeg" style="width: 40px;" alt="">
                                     <div>
@@ -91,16 +88,8 @@
                                         <time>Rp. 100,000,00</time>
                                     </div>
                                 </div>
-                                <!-- recent post item -->
-                                <div class="post-item">
-                                    <img src="../assets/img/product/pupuk.jpeg" style="width: 40px;" alt="">
-                                    <div>
-                                        <h4><a href="">ZINC SULPHATE</a></h4>
-                                        <time>Rp. 100,000,00</time>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

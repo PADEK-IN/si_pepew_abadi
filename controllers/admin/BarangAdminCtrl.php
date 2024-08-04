@@ -5,7 +5,7 @@ require_once '../helpers/flash.php';
 require_once '../helpers/redirect.php'; 
 require_once '../helpers/ImageHandler.php'; // Update nama file jika diperlukan
 
-class BarangCtrl {
+class BarangAdminCtrl {
 
     private $kategori;
     private $barang;
