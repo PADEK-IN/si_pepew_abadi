@@ -14,7 +14,7 @@
         <nav>
             <div class="container">
                 <ol>
-                    <li><a href="/home">Home</a></li>
+                    <!-- <li><a href="/home">Home</a></li> -->
                     <li><a href="/barang">Barang</a></li>
                     <li>Detail</li>
                 </ol>
@@ -30,20 +30,20 @@
                 <div class="col-lg-8">
                     <!-- Artikel -->
                     <article class="blog-details">
-                        <div class="post-img text-center mt-1">
+                        <div class="post-img text-center">
                             <img src="/assets/img/barang/<?= $barang['gambar'] ?>" alt="gambar_barang" class="img-fluid">
                         </div>
                         <h2 class="title"><?= $barang['nama'] ?></h2>
                         <div class="meta-top">
                             <ul>
                                 <li class="d-flex align-items-center"><i class="bi bi-menu-button"></i> <a href="#"><?= $barang['kategori_nama'] ?></a></li>
-                                <li class="d-flex align-items-center"><i class="bi bi-basket"></i> <a href="#"><?= $barang['stok'] ?></a></li>
+                                <!-- <li class="d-flex align-items-center"><i class="bi bi-basket"></i> <a href="#"><?= $barang['stok'] ?></a></li> -->
                                 <li class="d-flex align-items-center"><i class="bi bi-bucket"></i> <a href="#"><?= $barang['stok'] ?> <?= $barang['satuan'] ?></a></li>
                                 <li class="d-flex align-items-center"><i class="bi bi-tags"></i> <a href="#">Rp. <?= number_format($barang['harga'], 2, ',', '.'); ?></a></li>
                             </ul>
                         </div>
                         <div class="content">
-                            <p>INI DESKRIPSI</p>
+                            <p>DESKRIPSI</p>
                             <P><?= $barang['deskripsi'] ?></P>
                         </div>
                         <div class="meta-bottom">

@@ -13,8 +13,8 @@
         <nav>
             <div class="container">
                 <ol>
-                <li><a href="/">Home</a></li>
-                <li><a href="/produk">Produk</a></li>
+                <!-- <li><a href="/">Home</a></li> -->
+                <li><a href="/barang">Barang</a></li>
                 <li>Checkout</li>
                 </ol>
             </div>
