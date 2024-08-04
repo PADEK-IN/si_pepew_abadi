@@ -4,19 +4,18 @@
         <div class="page-header d-flex align-items-center" style="background-image: url('');">
         <div class="container position-relative">
             <div class="row d-flex justify-content-center">
-                <div class="col-lg-7 text-center">
-                    <h2>Hi <?= $_SESSION['nama'] ?></h2>
-                    <p>Temukan berbagai produk berkualitas untuk mendukung pertanian Anda. Dari pupuk organik hingga mesin pertanian modern, kami memiliki semua yang Anda butuhkan.</p>
-                    <p>Selamat Berbelaja 😊.</p>
-                </div>
+            <div class="col-lg-6 text-center">
+                <h2>Barang</h2>
+                <p>Temukan berbagai produk berkualitas untuk mendukung pertanian Anda. Dari pupuk organik hingga mesin pertanian modern, kami memiliki semua yang Anda butuhkan.</p>
+            </div>
             </div>
         </div>
         </div>
         <nav>
             <div class="container d-flex justify-content-between">
                 <ol>
-                    <!-- <li><a href="/home">Home</a></li> -->
-                    <li>Barang</li>
+                <li><a href="/">Home</a></li>
+                <li>Barang</li>
                 </ol>
             </div>
         </nav>
@@ -47,7 +46,7 @@
                                 </a>
                             </div>
                             <div class="portfolio-info">
-                                <h5><a href="/barang/detail/<?= $barang['id'] ?>" title="More Details"><?= $barang['nama'] ?></a></h5>
+                                <h5><a href="/public/detail-barang/<?= $barang['id'] ?>" title="More Details"><?= $barang['nama'] ?></a></h5>
                                 <div class="d-flex justify-content-between mt-4">
                                     <p style="padding: 0;" class="post-author-list">Kategori: <?= $barang['kategori_nama'] ?></p>
                                     <p style="padding: 0;">Stok: <?= $barang['stok'] ?> <?= $barang['satuan'] ?></p>    

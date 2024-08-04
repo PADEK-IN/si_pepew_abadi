@@ -13,7 +13,7 @@
         <nav>
             <div class="container">
                 <ol>
-                <li><a href="/">Home</a></li>
+                <!-- <li><a href="/">Home</a></li> -->
                 <li><a href="/barang">Barang</a></li>
                 <li>Keranjang</li>
                 </ol>
@@ -82,7 +82,7 @@
                         </div>
                         <div class="accordion-body d-flex align-items-center">
                             <div class="col-lg-3 text-center">
-                                <img src="../assets/img/product/pupuk.jpeg" style="width: 80px;" alt="">
+                                <img src="/assets/img/product/pupuk.jpeg" style="width: 80px;" alt="">
                             </div>
                             <div class="col-lg-9">
                                 <div class="d-flex">
@@ -114,7 +114,7 @@
                     <!-- Item 1 -->
                     <div class="accordion-body d-flex align-items-center">
                         <div class="col-lg-3 text-center">
-                            <img src="../assets/img/product/pupuk.jpeg" style="width: 150px;" alt="">
+                            <img src="/assets/img/product/pupuk.jpeg" style="width: 150px;" alt="">
                         </div>
                         <div class="col-lg-9">
                             <div class="d-flex">
@@ -141,7 +141,7 @@
                     <!-- Item 1 -->
                     <div class="accordion-body d-flex align-items-center">
                         <div class="col-lg-3 text-center">
-                            <img src="../assets/img/product/pupuk.jpeg" style="width: 150px;" alt="">
+                            <img src="/assets/img/product/pupuk.jpeg" style="width: 150px;" alt="">
                         </div>
                         <div class="col-lg-9">
                             <div class="d-flex">

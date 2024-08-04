@@ -1,6 +1,6 @@
 <?php
 
-class IndexCtrl {
+class PesananCtrl {
     private $isAuth;
 
     public function __construct() {
@@ -12,6 +12,7 @@ class IndexCtrl {
     public function keranjang() {
         renderView('pelanggan/pesanan/list');
     }
+
     public function checkout() {
         renderView('pelanggan/pesanan/checkout');
     }

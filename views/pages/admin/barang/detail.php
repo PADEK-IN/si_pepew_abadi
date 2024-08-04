@@ -62,7 +62,7 @@
                                             </tr>
                                             <tr>
                                                 <td>Harga</td>
-                                                <td>Rp. <?= $barang['harga'] ?></td>
+                                                <td>Rp. <?= number_format($barang['harga'], 2, ',', '.'); ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Stok Barang</td>
@@ -70,7 +70,7 @@
                                             </tr>
                                             <tr>
                                                 <td>Description</td>
-                                                <td><?= $barang['deskripsii'] ?></td>
+                                                <td><?= $barang['deskripsi'] ?></td>
                                             </tr>
                                         </table>
                                     </div>

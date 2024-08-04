@@ -6,7 +6,7 @@ class Pelanggan extends BaseModel {
         parent::__construct($pdo, 'pelanggan');
     }
 
-    public function create($email, $nama, $jenis_kelamin, $alamat, $no_telp, $kota = null, $kode_pos = null, $pekerjaan = null, $perusahaan = null, $npwp = null, $foto = null) {
+    public function create($email, $nama, $jenis_kelamin, $alamat, $no_telp, $kota = null, $kode_pos = null, $pekerjaan = null, $perusahaan = null, $npwp = null, $foto = 'user.png') {
         $stmt = $this->pdo->prepare("INSERT INTO pelanggan (email, nama, jenis_kelamin, alamat, kota, kode_pos, pekerjaan, perusahaan, npwp, no_telp, foto) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         return $stmt->execute([$email, $nama, $jenis_kelamin, $alamat, $kota, $kode_pos, $pekerjaan, $perusahaan, $npwp, $no_telp, $foto]);
     }

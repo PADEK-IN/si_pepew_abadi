@@ -89,12 +89,12 @@
                     </div>
                 </li>
                 <!-- widgets -->
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="/login">
                         <i class="fas fa-sign-out-alt"></i>
                         <p>LogOut</p>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

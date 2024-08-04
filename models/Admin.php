@@ -6,7 +6,7 @@ class Admin extends BaseModel {
         parent::__construct($pdo, 'admin');
     }
 
-    public function create($email, $nama, $jenis_kelamin, $alamat, $no_telp, $foto = null, $isValid = 1) {
+    public function create($email, $nama, $jenis_kelamin, $alamat, $no_telp, $foto = 'user.png', $isValid = 1) {
         $stmt = $this->pdo->prepare("INSERT INTO admin (email, nama, jenis_kelamin, alamat, no_telp, foto, isValid) VALUES (?, ?, ?, ?, ?, ?, ?)");
         return $stmt->execute([$email, $nama, $jenis_kelamin, $alamat, $no_telp, $foto, $isValid]);
     }

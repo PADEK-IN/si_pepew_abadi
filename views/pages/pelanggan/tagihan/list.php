@@ -13,7 +13,7 @@
         <nav>
             <div class="container">
                 <ol>
-                <li><a href="/">Home</a></li>
+                <!-- <li><a href="/">Home</a></li> -->
                 <li><a href="/keranjang">Keranjang</a></li>
                 <li>Tagihan</li>
                 </ol>
@@ -40,7 +40,7 @@
                             <div id="chekout-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                                 <div class="accordion-body d-flex align-items-center">
                                     <div class="col-lg-3 text-center">
-                                        <img src="../assets/img/product/pupuk.jpeg" class="m-5" style="width: 100px;" alt="">
+                                        <img src="/assets/img/product/pupuk.jpeg" class="m-5" style="width: 100px;" alt="">
                                         <br>
                                         <span class="alert alert-success ">Bukti Valid</span>
                                     </div>
@@ -89,7 +89,7 @@
                             <div id="chekout-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                                 <div class="accordion-body d-flex align-items-center">
                                     <div class="col-lg-3 text-center">
-                                        <!-- <img src="../assets/img/product/pupuk.jpeg" style="width: 80px;" alt=""> -->
+                                        <!-- <img src="/assets/img/product/pupuk.jpeg" style="width: 80px;" alt=""> -->
                                         <span class="alert alert-warning">Belum ada Bukti</span>
                                     </div>
                                     <div class="col-lg-9">
@@ -162,7 +162,7 @@
                             <div id="chekout-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                                 <div class="accordion-body d-flex align-items-center">
                                     <div class="col-lg-3 text-center">
-                                        <img src="../assets/img/product/pupuk.jpeg" class="m-5" style="width: 100px;" alt="">
+                                        <img src="/assets/img/product/pupuk.jpeg" class="m-5" style="width: 100px;" alt="">
                                         <br>
                                         <span class="alert alert-danger">Bukti Tidak Valid</span>
                                     </div>

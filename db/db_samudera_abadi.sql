@@ -53,8 +53,8 @@ CREATE TABLE kategori (
 CREATE TABLE barang (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
     id_kategori INT(5) NOT NULL,
-    nama VARCHAR(30) NOT NULL,
-    deskripsi VARCHAR(70),
+    nama VARCHAR(70) NOT NULL,
+    deskripsi TEXT,
     gambar VARCHAR(50),
     berat INT(11),
     satuan VARCHAR(10) NOT NULL,
