@@ -62,7 +62,7 @@ class IndexCtrl {
             setFlash('success', 'Profile berhasil diupdate');
             redirect('/profile');
         } catch (\Exception $e) {
-            setFlash('error', 'Server Error, gagal mengupdate profile');
+            setFlash('error', 'Server Error, gagal mengupdate profile'. $e->getMessage());
             redirect('/profile');
         }
     }
