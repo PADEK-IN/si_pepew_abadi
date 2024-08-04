@@ -6,7 +6,7 @@
         <div class="container position-relative">
             <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
-                <h2>Barang Detail</h2>
+                <h2>Detail Barang</h2>
             </div>
             </div>
         </div>
