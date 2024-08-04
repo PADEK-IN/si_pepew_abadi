@@ -67,7 +67,7 @@
                     <h3>Total Belanja: <span id="totalBelanja">Rp. 0</span></h3>
                 </div>
 
-                <button type="button" class="btn btn-success">Checkout</button>
+                <button type="button" class="btn btn-success" onclick="checkout()">Checkout</button>
             </div>
         </div>
     </section><!-- End Frequently Asked Questions Section -->
@@ -84,6 +84,27 @@
             checkboxes[i].checked = checkAll.checked;
         }
         updateTotal();
+    }
+
+    function checkout() {
+        var checkedItems = [];
+        var checkboxes = document.getElementsByClassName('checkbox-cart');
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                checkedItems.push(checkboxes[i].id.split('-')[1]);
+            }
+        }
+        if (checkedItems.length > 0) {
+            console.log(checkedItems)
+            // window.location.href = `/checkout?items=${checkedItems.join(',')}`;
+        } else {
+            swal({
+                title: "Keranjang Kosong",
+                text: "Pilih barang terlebih dahulu sebelum checkout",
+                icon: "warning",
+                button: "OK"
+            });
+        }
     }
 
     function deleteItem(id, name) {
