@@ -31,48 +31,43 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Code</th>
                                         <th>Nama Penerima</th>
-                                        <th>Nama Barang</th>
-                                        <th>Jumlah</th>
-                                        <th>Dari</th>
-                                        <th>Tujuan</th>
+                                        <th>ID Pesanan</th>
+                                        <th>Tanggal</th>
+                                        <th>Alamat</th>
+                                        <th>Bukti</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                    <th>No</th>
-                                        <th>Code</th>
+                                        <th>No</th>
                                         <th>Nama Penerima</th>
-                                        <th>Nama Barang</th>
-                                        <th>Jumlah</th>
-                                        <th>Harga</th>
-                                        <th>Total</th>
+                                        <th>ID Pesanan</th>
+                                        <th>Tanggal</th>
+                                        <th>Alamat</th>
+                                        <th>Bukti</th>
+                                        <th>Status</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <a href="/admin/pengiriman/32">GFDYT237</a>
-                                        </td>
-                                        <td>Santorio widodo</td>
-                                        <td>Selimut</td>
-                                        <td>3</td>
-                                        <td>Bogor</td>
-                                        <td>Jakarta</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>
-                                            <a href="/admin/pengiriman/43">73D82H2</a>
-                                        </td>
-                                        <td>Santorio widodo</td>
-                                        <td>Selimut</td>
-                                        <td>3</td>
-                                        <td>Bogor</td>
-                                        <td>Jakarta</td>
-                                    </tr>
+                                    <?php if($pengiriman == 0) { ?>
+                                        <tr>
+                                            <td colspan="7">Data pengiriman Masih Koosong</td>
+                                        </tr>
+                                    <?php } else { ?>
+                                        <?php foreach ($pengiriman as $index => $item): ?>
+                                            <tr>
+                                                <td><?php echo $index + 1; ?></td>
+                                                <td>Fulan Si pengirim</td>
+                                                <td><?php echo $item['id_pesanan']; ?></td>
+                                                <td><?php echo $item['tanggal']; ?></td>
+                                                <td><?php echo $item['alamat']; ?></td>
+                                                <td><?php echo $item['bukti']; ?></td>
+                                                <td><?php echo $item['status']; ?></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>

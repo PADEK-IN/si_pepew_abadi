@@ -1,6 +1,17 @@
 <?php
+require_once '../helpers/isAuth.php';
+require_once '../models/Pengiriman.php';
 
 class transactionController{
+    private $isAuth;
+    private $pengiriman;
+
+    public function __construct($pdo = null) {
+        $this->isAuth = new MiddlewareAuth();  
+        $this->isAuth->isAdmin();
+        $this->pengiriman = new Pengiriman($pdo);
+    }
+
     // pemesanan
         public function pemesanan() {
             renderView('admin/pemesanan/list');
@@ -22,7 +33,9 @@ class transactionController{
 
     // pengiriman
         public function pengiriman() {
-            renderView('admin/pengiriman/list');
+            $pengiriman = $this->pengiriman->getAll();
+
+            renderView('admin/pengiriman/list', compact('pengiriman'));
         }
         public function detailPengiriman($id) {
             renderView('admin/pengiriman/detail', ['id' => $id]);
