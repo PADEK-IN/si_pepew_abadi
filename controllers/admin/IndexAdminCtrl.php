@@ -1,12 +1,18 @@
 <?php
 require_once '../helpers/isAuth.php';
+require_once '../models/Admin.php';
+require_once '../models/Pelanggan.php';
 
 class IndexAdminCtrl {
     private $isAuth;
+    private $admin;
+    private $pelanggan;
 
-    public function __construct() {
+    public function __construct($pdo = null) {
         $this->isAuth = new MiddlewareAuth();
         $this->isAuth->isAdmin();
+        $this->admin = new Admin($pdo);
+        $this->pelanggan = new Pelanggan($pdo);
     }
 
     public function dashboard() {
@@ -15,10 +21,14 @@ class IndexAdminCtrl {
 
 // user
     public function admin() {
-        renderView('admin/user/list-admin');
+        $adminUser = $this->admin->getAll();
+        
+        renderView('admin/user/list-admin', compact('adminUser'));
     }
     public function pelanggan() {
-        renderView('admin/user/list-pelanggan');
+        $pelangganUser = $this->pelanggan->getAll();
+        // var_dump($pelangganUser);
+        renderView('admin/user/list-pelanggan', compact('pelangganUser'));
     }
 
     public function createAdmin() {

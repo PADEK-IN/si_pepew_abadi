@@ -38,7 +38,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
-                                        <th>Username</th>
+                                        <th>Email</th>
                                         <th>Role</th>
                                         <th>Action</th>
                                     </tr>
@@ -47,46 +47,31 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
-                                        <th>Username</th>
+                                        <th>Email</th>
                                         <th>Role</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Tiger Nixon</td>
-                                        <td>Architect</td>
-                                        <td>
-                                            <span class="badge badge-success">Admin</span>
-                                        </td>
-                                        <td>
-                                            <a href="/admin/edit/admin" class="btn btn-sm btn-warning">Edit</a>
-                                            <button 
-                                            type="button" 
-                                            class="btn btn-sm btn-danger" 
-                                            onclick="confirmDeleteUser(this, 'Ingin Menghapus pengguna 1 ini!')">
-                                                Hapus
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Tiger Nixon</td>
-                                        <td>Architect</td>
-                                        <td>
-                                            <span class="badge badge-primary">User</span>
-                                        </td>
-                                        <td>
-                                            <a href="/admin/edit/admin" class="btn btn-sm btn-warning">Edit</a>
-                                            <button 
-                                            type="button" 
-                                            class="btn btn-sm btn-danger" 
-                                            onclick="confirmDeleteUser(this, 'Ingin Menghapus pengguna 2 ini!')">
-                                                Hapus
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    <?php foreach ($adminUser as $index => $item): ?>
+                                        <tr>
+                                            <td><?php echo $index + 1; ?></td>
+                                            <td><?php echo $item['nama']; ?></td>
+                                            <td>Architect</td>
+                                            <td>
+                                                <span class="badge badge-success">Admin</span>
+                                            </td>
+                                            <td>
+                                                <a href="/admin/edit/admin" class="btn btn-sm btn-warning">Edit</a>
+                                                <button 
+                                                type="button" 
+                                                class="btn btn-sm btn-danger" 
+                                                onclick="confirmDeleteUser(this, 'Ingin Menghapus pengguna 1 ini!')">
+                                                    Hapus
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>
