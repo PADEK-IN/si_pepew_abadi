@@ -32,6 +32,11 @@ class IndexAdminCtrl {
         renderView('admin/user/list-admin', compact('adminUser'));
     }
 
+    public function detailAdmin($id) {
+        $admin = $this->admin->getById($id);
+        renderView('admin/user/detail-admin', compact('admin'));
+    }
+
     public function createAdmin() {
         renderView('admin/user/create-admin');
     }
@@ -136,6 +141,11 @@ class IndexAdminCtrl {
     public function pelanggan() {
         $pelangganUser = $this->pelanggan->getAll();
         renderView('admin/user/list-pelanggan', compact('pelangganUser'));
+    }
+
+    public function detailPelanggan($id) {
+        $pelanggan = $this->pelanggan->getById($id);
+        renderView('admin/user/detail-pelanggan', compact('pelanggan'));
     }
 
     public function createPelanggan() {

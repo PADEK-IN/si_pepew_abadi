@@ -10,6 +10,7 @@ $adminPath = 'admin';
 addRoute('GET', "/{$adminPath}/dashboard", $adminPath, 'IndexAdminCtrl', 'dashboard');
 // user
 addRoute('GET', "/{$adminPath}/admin-list", $adminPath, 'IndexAdminCtrl', 'admin');
+addRoute('GET', "/{$adminPath}/admin/detail/:id", $adminPath, 'IndexAdminCtrl', 'detailAdmin');
 addRoute('GET', "/{$adminPath}/create/admin", $adminPath, 'IndexAdminCtrl', 'createAdmin');
 addRoute('POST', "/{$adminPath}/admin/store", $adminPath, 'IndexAdminCtrl', 'storeAdmin');
 addRoute('GET', "/{$adminPath}/edit/admin/:id", $adminPath, 'IndexAdminCtrl', 'editAdmin');
@@ -17,6 +18,7 @@ addRoute('POST', "/{$adminPath}/admin/update/:id", $adminPath, 'IndexAdminCtrl',
 addRoute('GET', "/{$adminPath}/admin/delete/:id", $adminPath, 'IndexAdminCtrl', 'destroyAdmin');
 
 addRoute('GET', "/{$adminPath}/pelanggan-list", $adminPath, 'IndexAdminCtrl', 'pelanggan');
+addRoute('GET', "/{$adminPath}/pelanggan/detail/:id", $adminPath, 'IndexAdminCtrl', 'detailPelanggan');
 addRoute('GET', "/{$adminPath}/create/pelanggan", $adminPath, 'IndexAdminCtrl', 'createPelanggan');
 addRoute('POST', "/{$adminPath}/pelanggan/store", $adminPath, 'IndexAdminCtrl', 'storePelanggan');
 addRoute('GET', "/{$adminPath}/edit/pelanggan/:id", $adminPath, 'IndexAdminCtrl', 'editPelanggan');

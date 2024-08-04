@@ -59,7 +59,7 @@
                                     <tr>
                                         <td><?php echo $index + 1; ?></td>
                                         <td>
-                                            <a href=""><?php echo $item['nama']; ?></a>
+                                            <a href="/admin/pelanggan/detail/<?php echo $item['id']; ?>"><?php echo $item['nama']; ?></a>
                                         </td>
                                         <td><?php echo $item['email']; ?></td>
                                         <td>
