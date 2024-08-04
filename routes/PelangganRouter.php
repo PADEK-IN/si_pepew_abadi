@@ -7,6 +7,7 @@ $pelangganPath = 'pelanggan';
 // Home
 addRoute('GET', '/home', $pelangganPath, 'IndexCtrl', 'home');
 addRoute('GET', '/profile', $pelangganPath, 'IndexCtrl', 'profile');
+addRoute('POST', '/profile/update/:id', $pelangganPath, 'IndexCtrl', 'profileUpdate');
 
 // Barang
 addRoute('GET', '/barang', $pelangganPath, 'BarangCtrl', 'list');

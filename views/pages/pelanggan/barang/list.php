@@ -14,7 +14,7 @@
         <nav>
             <div class="container d-flex justify-content-between">
                 <ol>
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/home">Home</a></li>
                     <li>Barang</li>
                 </ol>
             </div>
