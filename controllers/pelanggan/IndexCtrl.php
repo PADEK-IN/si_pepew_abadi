@@ -1,10 +1,17 @@
 <?php
-
+require_once '../models/Pelanggan.php';
+require_once '../models/User.php';
+require_once '../helpers/flash.php'; 
+require_once '../helpers/redirect.php'; 
 class IndexCtrl {
     private $isAuth;
+    private $user;
+    private $pelanggan;
 
-    public function __construct() {
+    public function __construct($pdo = null) {
         $this->isAuth = new MiddlewareAuth();
+        $this->user = new User($pdo);
+        $this->pelanggan = new Pelanggan($pdo);
         $this->isAuth->isUser();
     }
 
@@ -16,38 +23,10 @@ class IndexCtrl {
         renderView('pelanggan/home/index');
     }
 
-    public function tentangKami() {
-        renderView('pelanggan/home/tentang-kami');
-    }
-
     public function profile() {
-        renderView('pelanggan/home/profile');
-    }
-
-    // Product
-    public function produk() {
-        renderView('pelanggan/produk/list');
-    }
-    public function detailProduk() {
-        renderView('pelanggan/produk/detail');
-    }
-    
-    // kontak
-    public function kontak() {
-        renderView('pelanggan/home/kontak');
-    }
-
-    // pemesanan
-    public function keranjang() {
-        renderView('pelanggan/pesanan/list');
-    }
-    public function checkout() {
-        renderView('pelanggan/pesanan/checkout');
-    }
-
-    // tagihan
-    public function tagihan() {
-        renderView('pelanggan/tagihan/list');
+        $user = $this->user->getById($_SESSION['user']['id']);
+        $profile = $this->pelanggan->getByUserId($_SESSION['user']['id']);
+        renderView('pelanggan/home/profile', compact('user'));
     }
 
 }

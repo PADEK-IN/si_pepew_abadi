@@ -3,7 +3,7 @@ require_once 'BaseModel.php';
 
 class User extends BaseModel {
     public function __construct($pdo) {
-        parent::__construct($pdo, 'pelanggan'); // 'pelanggan' adalah nama tabel
+        parent::__construct($pdo, 'users'); // 'pelanggan' adalah nama tabel
     }
 
     public function getByEmail($email) {

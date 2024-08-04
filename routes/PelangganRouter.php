@@ -6,6 +6,7 @@ require_once '../controllers/pelanggan/BarangCtrl.php';
 $pelangganPath = 'pelanggan';
 // Home
 addRoute('GET', '/home', $pelangganPath, 'IndexCtrl', 'home');
+addRoute('GET', '/profile', $pelangganPath, 'IndexCtrl', 'profile');
 
 // Barang
 addRoute('GET', '/barang', $pelangganPath, 'BarangCtrl', 'list');
