@@ -6,14 +6,20 @@ class Admin extends BaseModel {
         parent::__construct($pdo, 'admin');
     }
 
-    public function create($id_user, $nama, $jenis_kelamin, $alamat, $no_telp, $foto = null, $isValid = 0) {
-        $stmt = $this->pdo->prepare("INSERT INTO admin (id_user, nama, jenis_kelamin, alamat, no_telp, foto, isValid) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        return $stmt->execute([$id_user, $nama, $jenis_kelamin, $alamat, $no_telp, $foto, $isValid]);
+    public function create($email, $nama, $jenis_kelamin, $alamat, $no_telp, $foto = null, $isValid = 1) {
+        $stmt = $this->pdo->prepare("INSERT INTO admin (email, nama, jenis_kelamin, alamat, no_telp, foto, isValid) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        return $stmt->execute([$email, $nama, $jenis_kelamin, $alamat, $no_telp, $foto, $isValid]);
     }
 
-    public function update($id, $id_user, $nama, $jenis_kelamin, $alamat, $no_telp, $foto = null, $isValid = 0) {
-        $stmt = $this->pdo->prepare("UPDATE admin SET id_user = ?, nama = ?, jenis_kelamin = ?, alamat = ?, no_telp = ?, foto = ?, isValid = ? WHERE id = ?");
-        return $stmt->execute([$id_user, $nama, $jenis_kelamin, $alamat, $no_telp, $foto, $isValid, $id]);
+    public function update($id, $email, $nama, $jenis_kelamin, $alamat, $no_telp, $foto = null, $isValid = 0) {
+        $stmt = $this->pdo->prepare("UPDATE admin SET email = ?, nama = ?, jenis_kelamin = ?, alamat = ?, no_telp = ?, foto = ?, isValid = ? WHERE id = ?");
+        return $stmt->execute([$email, $nama, $jenis_kelamin, $alamat, $no_telp, $foto, $isValid, $id]);
+    }
+
+    public function getByUserEmail($email) {
+        $stmt = $this->pdo->prepare("SELECT * FROM admin WHERE email = ?");
+        $stmt->execute([$email]);
+        return $stmt->fetch();
     }
 }
 ?>
