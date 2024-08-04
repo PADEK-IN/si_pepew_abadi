@@ -38,8 +38,8 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
-                                        <th>Username</th>
-                                        <th>Role</th>
+                                        <th>Email</th>
+                                        <th>Nomor Handphone</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -47,46 +47,31 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
-                                        <th>Username</th>
-                                        <th>Role</th>
+                                        <th>Email</th>
+                                        <th>Nomor Handphone</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
+                                <?php foreach ($pelangganUser as $index => $item): ?>
                                     <tr>
-                                        <td>1</td>
-                                        <td>Tiger Nixon</td>
-                                        <td>Architect</td>
+                                        <td><?php echo $index + 1; ?></td>
                                         <td>
-                                            <span class="badge badge-success">Admin</span>
+                                            <a href=""><?php echo $item['nama']; ?></a>
                                         </td>
+                                        <td><?php echo $item['email']; ?></td>
+                                        <td><?php echo $item['no_telp']; ?></td>
                                         <td>
                                             <a href="/admin/edit/pelanggan" class="btn btn-sm btn-warning">Edit</a>
                                             <button 
                                             type="button" 
                                             class="btn btn-sm btn-danger" 
-                                            onclick="confirmDeleteUser(this, 'Ingin Menghapus pengguna 1 ini!')">
+                                            onclick="deletePengguna('<?php echo $item['id']; ?>','<?php echo $item['nama']; ?>')">
                                                 Hapus
                                             </button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Tiger Nixon</td>
-                                        <td>Architect</td>
-                                        <td>
-                                            <span class="badge badge-primary">User</span>
-                                        </td>
-                                        <td>
-                                            <a href="/admin/edit/pelanggan" class="btn btn-sm btn-warning">Edit</a>
-                                            <button 
-                                            type="button" 
-                                            class="btn btn-sm btn-danger" 
-                                            onclick="confirmDeleteUser(this, 'Ingin Menghapus pengguna 1 ini!')">
-                                                Hapus
-                                            </button>
-                                        </td>
-                                    </tr>
+                                <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>
@@ -96,3 +81,20 @@
         </div>
     </div>
 </div>
+<script>
+    function deletePengguna(id, name) {
+        swal({
+            title: `Yakin ingin menghapus akun ${name}?`,
+            icon: "warning",
+            buttons: {
+                cancel: "Cancel",
+                confirm: "Confirm"
+            },
+            dangerMode: true
+        }).then((willDelete) => {
+            // if (willDelete) {
+            //     window.location.href = `/admin/barang/delete/${id}`;
+            // }
+        });
+    }
+</script>
