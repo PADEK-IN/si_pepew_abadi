@@ -78,11 +78,9 @@ CREATE TABLE keranjang (
 -- Tabel pesanan
 CREATE TABLE pesanan (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
-    id_admin INT(5) NOT NULL,
     id_pelanggan INT(5) NOT NULL,
     metode_kirim ENUM('diantar', 'dijemput') NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_admin) REFERENCES admin(id),
     FOREIGN KEY (id_pelanggan) REFERENCES pelanggan(id)
 );
 
@@ -100,10 +98,8 @@ CREATE TABLE pesanan_items (
 CREATE TABLE tagihan (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
     id_pesanan INT(5) NOT NULL,
-    metode_bayar ENUM('cod', 'transfer', 'tempo 3 hari', 'tempo 7 hari', 'tempo 30 hari') NOT NULL,
-    diskon DECIMAL(10,2) DEFAULT 0,
+    metode_bayar ENUM('cod', 'transfer') NOT NULL,
     ppn DECIMAL(10,2) DEFAULT 0,
-    pph DECIMAL(10,2) DEFAULT 0,
     total DECIMAL(20,2) NOT NULL,
     jumlah_bayar VARCHAR(30) NOT NULL,
     bukti_bayar VARCHAR(50),
