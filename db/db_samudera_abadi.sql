@@ -102,7 +102,7 @@ CREATE TABLE tagihan (
     id_pesanan INT(5) NOT NULL,
     metode_bayar ENUM('cod', 'transfer') NOT NULL,
     jumlah_bayar VARCHAR(30) NOT NULL,
-    bukti_bayar VARCHAR(50),
+    bukti_bayar VARCHAR(255),
     status ENUM('lunas', 'tertunda', 'batal') DEFAULT 'tertunda',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_pesanan) REFERENCES pesanan(id)

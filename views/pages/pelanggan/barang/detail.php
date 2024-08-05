@@ -73,7 +73,7 @@
                 <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog">
                         <div class="modal-content">
-                            <form action="/pesanan/store" method="post">
+                            <form action="/pesanan/create" method="post">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="staticBackdropLabel">Pesan Barang</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

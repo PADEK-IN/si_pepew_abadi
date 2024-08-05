@@ -2,13 +2,13 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
         <div class="page-header d-flex align-items-center" style="background-image: url('');">
-        <div class="container position-relative">
-            <div class="row d-flex justify-content-center">
-            <div class="col-lg-6 text-center">
-                <h2>Detail Pesanan</h2>
+            <div class="container position-relative">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <h2>Detail Pesanan</h2>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
         </div>
         <nav>
             <div class="container">
@@ -20,7 +20,8 @@
             </div>
         </nav>
     </div>
-    <form action="" method="post">
+
+    <form action="/pesanan/store" method="post">
         <div class="col-lg-12">
             <div class="container my-2 d-flex align-items-center gap-2 rounded-lg shadow py-3 px-5 position-relative">
                 <div class="col-lg-3 text-center">
@@ -64,7 +65,7 @@
                         </span>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <select name="metode_bayar" class="form-control" style="width: 100%;">
+                        <select name="metode_kirim" class="form-control" style="width: 100%;" required>
                             <option>Pilih Metode Pengiriman</option>
                             <option value="diantar">Diantar</option>
                             <option value="dijemput">Dijemput</option>
@@ -84,7 +85,7 @@
                         </span>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <select name="metode_bayar" class="form-control" style="width: 100%;">
+                        <select name="metode_bayar" class="form-control" style="width: 100%;" required>
                             <option>Pilih Metode Pembayaran</option>
                             <option value="cod">COD</option>
                             <option value="transfer">Transfer</option>
@@ -103,8 +104,13 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 12.423q-.846 0-1.423-.577t-.577-1.423T12.077 9t1.423-.577T14.923 9t.577 1.423t-.577 1.423t-1.423.577m-6.192 3.193q-.667 0-1.141-.475q-.475-.475-.475-1.141V6.846q0-.666.475-1.14t1.14-.475h12.385q.667 0 1.141.474t.475 1.141V14q0 .666-.475 1.14q-.474.476-1.14.476zm1-1h10.384q0-.672.475-1.144q.474-.472 1.14-.472V7.846q-.67 0-1.142-.474q-.473-.475-.473-1.141H8.308q0 .671-.475 1.143q-.474.472-1.14.472V13q.67 0 1.143.475q.472.474.472 1.14m9.538 4H4.308q-.667 0-1.141-.474q-.475-.475-.475-1.141V8.692q0-.212.144-.356t.357-.144t.356.144t.143.356V17q0 .23.192.423q.193.193.424.193h13.538q.213 0 .356.143q.144.144.144.357t-.144.356t-.356.144m-10.538-4h-.616V6.23h.616q-.25 0-.433.183t-.183.432V14q0 .25.183.433t.433.183"/></svg>
                         </span>
                     </div>
+                    <div>
+                        <div class="fs-6 gap-1 text-secondary">PPN 11%: <?= number_format(($barang['harga']*$jumlah)*0.11, 2, ',', '.') ?></div>
+                    </div>
                     <div class="d-flex justify-content-between">
-                        <div class="fs-4 gap-1 text-primary">Rp. <?= number_format($barang['harga']*$jumlah, 2, ',', '.') ?></div>
+                        <input type="number" class="d-none" readonly name="id_barang" value="<?= $barang['id']*$jumlah ?>">
+                        <input type="number" class="d-none" readonly name="jumlah" value="<?= $jumlah ?>">
+                        <div class="fs-4 gap-1 text-primary">Total: Rp. <?= number_format((($barang['harga']*$jumlah)*0.11)+($barang['harga']*$jumlah), 2, ',', '.') ?></div>
                     </div>
                 </div>
             </div>
@@ -112,10 +118,10 @@
 
         <div class="col-lg-12">
             <div class="container my-2 d-flex align-items-center justify-content-between rounded-lg py-2 position-relative">
-                <button class="btn btn-success" style="width: 100%;">Buat Pesanan</button>
+                <button type="submit" class="btn btn-success" style="width: 100%;">Buat Pesanan</button>
             </div>
         </div>
 
-    </form>    
+    </form> 
 
 </main>

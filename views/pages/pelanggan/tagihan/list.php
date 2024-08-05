@@ -13,8 +13,6 @@
         <nav>
             <div class="container">
                 <ol>
-                <!-- <li><a href="/">Home</a></li> -->
-                <li><a href="/keranjang">Keranjang</a></li>
                 <li>Tagihan</li>
                 </ol>
             </div>

@@ -4,6 +4,7 @@ require_once '../controllers/pelanggan/IndexCtrl.php';
 require_once '../controllers/pelanggan/BarangCtrl.php';
 require_once '../controllers/pelanggan/PesananCtrl.php';
 require_once '../controllers/pelanggan/KeranjangCtrl.php';
+require_once '../controllers/pelanggan/TagihanCtrl.php';
 
 $pelangganPath = 'pelanggan';
 // Home
@@ -22,7 +23,9 @@ addRoute('GET', '/keranjang/delete/:id', $pelangganPath, 'KeranjangCtrl', 'destr
 
 // pemesanan
 addRoute('GET', '/checkout', $pelangganPath, 'PesananCtrl', 'checkout');
+addRoute('POST', '/pesanan/create', $pelangganPath, 'PesananCtrl', 'create');
 addRoute('POST', '/pesanan/store', $pelangganPath, 'PesananCtrl', 'store');
 
 // tagihan
-addRoute('GET', '/tagihan', $pelangganPath, 'PesananCtrl', 'tagihan');
+addRoute('GET', '/tagihan', $pelangganPath, 'TagihanCtrl', 'tagihan');
+addRoute('POST', '/tagihan/pembayaran', $pelangganPath, 'TagihanCtrl', 'pembayaran');
