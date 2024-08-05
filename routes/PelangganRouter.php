@@ -21,8 +21,8 @@ addRoute('GET', '/keranjang/:id', $pelangganPath, 'KeranjangCtrl', 'store');
 addRoute('GET', '/keranjang/delete/:id', $pelangganPath, 'KeranjangCtrl', 'destroy');
 
 // pemesanan
-addRoute('GET', '/pesan/store', $pelangganPath, 'PesananCtrl', 'store');
 addRoute('GET', '/checkout', $pelangganPath, 'PesananCtrl', 'checkout');
+addRoute('POST', '/pesanan/store', $pelangganPath, 'PesananCtrl', 'store');
 
 // tagihan
 addRoute('GET', '/tagihan', $pelangganPath, 'PesananCtrl', 'tagihan');

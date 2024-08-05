@@ -73,27 +73,30 @@
                 <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog">
                         <div class="modal-content">
-                            <form action="/pesanan/store" method="post" id="delete-form">
+                            <form action="/pesanan/store" method="post">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="staticBackdropLabel">Pesan Barang</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
+                                    <input type="text" name="id_barang" class="form-control d-none" readonly value="<?= $barang['id'] ?>">
                                     <div class="mb-3 d-flex justify-content-center">
-                                        <img src="/assets/img/barang/<?= $barang['gambar'] ?>" alt="<?= $barang['nama'] ?>" width="200px">
+                                        <img src="/assets/img/barang/<?= $barang['gambar'] ?>" alt="<?= $barang['nama'] ?>" width="150px">
+                                        <div class="d-flex flex-column justify-content-between">
+                                            <span style="margin-top: 20px; width:100%" class="fs-5" id="name"><?= $barang['nama'] ?></span>
+                                            <div class="d-flex flex-column align-items-end">
+                                                <span style="border: 0; width:100%" class="fs-5" id="name">Rp. <?= number_format($barang['harga'], 2, ',', '.') ?></span>
+                                                <span style="border: 0; width:100%" class="fs-6" id="name">Stok: <?= $barang['stok'] ?></span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="mb-3">
-                                        <input type="text" name="id_barang" class="form-control d-none" readonly value="<?= $barang['id'] ?>">
-                                        <input type="text" name="nama" style="border: 0; width:100%" class="fs-5" id="name" readonly value="<?= $barang['nama'] ?>">
-                                    </div>
-                                    <div class="mb-3">
+                                    <div class="mb-3 d-flex gap-3">
                                         <label for="jumlah" class="col-form-label">Jumlah:</label>
-                                        <input type="number" name="jumlah" class="form-control" id="jumlah">
+                                        <input type="number" name="jumlah" class="form-control" id="jumlah" value="1">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                    <button type="submit" class="btn btn-primary">Pesan</button>
+                                    <button type="submit" style="width: 100%;" class="btn btn-primary">Beli Sekarang</button>
                                 </div>
                             </form>
                         </div>
