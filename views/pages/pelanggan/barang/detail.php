@@ -58,13 +58,46 @@
                             </ul>
                             
                             <ul class="tags">
-                                <a href="/checkout" class="btn btn-warning">
+                                <span 
+                                style="cursor: pointer;" class="btn btn-warning"
+                                data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <i class="bi bi-bag"></i>
                                     Beli Sekarang
-                                </a>
+                                </span>
                             </ul>
                         </div>
                     </article>
+                </div>
+
+                <!-- Modal Edit -->
+                <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog">
+                        <div class="modal-content">
+                            <form action="/pesanan/store" method="post" id="delete-form">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Pesan Barang</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3 d-flex justify-content-center">
+                                        <img src="/assets/img/barang/<?= $barang['gambar'] ?>" alt="<?= $barang['nama'] ?>" width="200px">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" name="id_barang" class="form-control d-none" readonly value="<?= $barang['id'] ?>">
+                                        <input type="text" name="nama" style="border: 0; width:100%" class="fs-5" id="name" readonly value="<?= $barang['nama'] ?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="jumlah" class="col-form-label">Jumlah:</label>
+                                        <input type="number" name="jumlah" class="form-control" id="jumlah">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                    <button type="submit" class="btn btn-primary">Pesan</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- sidebar -->

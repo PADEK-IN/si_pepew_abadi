@@ -18,8 +18,10 @@ addRoute('GET', '/barang/detail/:id', $pelangganPath, 'BarangCtrl', 'detail');
 // keranjang
 addRoute('GET', '/keranjang', $pelangganPath, 'KeranjangCtrl', 'list');
 addRoute('GET', '/keranjang/:id', $pelangganPath, 'KeranjangCtrl', 'store');
+addRoute('GET', '/keranjang/delete/:id', $pelangganPath, 'KeranjangCtrl', 'destroy');
 
 // pemesanan
+addRoute('GET', '/pesan/store', $pelangganPath, 'PesananCtrl', 'store');
 addRoute('GET', '/checkout', $pelangganPath, 'PesananCtrl', 'checkout');
 
 // tagihan

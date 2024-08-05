@@ -23,6 +23,7 @@
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq" class="faq">
+        <?php if($barang): ?>
         <div class="container" data-aos="fade-up">
             <div class="row gy-4">
                 <div class="col-lg-5">
@@ -33,11 +34,11 @@
                 </div>
     
                 <div class="col-lg-7">
-                    <div class="container my-2 d-flex align-items-center gap-2 rounded-lg shadow py-3 px-5 position-relative">
-                        <input type="checkbox" id="check-all" onclick="toggleAll()">
-                        <label for="check-all" class="ms-2">Pilih Semua</label>
-                    </div>
                     <?php foreach($barang as $item): ?>
+                        <div class="container my-2 d-flex align-items-center gap-2 rounded-lg shadow py-3 px-5 position-relative">
+                            <input type="checkbox" id="check-all" onclick="toggleAll()">
+                            <label for="check-all" class="ms-2">Pilih Semua</label>
+                        </div>
                         <div class="container my-2 d-flex align-items-center gap-2 rounded-lg shadow py-3 px-5 position-relative">
                             <span class="position-absolute top-0 end-0 p-2" style="cursor: pointer;" onclick="deleteItem('<?= $item['id'] ?>','<?= $item['nama'] ?>')">
                                 <i class="bi bi-trash text-danger fs-4"></i>
@@ -70,6 +71,13 @@
                 <button type="button" class="btn btn-success" onclick="checkout()">Checkout</button>
             </div>
         </div>
+        <?php else: ?>
+        <div class="container text-center">
+            <h3 class="text-center">Keranjang Kosong</h3>
+            <p>Silahkan pilih barang terlebih dahulu</p>
+            <a href="/barang" class="btn btn-warning">Lihat Barang</a>
+        </div>
+        <?php endif ?>
     </section><!-- End Frequently Asked Questions Section -->
 </main>
 

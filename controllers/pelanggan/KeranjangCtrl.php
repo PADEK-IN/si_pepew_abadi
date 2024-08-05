@@ -36,4 +36,10 @@ class KeranjangCtrl {
         }
     }
 
+    public function destroy($id) {
+        $this->keranjang->delete($id);
+        setFlash('success', 'Barang berhasil dihapus dari keranjang');
+        redirect('/keranjang');
+    }
+
 }

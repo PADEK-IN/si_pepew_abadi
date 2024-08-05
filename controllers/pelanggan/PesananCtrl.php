@@ -8,6 +8,10 @@ class PesananCtrl {
         $this->isAuth->isUser();
     }
 
+    public function store() {
+        renderView('pelanggan/pesanan/store');
+    }
+
     public function checkout() {
         renderView('pelanggan/pesanan/checkout');
     }
