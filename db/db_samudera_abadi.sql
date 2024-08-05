@@ -80,6 +80,8 @@ CREATE TABLE pesanan (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
     id_pelanggan INT(5) NOT NULL,
     metode_kirim ENUM('diantar', 'dijemput') NOT NULL,
+    ppn DECIMAL(10,2) DEFAULT 0,
+    total DECIMAL(20,2) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_pelanggan) REFERENCES pelanggan(id)
 );
@@ -99,8 +101,6 @@ CREATE TABLE tagihan (
     id INT(5) AUTO_INCREMENT PRIMARY KEY,
     id_pesanan INT(5) NOT NULL,
     metode_bayar ENUM('cod', 'transfer') NOT NULL,
-    ppn DECIMAL(10,2) DEFAULT 0,
-    total DECIMAL(20,2) NOT NULL,
     jumlah_bayar VARCHAR(30) NOT NULL,
     bukti_bayar VARCHAR(50),
     status ENUM('lunas', 'tertunda', 'batal') DEFAULT 'tertunda',
