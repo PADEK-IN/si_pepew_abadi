@@ -34,5 +34,23 @@ class Keranjang extends BaseModel {
         $stmt->execute([$id_barang, $id_user]);
         return $stmt->fetch();
     }
+
+    public function getByIdsWithBarang($id_user, $ids) {
+        $placeholders = str_repeat('?,', count($ids) - 1) . '?';
+        $ids = array_map('intval', $ids);
+        $sql = "
+            SELECT keranjang.id, keranjang.jumlah, barang.nama, barang.harga, barang.gambar 
+            FROM keranjang 
+            JOIN barang ON keranjang.id_barang = barang.id 
+            WHERE keranjang.id_user = ? 
+            AND keranjang.id IN ($placeholders)
+        ";
+
+        $stmt = $this->pdo->prepare($sql);
+        $params = array_merge([$id_user], $ids);
+        $stmt->execute($params);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
 ?>

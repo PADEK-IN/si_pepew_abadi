@@ -21,7 +21,7 @@
         </nav>
     </div>
 
-    <form action="/pesanan/store" method="post">
+    <form action="/pesanan/store" id="form-payment" method="post">
         <div class="col-lg-12">
             <div class="container my-2 d-flex align-items-center gap-2 rounded-lg shadow py-3 px-5 position-relative">
                 <div class="col-lg-3 text-center">
@@ -65,7 +65,7 @@
                         </span>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <select name="metode_kirim" class="form-control" style="width: 100%;" required>
+                        <select name="metode_kirim" id="metode_kirim" class="form-control" style="width: 100%;" required>
                             <option>Pilih Metode Pengiriman</option>
                             <option value="diantar">Diantar</option>
                             <option value="dijemput">Dijemput</option>
@@ -85,7 +85,7 @@
                         </span>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <select name="metode_bayar" class="form-control" style="width: 100%;" required>
+                        <select name="metode_bayar" class="form-control" id="metode_bayar" style="width: 100%;" required>
                             <option>Pilih Metode Pembayaran</option>
                             <option value="cod">COD</option>
                             <option value="transfer">Transfer</option>
@@ -105,12 +105,16 @@
                         </span>
                     </div>
                     <div>
-                        <div class="fs-6 gap-1 text-secondary">PPN 11%: <?= number_format(($barang['harga']*$jumlah)*0.11, 2, ',', '.') ?></div>
+                        <div id="div_input"></div>
+                        <div class="fs-6 gap-1 text-secondary" id="total">Total Belanja: <?= number_format($barang['harga']*$jumlah, 2, ',', '.') ?></div>
+                        <div class="fs-6 gap-1 text-secondary" id="ppn">PPN 11%: <?= number_format(($barang['harga']*$jumlah)*0.11, 2, ',', '.') ?></div>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <input type="number" class="d-none" readonly name="id_barang" value="<?= $barang['id']*$jumlah ?>">
+                        <input type="number" class="d-none" readonly name="id_barang" id="id_barang" value="<?= $barang['id'] ?>">
+                        <input type="number" class="d-none" readonly name="ongkir" id="ongkir" value="0">
                         <input type="number" class="d-none" readonly name="jumlah" value="<?= $jumlah ?>">
-                        <div class="fs-4 gap-1 text-primary">Total: Rp. <?= number_format((($barang['harga']*$jumlah)*0.11)+($barang['harga']*$jumlah), 2, ',', '.') ?></div>
+                        <input type="number" class="d-none" readonly name="total" id="total-input" value="<?= $barang['harga']*$jumlah ?>">
+                        <div class="fs-4 gap-1 text-primary" id="net">Net: Rp. <?= number_format((($barang['harga']*$jumlah)*0.11)+($barang['harga']*$jumlah), 2, ',', '.') ?></div>
                     </div>
                 </div>
             </div>
@@ -118,10 +122,84 @@
 
         <div class="col-lg-12">
             <div class="container my-2 d-flex align-items-center justify-content-between rounded-lg py-2 position-relative">
-                <button type="submit" class="btn btn-success" style="width: 100%;">Buat Pesanan</button>
+                <button type="button" class="btn btn-success" style="width: 100%;" onclick="store()">Buat Pesanan</button>
             </div>
         </div>
 
     </form> 
 
 </main>
+
+<script>
+    document.getElementById('metode_kirim').addEventListener('change', function() {
+        if (this.value === 'diantar') {
+            let inputOngkir = document.getElementById('ongkir');
+            inputOngkir.value = 15000;
+
+            let divTag = document.createElement('div');
+            divTag.setAttribute('class', 'fs-6 gap-1 text-secondary');
+            divTag.textContent = 'Ongkir: Rp. 15.000,00';
+
+            let divInput = document.getElementById('div_input');
+            divInput.appendChild(divTag);
+            
+            let totalUpdate = <?= $barang['harga']*$jumlah ?> + 15000;
+            let ppnUpdate = totalUpdate * 0.11;
+            let netUpdate = totalUpdate + ppnUpdate;
+
+            let ppnTag = document.getElementById('ppn');
+            let totalTag = document.getElementById('total');
+            let totalInput = document.getElementById('total-input');
+            let netTag = document.getElementById('net');
+
+            totalInput.value = totalUpdate;
+            ppnTag.textContent = 'PPN 11%: Rp. ' + (ppnUpdate).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+            totalTag.textContent = 'Total: Rp. ' + (totalUpdate).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+            netTag.textContent = 'Net: Rp. ' + (netUpdate).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        } else {
+            let inputOngkir = document.getElementById('ongkir');
+            inputOngkir.value = 0;
+            let divInput = document.getElementById('div_input');
+            divInput.innerHTML = '';
+            let totalUpdate = <?= $barang['harga']*$jumlah ?>;
+            let ppnUpdate = totalUpdate * 0.11;
+            let netUpdate = totalUpdate + ppnUpdate;
+            
+            let ppnTag = document.getElementById('ppn');
+            let totalTag = document.getElementById('total');
+            let totalInput = document.getElementById('total-input');
+            let netTag = document.getElementById('net');
+
+            totalInput.value = totalUpdate;
+            ppnTag.textContent = 'PPN 11%: Rp. ' + (ppnUpdate).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+            totalTag.textContent = 'Total: Rp. ' + (totalUpdate).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+            netTag.textContent = 'Net: Rp. ' + (netUpdate).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        }
+    });
+
+    function store() {
+        let metode_bayar = document.getElementById('metode_bayar').value;
+        let metode_kirim = document.getElementById('metode_kirim').value;
+
+        if (metode_bayar === 'Pilih Metode Pembayaran') {
+            swal({
+                title: 'Gagal',
+                text: 'Pilih metode pembayaran terlebih dahulu',
+                icon: 'error'
+            });
+            return;
+        }
+
+        if (metode_kirim === 'Pilih Metode Pengiriman') {
+            swal({
+                title: 'Gagal',
+                text: 'Pilih metode pengiriman terlebih dahulu',
+                icon: 'error'
+            });
+            return;
+        }
+
+        let form = document.getElementById('form-payment');
+        form.submit();
+    }
+</script>

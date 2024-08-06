@@ -19,10 +19,12 @@ addRoute('GET', '/barang/detail/:id', $pelangganPath, 'BarangCtrl', 'detail');
 // keranjang
 addRoute('GET', '/keranjang', $pelangganPath, 'KeranjangCtrl', 'list');
 addRoute('GET', '/keranjang/:id', $pelangganPath, 'KeranjangCtrl', 'store');
+addRoute('POST', '/keranjang/update/:id', $pelangganPath, 'KeranjangCtrl', 'update');
 addRoute('GET', '/keranjang/delete/:id', $pelangganPath, 'KeranjangCtrl', 'destroy');
 
 // pemesanan
-addRoute('GET', '/checkout', $pelangganPath, 'PesananCtrl', 'checkout');
+addRoute('POST', '/checkout', $pelangganPath, 'PesananCtrl', 'checkout');
+addRoute('POST', '/checkout/store', $pelangganPath, 'PesananCtrl', 'checkoutStore');
 addRoute('POST', '/pesanan/create', $pelangganPath, 'PesananCtrl', 'create');
 addRoute('POST', '/pesanan/store', $pelangganPath, 'PesananCtrl', 'store');
 

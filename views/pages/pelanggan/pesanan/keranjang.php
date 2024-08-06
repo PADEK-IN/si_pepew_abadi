@@ -24,7 +24,7 @@
     <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq" class="faq">
         <?php if($barang): ?>
-        <div class="container" data-aos="fade-up">
+        <form action="/checkout" method="post" id="checkout-form" class="container" data-aos="fade-up">
             <div class="row gy-4">
                 <div class="col-lg-5">
                     <div class="content px-xl-5">
@@ -34,11 +34,11 @@
                 </div>
     
                 <div class="col-lg-7">
+                    <div class="container my-2 d-flex align-items-center gap-2 rounded-lg shadow py-3 px-5 position-relative">
+                        <input type="checkbox" id="check-all" onclick="toggleAll()">
+                        <label for="check-all" class="ms-2">Pilih Semua</label>
+                    </div>
                     <?php foreach($barang as $item): ?>
-                        <div class="container my-2 d-flex align-items-center gap-2 rounded-lg shadow py-3 px-5 position-relative">
-                            <input type="checkbox" id="check-all" onclick="toggleAll()">
-                            <label for="check-all" class="ms-2">Pilih Semua</label>
-                        </div>
                         <div class="container my-2 d-flex align-items-center gap-2 rounded-lg shadow py-3 px-5 position-relative">
                             <span class="position-absolute top-0 end-0 p-2" style="cursor: pointer;" onclick="deleteItem('<?= $item['id'] ?>','<?= $item['nama'] ?>')">
                                 <i class="bi bi-trash text-danger fs-4"></i>
@@ -54,9 +54,9 @@
                                 <div class="d-flex justify-content-between">
                                     <div class="fs-5 gap-1"><i class="bi bi-tags"></i>Rp. <?= number_format($item['harga'], 2, ',', '.'); ?></div>
                                     <div class="d-flex gap-1">
-                                        <button class="border border-2 text-center" style="width: 25px;" onclick="min('<?= $item['id'] ?>')">-</button>
+                                        <button type="button" class="border border-2 text-center" style="width: 25px;" onclick="min('<?= $item['id'] ?>')">-</button>
                                         <input class="border border-2 text-center" style="width: 30px;" id="jumlah-<?= $item['id'] ?>" type="text" value="<?= $item['jumlah'] ?>" oninput="updateTotal()"/>
-                                        <button class="border border-2 text-center" style="width: 25px;" onclick="plus('<?= $item['id'] ?>')">+</button>
+                                        <button type="button" class="border border-2 text-center" style="width: 25px;" onclick="plus('<?= $item['id'] ?>')">+</button>
                                     </div>
                                 </div>
                             </div>
@@ -67,10 +67,10 @@
                 <div class="col-lg-12 d-flex justify-content-end">
                     <h3>Total Belanja: <span id="totalBelanja">Rp. 0</span></h3>
                 </div>
-
+                <input type="text" class="d-none" id="ids" name="ids" readonly>        
                 <button type="button" class="btn btn-success" onclick="checkout()">Checkout</button>
             </div>
-        </div>
+        </form>
         <?php else: ?>
         <div class="container text-center">
             <h3 class="text-center">Keranjang Kosong</h3>
@@ -103,8 +103,9 @@
             }
         }
         if (checkedItems.length > 0) {
-            console.log(checkedItems)
-            // window.location.href = `/checkout?items=${checkedItems.join(',')}`;
+            let idsInput = document.getElementById('ids');
+            idsInput.value = checkedItems.join(',');
+            document.getElementById('checkout-form').submit();
         } else {
             swal({
                 title: "Keranjang Kosong",
@@ -132,27 +133,59 @@
     }
 
     function plus(id) {
-        var jumlahInput = document.getElementById('jumlah-' + id);
-        var jumlah = parseInt(jumlahInput.value) || 0;
+        let jumlahInput = document.getElementById('jumlah-' + id);
+        let jumlah = parseInt(jumlahInput.value) || 0;
         jumlahInput.value = jumlah + 1;
+        
         updateTotal();
+
+        // Fetch API to update the quantity
+        fetch(`/keranjang/update/${id}`, {
+            method: 'POST',
+            body: JSON.stringify({ jumlah: jumlah + 1 }),
+            headers: {
+            'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.message);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     }
 
     function min(id) {
-        var jumlahInput = document.getElementById('jumlah-' + id);
-        var jumlah = parseInt(jumlahInput.value) || 0;
+        let jumlahInput = document.getElementById('jumlah-' + id);
+        let jumlah = parseInt(jumlahInput.value) || 0;
         if (jumlah > 1) {
             jumlahInput.value = jumlah - 1;
             updateTotal();
+            // Fetch API to update the quantity
+            fetch(`/keranjang/update/${id}`, {
+                method: 'POST',
+                body: JSON.stringify({ jumlah: jumlah - 1 }),
+                headers: {
+                'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         }
     }
 
     function updateTotal() {
-        var total = 0;
+        let total = 0;
         <?php foreach($barang as $item): ?>
             if (document.getElementById('check-<?= $item['id'] ?>').checked) {
-                var jumlah = parseInt(document.getElementById('jumlah-<?= $item['id'] ?>').value) || 0;
-                var harga = <?= $item['harga'] ?>;
+                let jumlah = parseInt(document.getElementById('jumlah-<?= $item['id'] ?>').value) || 0;
+                let harga = <?= $item['harga'] ?>;
                 total += jumlah * harga;
             }
         <?php endforeach ?>

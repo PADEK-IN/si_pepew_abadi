@@ -14,7 +14,7 @@
 
 <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-    <a href="/home" class="logo d-flex align-items-center">
+    <a href="/barang" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="/assets/img/logo.png" alt="">
         <h1>Samudera Abadi<span>.</span></h1>
@@ -26,8 +26,6 @@
             <li class="dropdown">
                 <a href="#"><span>Pesanan</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
-                    <li><a href="/checkout">Checkout</a></li>
-                    <!-- <li><a href="/tagihan">Menunggu Pembayaran</a></li> -->
                     <li><a href="/pemesanan/proses">Diproses</a></li>
                     <li><a href="/pemesanan/selesai">Selesai</a></li>
                 </ul>

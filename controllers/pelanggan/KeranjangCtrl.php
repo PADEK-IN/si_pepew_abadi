@@ -20,7 +20,6 @@ class KeranjangCtrl {
         renderView('pelanggan/pesanan/keranjang', compact('barang'));
     }
 
-    // pemesanan
     public function store($id) {
         $keranjang = $this->keranjang->getByIdBarangAndIdUser($id, $_SESSION['user']['id']);
         
@@ -33,6 +32,26 @@ class KeranjangCtrl {
             $this->keranjang->create($_SESSION['user']['id'], $id, 1);
             setFlash('success', 'Barang berhasil dimasukkan ke keranjang');
             redirect('/barang/detail/'.$id);
+        }
+    }
+
+    public function update($id) {
+        try {
+            $data = json_decode(file_get_contents('php://input'), true);
+            $this->keranjang->update($id, $data['jumlah']);
+            $response = [
+                'status' => 'success',
+                'code' => 200,
+                'message' => 'Keranjang berhasil diperbarui'
+            ];
+            echo json_encode($response);
+        } catch (Exception $e) {
+            $response = [
+                'status' => 'error',
+                'code' => 500,
+                'message' => 'Terjadi kesalahan saat memperbarui keranjang'
+            ];
+            echo json_encode($response);
         }
     }
 

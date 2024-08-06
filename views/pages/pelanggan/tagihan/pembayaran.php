@@ -31,6 +31,7 @@
                 <h5 class="card-title fs-3 text-warning">123456789012345</h5>
                 <p class="card-text fd-5 fst-italic">a/n CV. Anugerah Abadi</p>
                 <p class="card-text fs-4 text-primary fw-bold">Rp. <?= number_format($net, 2, ',' , '.') ?></p>
+                <p class="card-text fd-5 fst-italic">Metode Pembayaran: Transfer</p>
                 <p class="card-text">Silahkan lakukan pembayaran transfer ke nomor rekening di atas. Untuk menyelesaikan pemesanan. Dalam waktu 1x24 jam.</p>
                 <button href="" class="btn btn-sm btn-primary"
                     data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -42,12 +43,13 @@
             </div>
         </div>
     </div>
+
     <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <form action="/tagihan/pembayaran" method="post" enctype="multipart/form-data">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Upload BUkti Pembayaran</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Upload Bukti Pembayaran</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -55,6 +57,7 @@
                             <label for="name" class="col-form-label">Jumlah Pembayaran:</label>
                             <input type="number" name="id_pesanan" class="form-control d-none" value="<?= $pesananId ?>">
                             <input type="number" name="jumlah_bayar" class="form-control" value="<?= $net ?>">
+                            <input type="number" name="net" class="d-none" readonly value="<?= $net ?>">
                         </div>
                         <div class="mb-3">
                             <label for="name" class="col-form-label">Bukti Pembayaran:</label>
