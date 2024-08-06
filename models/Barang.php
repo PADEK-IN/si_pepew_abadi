@@ -63,5 +63,10 @@ class Barang extends BaseModel {
         ]);
     }
 
+    public function updateStok($id, $stok) {
+        $stmt = $this->pdo->prepare("UPDATE barang SET stok = :stok WHERE id = :id");
+        $stmt->execute(['id' => $id, 'stok' => $stok]);
+    }
+
 }
 ?>

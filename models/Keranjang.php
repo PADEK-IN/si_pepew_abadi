@@ -24,7 +24,7 @@ class Keranjang extends BaseModel {
     }
 
     public function getAllWithBarang($id_user) {
-        $stmt = $this->pdo->prepare("SELECT keranjang.id, keranjang.jumlah, barang.nama, barang.harga, barang.gambar FROM keranjang JOIN barang ON keranjang.id_barang = barang.id WHERE keranjang.id_user = ?");
+        $stmt = $this->pdo->prepare("SELECT keranjang.id, keranjang.jumlah, barang.id as id_barang ,barang.nama, barang.stok, barang.harga, barang.gambar FROM keranjang JOIN barang ON keranjang.id_barang = barang.id WHERE keranjang.id_user = ?");
         $stmt->execute([$id_user]);
         return $stmt->fetchAll();
     }
@@ -35,11 +35,17 @@ class Keranjang extends BaseModel {
         return $stmt->fetch();
     }
 
+    public function getByIdKeranjangAndIdUserWithBarang($id, $id_user) {
+        $stmt = $this->pdo->prepare("SELECT keranjang.id, keranjang.jumlah, barang.id as id_barang, barang.nama, barang.stok, barang.harga, barang.gambar FROM keranjang JOIN barang ON keranjang.id_barang = barang.id WHERE keranjang.id = ? AND keranjang.id_user = ?");
+        $stmt->execute([$id, $id_user]);
+        return $stmt->fetch();
+    }
+
     public function getByIdsWithBarang($id_user, $ids) {
         $placeholders = str_repeat('?,', count($ids) - 1) . '?';
         $ids = array_map('intval', $ids);
         $sql = "
-            SELECT keranjang.id, keranjang.jumlah, barang.nama, barang.harga, barang.gambar 
+            SELECT keranjang.id, keranjang.jumlah, barang.id as id_barang, barang.nama, barang.stok, barang.harga, barang.gambar 
             FROM keranjang 
             JOIN barang ON keranjang.id_barang = barang.id 
             WHERE keranjang.id_user = ? 

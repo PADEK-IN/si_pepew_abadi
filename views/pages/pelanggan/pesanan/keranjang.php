@@ -48,8 +48,9 @@
                                 <img src="/assets/img/barang/<?= $item['gambar'] ?>" height="150px" width="150px" style="object-fit: cover;">
                             </div>
                             <div class="col-lg-8 d-flex flex-column py-2 justify-content-between" style="height: 150px;">
-                                <div class="fs-4 gap-2" data-bs-toggle="collapse" data-bs-target="#keranjang-1">
-                                    <span><?= $item['nama'] ?></span>
+                                <div class="d-flex flex-column" data-bs-toggle="collapse" data-bs-target="#keranjang-1">
+                                    <span class="fs-4"><?= $item['nama'] ?></span>
+                                    <span class="fd-6" id="stok">Stok: <?= $item['stok'] ?></span>
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <div class="fs-5 gap-1"><i class="bi bi-tags"></i>Rp. <?= number_format($item['harga'], 2, ',', '.'); ?></div>
@@ -150,6 +151,17 @@
         .then(response => response.json())
         .then(data => {
             console.log(data.message);
+            if(data.code === 400) {
+                swal({
+                    title: "Stok tidak mencukupi",
+                    text: data.message,
+                    icon: "error",
+                    button: "OK"
+                });
+                jumlahInput.value = jumlah;
+                let stok = document.getElementById('stok');
+                stok.innerText = 'Stok: ' + jumlah;
+            }
         })
         .catch(error => {
             console.error('Error:', error);
