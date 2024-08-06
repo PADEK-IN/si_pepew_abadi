@@ -7,7 +7,6 @@ require_once '../models/Pelanggan.php';
 require_once '../models/Keranjang.php';
 require_once '../models/Tagihan.php';
 require_once '../helpers/flash.php';
-require_once '../helpers/logTerminal.php';
 require_once '../helpers/redirect.php';
 class PesananCtrl {
     private $isAuth;
@@ -80,14 +79,15 @@ class PesananCtrl {
             if($metode_bayar == 'transfer'){
                 $this->tagihan->create($pesananId, $metode_bayar);
                 setFlash('success', 'Pesanan berhasil dibuat! Silahkan lakukan pembayaran.');
-                renderView('pelanggan/tagihan/pembayaran', compact('pesananId', 'net'));
+                return renderView('pelanggan/tagihan/pembayaran', compact('pesananId', 'net'));
             } else {
+                $this->tagihan->create($pesananId, $metode_bayar);
                 setFlash('success', 'Pesanan berhasil dibuat! Silahkan tunggu konfirmasi dari admin.');
-                redirect('/tagihan');
+                return redirect('/tagihan');
             }
         } catch (\Exception $th) {
             setFlash('error', 'Server error, gagal membuat pesanan!'.$th->getMessage());
-            redirect('/barang/detail/'.$id_barang);
+            return redirect('/barang/detail/'.$id_barang);
         }
     }
 
@@ -110,10 +110,10 @@ class PesananCtrl {
             $ppn = $total * 0.11;
             $net = $total + $ppn;
 
-            renderView('pelanggan/pesanan/checkout', compact('barangs', 'alamat', 'total', 'ppn', 'net', 'ids'));
+            return renderView('pelanggan/pesanan/checkout', compact('barangs', 'alamat', 'total', 'ppn', 'net', 'ids'));
         } catch (\Exception $th) {
             setFlash('error', 'Server error, gagal checkout!'.$th->getMessage());
-            redirect('/keranjang');
+            return redirect('/keranjang');
         }	
     }
 
@@ -155,14 +155,15 @@ class PesananCtrl {
             if($metode_bayar == 'transfer'){
                 $this->tagihan->create($pesananId, $metode_bayar);
                 setFlash('success', 'Pesanan berhasil dibuat! Silahkan lakukan pembayaran.');
-                renderView('pelanggan/tagihan/pembayaran', compact('pesananId', 'net'));
+                return renderView('pelanggan/tagihan/pembayaran', compact('pesananId', 'net'));
             } else {
+                $this->tagihan->create($pesananId, $metode_bayar);
                 setFlash('success', 'Pesanan berhasil dibuat! Silahkan tunggu konfirmasi dari admin.');
-                redirect('/tagihan');
+                return redirect('/tagihan');
             }
         } catch (\Exception $th) {
             setFlash('error', 'Server error, gagal membuat pesanan!'.$th->getMessage());
-            redirect('/barang');
+            return redirect('/barang');
         }
     }
 

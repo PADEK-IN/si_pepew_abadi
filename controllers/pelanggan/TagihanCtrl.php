@@ -11,6 +11,7 @@ require_once '../helpers/imageHandler.php';
 
 class TagihanCtrl {
     private $isAuth;
+    private $pelanggan; 
     private $tagihan; 
     private $imageHelper;
 
@@ -18,11 +19,20 @@ class TagihanCtrl {
         $this->isAuth = new MiddlewareAuth();
         $this->isAuth->isUser();
         $this->tagihan = new Tagihan($pdo);
+        $this->pelanggan = new Pelanggan($pdo);
         $this->imageHelper = new ImageHandler();
     }
 
     public function tagihan() {
-        renderView('pelanggan/tagihan/list');
+        try {
+            $id_pelanggan = $this->pelanggan->getByUserEmail($_SESSION['user']['email'])['id'];
+            $detailTagihan = $this->tagihan->getByIdPelangganWithDetailPesanan($id_pelanggan);
+            // console_log($detailTagihan);
+            return renderView('pelanggan/tagihan/list', compact('detailTagihan'));
+        } catch (\Exception $e) {
+            setFlash('error', 'Server Error, terjadi kesalahan saat mengambil data tagihan.'. $e->getMessage());
+            return redirect('/home');
+        }
     }
 
     public function pembayaran() {

@@ -1,6 +1,7 @@
 <?php
 session_start(); // Mengaktifkan session
 // Load the config app
+require_once '../helpers/logTerminal.php';
 require_once '../config/app.php';
 require_once '../config/db.php';
 

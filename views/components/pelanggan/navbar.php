@@ -23,13 +23,13 @@
         <ul>
             <!-- <li><a href="/home">Beranda</a></li> -->
             <li><a href="/barang">Barang</a></li>
-            <li class="dropdown">
+            <!-- <li class="dropdown">
                 <a href="#"><span>Pesanan</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
                     <li><a href="/pemesanan/proses">Diproses</a></li>
                     <li><a href="/pemesanan/selesai">Selesai</a></li>
                 </ul>
-            </li> 
+            </li>  -->
             <li><a href="/tagihan">Tagihan</a></li>        
             <li>
                 <a href="/keranjang">
