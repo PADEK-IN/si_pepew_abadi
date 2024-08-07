@@ -37,48 +37,71 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Code</th>
-                                        <th>Nama Penerima</th>
-                                        <th>Nama Barang</th>
-                                        <th>Jumlah</th>
-                                        <th>Harga</th>
-                                        <th>Total</th>
+                                        <th>ID Pesanan</th>
+                                        <th>Pemesan</th>
+                                        <th>Methode Pembayaran</th>
+                                        <th>Jumlah Bayar</th>
+                                        <th>Status</th>
+                                        <th>Bukti Bayar</th>
+                                        <th>Keterangan Bukti</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                    <th>No</th>
-                                        <th>Code</th>
-                                        <th>Nama Penerima</th>
-                                        <th>Nama Barang</th>
-                                        <th>Jumlah</th>
-                                        <th>Harga</th>
-                                        <th>Total</th>
+                                        <th>No</th>
+                                        <th>ID Pesanan</th>
+                                        <th>Pemesan</th>
+                                        <th>Methode Pembayaran</th>
+                                        <th>Jumlah Bayar</th>
+                                        <th>Status</th>
+                                        <th>Bukti Bayar</th>
+                                        <th>Keterangan Bukti</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <a href="/admin/tagihan/32">GFDYT237</a>
-                                        </td>
-                                        <td>Santorio widodo</td>
-                                        <td>Selimut</td>
-                                        <td>3</td>
-                                        <td>Rp. 50.000</td>
-                                        <td>Rp. 150.000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>
-                                            <a href="/admin/tagihan/43">73D82H2</a>
-                                        </td>
-                                        <td>Santorio widodo</td>
-                                        <td>Selimut</td>
-                                        <td>3</td>
-                                        <td>Rp. 50.000</td>
-                                        <td>Rp. 150.000</td>
-                                    </tr>
+                                    <?php foreach ($listTagihan as $index => $item): ?>
+                                        <tr>
+                                            <td><?php echo $index + 1; ?></td>
+                                            <td>
+                                                <a href="/admin/tagihan/<?php echo $item['id']; ?>"><?php echo $item['id_pesanan']; ?></a>
+                                            </td>
+                                            <td>
+                                                <?= $item['pelanggan']['nama'] ?>
+                                            </td>
+                                            <td>
+                                                <?php if($item['metode_bayar'] == 'cod') {
+                                                    echo '<span class="badge badge-success">COD</span>';
+                                                } else if($item['metode_bayar'] == 'transfer') {
+                                                    echo '<span class="badge badge-primary">Transfer</span>';
+                                                }?>
+                                            </td>
+                                            <td>Rp. <?= $item['jumlah_bayar'] ?></td>
+                                            <td>
+                                                <?php if($item['status'] == 'tertunda') {
+                                                    echo '<span class="badge badge-warning">Tertunda</span>';
+                                                } else if($item['status'] == 'lunas') {
+                                                    echo '<span class="badge badge-success">Lunas</span>';
+                                                } else {
+                                                    echo '<span class="badge badge-danger">Batal</span>';
+                                                }?>
+                                            </td>
+                                            <td>
+                                                <?php if($item['bukti_bayar'] !== null) {
+                                                    echo '<img src="/assets/img/barang/' . $item['bukti_bayar'] . '" alt="barang1" width="50px">';
+                                                } else {
+                                                    echo '<span class="badge badge-danger">Belum Upload</span>';
+                                                }?>
+                                            </td>
+                                            <td>
+                                                <?php if($item['isValid'] == '1') {
+                                                    echo '<span class="badge badge-success">Valid</span>';
+                                                } else {
+                                                    echo '<span class="badge badge-warning">Tidak Valid</span>';
+                                                }
+                                                ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>
