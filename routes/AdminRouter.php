@@ -44,7 +44,7 @@ addRoute('GET', "/{$adminPath}/pemesanan/:id", $adminPath, 'transactionControlle
 // tagihan
 addRoute('GET', "/{$adminPath}/tagihan", $adminPath, 'transactionController', 'tagihan');
 addRoute('GET', "/{$adminPath}/tagihan/:id", $adminPath, 'transactionController', 'detailTagihan');
-addRoute('GET', "/{$adminPath}/tagihan-validasi-list", $adminPath, 'transactionController', 'validasiTagihan');
+addRoute('POST', "/{$adminPath}/tagihan-validasi/:id", $adminPath, 'transactionController', 'validasiTagihan');
 // pengiriman
 addRoute('GET', "/{$adminPath}/pengiriman", $adminPath, 'transactionController', 'pengiriman');
 addRoute('GET', "/{$adminPath}/pengiriman/:id", $adminPath, 'transactionController', 'detailPengiriman');

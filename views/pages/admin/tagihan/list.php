@@ -39,25 +39,14 @@
                                         <th>No</th>
                                         <th>ID Pesanan</th>
                                         <th>Pemesan</th>
-                                        <th>Methode Pembayaran</th>
+                                        <th>Methode Pengiriman</th>
                                         <th>Jumlah Bayar</th>
                                         <th>Status</th>
                                         <th>Bukti Bayar</th>
                                         <th>Keterangan Bukti</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>ID Pesanan</th>
-                                        <th>Pemesan</th>
-                                        <th>Methode Pembayaran</th>
-                                        <th>Jumlah Bayar</th>
-                                        <th>Status</th>
-                                        <th>Bukti Bayar</th>
-                                        <th>Keterangan Bukti</th>
-                                    </tr>
-                                </tfoot>
                                 <tbody>
                                     <?php foreach ($listTagihan as $index => $item): ?>
                                         <tr>
@@ -99,6 +88,14 @@
                                                     echo '<span class="badge badge-warning">Tidak Valid</span>';
                                                 }
                                                 ?>
+                                            </td>
+                                            <td>
+                                                <form action="/admin/tagihan-validasi/<?php echo $item['id']; ?>" method="POST">
+                                                    <button type="submit" class="btn btn-sm btn-primary">
+                                                        <i class="fas fa-check"></i>
+                                                        Validasi
+                                                    </button>
+                                                </form>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

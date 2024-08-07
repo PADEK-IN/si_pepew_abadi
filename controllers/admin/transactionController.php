@@ -46,10 +46,12 @@ class transactionController{
                 return redirect('/home');
             }
         }
-        public function validasiTagihan() {
+        public function validasiTagihan($id) {
             try {
-                //code...
-                renderView('admin/tagihan/validasi');
+                $this->tagihan->validate($id, 'lunas', 1);
+                setFlash('success', 'Data Pesanan berhasil divalidasi!');
+                redirect('/admin/tagihan');
+                // renderView('admin/tagihan/validasi');
             } catch (\Exception $e) {
                 setFlash('error', 'Server Error, terjadi kesalahan saat mengambil data tagihan.'. $e->getMessage());
                 return redirect('/home');
