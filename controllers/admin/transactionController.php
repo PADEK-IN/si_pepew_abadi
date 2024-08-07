@@ -26,9 +26,9 @@ class transactionController{
     // tagihan
         public function tagihan() {
             try {
-                $listTagihan = $this->tagihan->getAllWithPesananAndPelanggan();
+                $listTagihan = $this->tagihan->getAllWithPesananAndPelangganAndPengiriman();
 
-                console_log($listTagihan);
+                // console_log($listTagihan);
                 renderView('admin/tagihan/list', compact('listTagihan'));
             } catch (\Exception $e) {
                 setFlash('error', 'Server Error, terjadi kesalahan saat mengambil data tagihan.'. $e->getMessage());

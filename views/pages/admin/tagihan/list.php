@@ -83,16 +83,17 @@
                                                 }?>
                                             </td>
                                             <td>
-                                            <?php 
-                                                if ($item['metode_bayar'] === 'transfer') {
-                                                    if ($item['bukti_bayar'] !== null) {
-                                                        echo '<img src="/assets/img/barang/' . htmlspecialchars($item['bukti_bayar']) . '" alt="bukti_bayar" width="50px">';
-                                                    } else {
-                                                        echo '<span class="badge badge-danger">Belum Upload</span>';
+                                                <?php 
+                                                    if ($item['metode_bayar'] === 'transfer') {
+                                                        if ($item['bukti_bayar'] !== null) {
+                                                            echo '<img src="/assets/img/barang/' . htmlspecialchars($item['bukti_bayar']) . '" alt="bukti_bayar" width="50px">';
+                                                            
+                                                        } else {
+                                                            echo '<span class="badge badge-danger">Belum Upload</span>';
+                                                        }
+                                                    } elseif ($item['metode_bayar'] === 'cod') {
+                                                        echo '<span class="badge badge-secondary">--</span>';
                                                     }
-                                                } elseif ($item['metode_bayar'] === 'cod') {
-                                                    echo '<span class="badge badge-secondary">--</span>';
-                                                }
                                                 ?>
                                             </td>
                                             <td>
@@ -104,21 +105,25 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                <?php if($item['pesanan']['metode_kirim'] == 'diantar' && $item['status'] == 'lunas') { ?>
-                                                    <a href="/admin/pengiriman/create/<?php echo $item['id']; ?>" class="btn btn-sm btn-success">Kirim</a>
-                                                <?php } ?>
-                                                <?php 
-                                                    if ($item['status'] !== 'lunas' && ($item['bukti_bayar'] !== null || $item['metode_bayar'] !== 'transfer')): 
-                                                    ?>
-                                                        <form action="/admin/tagihan-validasi/<?php echo htmlspecialchars($item['id']); ?>" method="POST">
-                                                            <button type="submit" class="btn btn-sm btn-primary">Validasi</button>
-                                                        </form>
-                                                <?php endif; ?>
-                                                <form action="/admin/tagihan-reject/<?php echo $item['id']; ?>" method="POST">
-                                                    <button type="submit" class="btn btn-sm btn-danger">
-                                                        Tolak
-                                                    </button>
-                                                </form>
+                                                <?php
+                                                    if ($item['pengiriman'] == false) {
+                                                        if ($item['pesanan']['metode_kirim'] === 'diantar' && $item['status'] === 'lunas') {
+                                                            echo '<a href="/admin/pengiriman/create/' . htmlspecialchars($item['id']) . '" class="btn btn-sm btn-success">Kirim</a>';
+                                                        }
+                                                        
+                                                        if ($item['status'] !== 'lunas' && ($item['bukti_bayar'] !== null || $item['metode_bayar'] !== 'transfer')) {
+                                                            echo '<form action="/admin/tagihan-validasi/' . htmlspecialchars($item['id']) . '" method="POST">
+                                                                    <button type="submit" class="btn btn-sm btn-primary">Validasi</button>
+                                                                </form>';
+                                                        }
+                                                        
+                                                        echo '<form action="/admin/tagihan-reject/' . htmlspecialchars($item['id']) . '" method="POST">
+                                                                <button type="submit" class="btn btn-sm btn-danger">Tolak</button>
+                                                            </form>';
+                                                    } else {
+                                                        echo '<span class="badge badge-secondary">---</span>';
+                                                    }
+                                                ?>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

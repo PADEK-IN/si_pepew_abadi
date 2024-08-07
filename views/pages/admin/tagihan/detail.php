@@ -28,6 +28,15 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <h4 class="card-title">Detail Tagihan #<?= $detailTagihan['id_pesanan'] ?></h4>
+                        <?php if ($detailTagihan['status'] == 'lunas' && ($detailTagihan['bukti_bayar'] !== null || $detailTagihan['metode_bayar'] !== 'transfer')): 
+                            ?>
+                                <form action="/admin/tagihan-validasi/<?php echo htmlspecialchars($detailTagihan['id']); ?>" method="POST">
+                                    <button type="submit" class="btn btn-sm btn-primary btn-round ms-auto">
+                                        <i class="fas fa-file-import"></i>
+                                        Validasi
+                                    </button>
+                                </form>
+                        <?php endif; ?>
                     </div>
                     <div class="card-body">
                         <div class="row">

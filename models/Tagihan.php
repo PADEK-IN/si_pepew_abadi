@@ -47,7 +47,7 @@ class Tagihan extends BaseModel {
         return $tagihan;
     }
 
-    public function getAllWithPesananAndPelanggan() {
+    public function getAllWithPesananAndPelangganAndPengiriman() {
         $stmt = $this->pdo->prepare("SELECT * FROM tagihan ORDER BY created_at DESC");
         $stmt->execute();
         $tagihan = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -67,6 +67,12 @@ class Tagihan extends BaseModel {
             $stmt->execute([$value['id_pesanan']]);
             $pelanggan = $stmt->fetch(PDO::FETCH_ASSOC);
             $tagihan[$key]['pelanggan'] = $pelanggan;
+
+            // Get the pengiriman details
+            $stmt = $this->pdo->prepare("SELECT * FROM pengiriman WHERE id_pesanan = ?");
+            $stmt->execute([$value['id_pesanan']]);
+            $pengiriman = $stmt->fetch(PDO::FETCH_ASSOC);
+            $tagihan[$key]['pengiriman'] = $pengiriman;
         }
         return $tagihan;
     }
