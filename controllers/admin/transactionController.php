@@ -37,7 +37,7 @@ class transactionController{
         }
         public function detailTagihan($id) {
             try {
-                $detailTagihan = $this->tagihan->getByIdPesananWithPesananAndPelanggan($id);
+                $detailTagihan = $this->tagihan->getByIdWithPesananAndPelanggan($id);
                 // console_log($detailTagihan);
 
                 renderView('admin/tagihan/detail', compact('detailTagihan'));
@@ -47,7 +47,13 @@ class transactionController{
             }
         }
         public function validasiTagihan() {
-            renderView('admin/tagihan/validasi');
+            try {
+                //code...
+                renderView('admin/tagihan/validasi');
+            } catch (\Exception $e) {
+                setFlash('error', 'Server Error, terjadi kesalahan saat mengambil data tagihan.'. $e->getMessage());
+                return redirect('/home');
+            }
         }
 
     // pengiriman

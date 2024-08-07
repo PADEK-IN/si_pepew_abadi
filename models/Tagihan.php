@@ -71,9 +71,9 @@ class Tagihan extends BaseModel {
         return $tagihan;
     }
 
-    public function getByIdPesananWithPesananAndPelanggan($id_pesanan) {
-        $stmt = $this->pdo->prepare("SELECT * FROM tagihan WHERE id_pesanan = ?");
-        $stmt->execute([$id_pesanan]);
+    public function getByIdWithPesananAndPelanggan($id) {
+        $stmt = $this->pdo->prepare("SELECT * FROM tagihan WHERE id = ?");
+        $stmt->execute([$id]);
         $tagihan = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // Get the pesanan details
