@@ -70,6 +70,37 @@ class Tagihan extends BaseModel {
         }
         return $tagihan;
     }
+
+    public function getByIdPesananWithPesananAndPelanggan($id_pesanan) {
+        $stmt = $this->pdo->prepare("SELECT * FROM tagihan WHERE id_pesanan = ?");
+        $stmt->execute([$id_pesanan]);
+        $tagihan = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Get the pesanan details
+        $stmt = $this->pdo->prepare("SELECT metode_kirim, ppn, total FROM pesanan WHERE id = ?");
+        $stmt->execute([$tagihan['id_pesanan']]);
+        $pesanan = $stmt->fetch(PDO::FETCH_ASSOC);
+        $tagihan['pesanan'] = $pesanan;
+
+        $stmt = $this->pdo->prepare("SELECT id_barang, jumlah FROM pesanan_items WHERE id_pesanan = ?");
+        $stmt->execute([$tagihan['id_pesanan']]);
+        $item_pesanan = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($item_pesanan as $key => $value) {
+            $stmt = $this->pdo->prepare("SELECT id, nama, harga, satuan, berat FROM barang WHERE id = ?");
+            $stmt->execute([$value['id_barang']]);
+            $barang = $stmt->fetch(PDO::FETCH_ASSOC);
+            $item_pesanan[$key]['barang'] = $barang;
+        }
+        $tagihan['item_pesanan'] = $item_pesanan;
+
+        // Get the pelanggan details
+        $stmt = $this->pdo->prepare("SELECT nama, email, alamat FROM pelanggan WHERE id = (SELECT id_pelanggan FROM pesanan WHERE id = ?)");
+        $stmt->execute([$tagihan['id_pesanan']]);
+        $pelanggan = $stmt->fetch(PDO::FETCH_ASSOC);
+        $tagihan['pelanggan'] = $pelanggan;
+
+        return $tagihan;
+    }
 }
 ?>
     
