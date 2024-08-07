@@ -90,12 +90,18 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                <form action="/admin/tagihan-validasi/<?php echo $item['id']; ?>" method="POST">
-                                                    <button type="submit" class="btn btn-sm btn-primary">
-                                                        <i class="fas fa-check"></i>
-                                                        Validasi
-                                                    </button>
-                                                </form>
+                                                <div>
+                                                    <form action="/admin/tagihan-validasi/<?php echo $item['id']; ?>" method="POST">
+                                                        <button type="submit" class="btn btn-sm btn-primary">
+                                                            Validasi
+                                                        </button>
+                                                    </form>
+                                                    <form action="/admin/tagihan-reject/<?php echo $item['id']; ?>" method="POST">
+                                                        <button type="submit" class="btn btn-sm btn-danger">
+                                                            Tolak
+                                                        </button>
+                                                    </form>
+                                                </div>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

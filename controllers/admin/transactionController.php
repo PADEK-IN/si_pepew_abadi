@@ -57,6 +57,17 @@ class transactionController{
                 return redirect('/home');
             }
         }
+        public function rejectTagihan($id) {
+            try {
+                $this->tagihan->reject($id, 'batal', 0);
+                setFlash('success', 'Data Pesanan berhasil ditolak!');
+                redirect('/admin/tagihan');
+                // renderView('admin/tagihan/validasi');
+            } catch (\Exception $e) {
+                setFlash('error', 'Server Error, terjadi kesalahan saat mengambil data tagihan.'. $e->getMessage());
+                return redirect('/home');
+            }
+        }
 
     // pengiriman
         public function pengiriman() {

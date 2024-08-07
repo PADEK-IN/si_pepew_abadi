@@ -106,6 +106,11 @@ class Tagihan extends BaseModel {
         $stmt = $this->pdo->prepare("UPDATE tagihan SET status = ?, isValid = ? WHERE id = ?");
         return $stmt->execute([$status, $isValid, $id]);
     }
+
+    public function reject($id, $status, $isValid) {
+        $stmt = $this->pdo->prepare("UPDATE tagihan SET status = ?, isValid = ? WHERE id = ?");
+        return $stmt->execute([$status, $isValid, $id]);
+    }
 }
 ?>
     
