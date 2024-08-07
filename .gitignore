@@ -1,2 +1,2 @@
-public/assets/img/*
-!public/assets/img/client/
+# public/assets/img/*
+# !public/assets/img/client/
