@@ -37,19 +37,9 @@
                                         <th>Alamat</th>
                                         <th>Bukti</th>
                                         <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Penerima</th>
-                                        <th>ID Pesanan</th>
-                                        <th>Tanggal</th>
-                                        <th>Alamat</th>
-                                        <th>Bukti</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </tfoot>
                                 <tbody>
                                     <?php if($pengiriman == 0) { ?>
                                         <tr>
@@ -59,12 +49,31 @@
                                         <?php foreach ($pengiriman as $index => $item): ?>
                                             <tr>
                                                 <td><?php echo $index + 1; ?></td>
-                                                <td>Fulan Si pengirim</td>
+                                                <td><?php echo $item['pelanggan']['nama']; ?></td>
                                                 <td><?php echo $item['id_pesanan']; ?></td>
                                                 <td><?php echo $item['tanggal']; ?></td>
                                                 <td><?php echo $item['alamat']; ?></td>
-                                                <td><?php echo $item['bukti']; ?></td>
-                                                <td><?php echo $item['status']; ?></td>
+                                                <td>
+                                                    <?php if($item['bukti'] == null) {?>
+                                                        <span class="badge badge-danger">---</span>
+                                                    <?php } else { ?>
+                                                        <span class="badge badge-success">Fotonya</span>
+                                                    <?php } ?>
+                                                </td>
+                                                <td>
+                                                    <?php if($item['status'] == 'diproses') {?>
+                                                        <span class="badge badge-warning">Diproses</span>
+                                                    <?php } else { ?>
+                                                        <span class="badge badge-success">Transaksi Selesai</span>
+                                                    <?php } ?>
+                                                </td>
+                                                <td>
+                                                    <?php if($item['status'] == 'diproses') {?>
+                                                        <a href="/admin/pengiriman/<?= $item['id'] ?>/edit" class="btn btn-sm btn-primary">Validate</a>
+                                                    <?php } else { ?>
+                                                        <span class="badge badge-secondary">---</span>
+                                                    <?php } ?>
+                                                </td>
                                             </tr>
                                         <?php endforeach; ?>
                                     <?php } ?>

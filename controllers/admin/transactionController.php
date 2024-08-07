@@ -71,7 +71,8 @@ class transactionController{
 
     // pengiriman
         public function pengiriman() {
-            $pengiriman = $this->pengiriman->getAll();
+            $pengiriman = $this->pengiriman->getAllWithTagihanAndPesananAndPelanggan();
+            // console_log($pengiriman);
 
             renderView('admin/pengiriman/list', compact('pengiriman'));
         }
