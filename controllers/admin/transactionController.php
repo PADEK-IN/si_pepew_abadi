@@ -28,7 +28,7 @@ class transactionController{
             try {
                 $listTagihan = $this->tagihan->getAllWithPesananAndPelanggan();
 
-                // console_log($listTagihan);
+                console_log($listTagihan);
                 renderView('admin/tagihan/list', compact('listTagihan'));
             } catch (\Exception $e) {
                 setFlash('error', 'Server Error, terjadi kesalahan saat mengambil data tagihan.'. $e->getMessage());
@@ -74,6 +74,33 @@ class transactionController{
             $pengiriman = $this->pengiriman->getAll();
 
             renderView('admin/pengiriman/list', compact('pengiriman'));
+        }
+
+        public function createPengiriman($id) {
+            try {
+                $tagihan = $this->tagihan->getByIdWithPesananAndPelanggan($id);
+                // console_log($tagihan);
+    
+                renderView('admin/pengiriman/create', compact('tagihan'));
+            } catch (\Exception $e) {
+                setFlash('error', 'Server Error, terjadi kesalahan saat mengambil data tagihan.'. $e->getMessage());
+                return redirect('/home');
+            }
+        }
+        public function storePengiriman() {
+            try {
+                $id_pesanan = filter_input(INPUT_POST, 'id_pesanan', FILTER_DEFAULT);
+                $tanggal = filter_input(INPUT_POST, 'tanggal', FILTER_DEFAULT);
+                $alamat = filter_input(INPUT_POST, 'alamat', FILTER_DEFAULT);
+
+                $this->pengiriman->create($id_pesanan, $tanggal, $alamat);
+
+                setFlash('success', 'Data Pengiriman Pesanan berhasil dibuat!');
+                redirect('/admin/pengiriman');
+            } catch (\Exception $e) {
+                setFlash('error', 'Server Error, terjadi kesalahan saat mengambil data tagihan.'. $e->getMessage());
+                return redirect('/admin/dashboard');
+            }
         }
         public function detailPengiriman($id) {
             renderView('admin/pengiriman/detail', ['id' => $id]);

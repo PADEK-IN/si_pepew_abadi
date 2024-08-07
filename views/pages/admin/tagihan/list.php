@@ -39,6 +39,7 @@
                                         <th>No</th>
                                         <th>ID Pesanan</th>
                                         <th>Pemesan</th>
+                                        <th>Methode Pembayaran</th>
                                         <th>Methode Pengiriman</th>
                                         <th>Jumlah Bayar</th>
                                         <th>Status</th>
@@ -59,9 +60,16 @@
                                             </td>
                                             <td>
                                                 <?php if($item['metode_bayar'] == 'cod') {
-                                                    echo '<span class="badge badge-success">COD</span>';
+                                                    echo '<span class="badge badge-success">Cash</span>';
                                                 } else if($item['metode_bayar'] == 'transfer') {
                                                     echo '<span class="badge badge-primary">Transfer</span>';
+                                                }?>
+                                            </td>
+                                            <td>
+                                                <?php if($item['pesanan']['metode_kirim'] == 'diantar') {
+                                                    echo '<span class="badge badge-success">Di Antar</span>';
+                                                } else {
+                                                    echo '<span class="badge badge-primary">Di Jemput</span>';
                                                 }?>
                                             </td>
                                             <td>Rp. <?= $item['jumlah_bayar'] ?></td>
@@ -75,11 +83,17 @@
                                                 }?>
                                             </td>
                                             <td>
-                                                <?php if($item['bukti_bayar'] !== null) {
-                                                    echo '<img src="/assets/img/barang/' . $item['bukti_bayar'] . '" alt="barang1" width="50px">';
-                                                } else {
-                                                    echo '<span class="badge badge-danger">Belum Upload</span>';
-                                                }?>
+                                            <?php 
+                                                if ($item['metode_bayar'] === 'transfer') {
+                                                    if ($item['bukti_bayar'] !== null) {
+                                                        echo '<img src="/assets/img/barang/' . htmlspecialchars($item['bukti_bayar']) . '" alt="bukti_bayar" width="50px">';
+                                                    } else {
+                                                        echo '<span class="badge badge-danger">Belum Upload</span>';
+                                                    }
+                                                } elseif ($item['metode_bayar'] === 'cod') {
+                                                    echo '<span class="badge badge-secondary">--</span>';
+                                                }
+                                                ?>
                                             </td>
                                             <td>
                                                 <?php if($item['isValid'] == '1') {
@@ -90,18 +104,21 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                <div>
-                                                    <form action="/admin/tagihan-validasi/<?php echo $item['id']; ?>" method="POST">
-                                                        <button type="submit" class="btn btn-sm btn-primary">
-                                                            Validasi
-                                                        </button>
-                                                    </form>
-                                                    <form action="/admin/tagihan-reject/<?php echo $item['id']; ?>" method="POST">
-                                                        <button type="submit" class="btn btn-sm btn-danger">
-                                                            Tolak
-                                                        </button>
-                                                    </form>
-                                                </div>
+                                                <?php if($item['pesanan']['metode_kirim'] == 'diantar' && $item['status'] == 'lunas') { ?>
+                                                    <a href="/admin/pengiriman/create/<?php echo $item['id']; ?>" class="btn btn-sm btn-success">Kirim</a>
+                                                <?php } ?>
+                                                <?php 
+                                                    if ($item['status'] !== 'lunas' && ($item['bukti_bayar'] !== null || $item['metode_bayar'] !== 'transfer')): 
+                                                    ?>
+                                                        <form action="/admin/tagihan-validasi/<?php echo htmlspecialchars($item['id']); ?>" method="POST">
+                                                            <button type="submit" class="btn btn-sm btn-primary">Validasi</button>
+                                                        </form>
+                                                <?php endif; ?>
+                                                <form action="/admin/tagihan-reject/<?php echo $item['id']; ?>" method="POST">
+                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                        Tolak
+                                                    </button>
+                                                </form>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
