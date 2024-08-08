@@ -86,7 +86,7 @@
                                                 <?php 
                                                     if ($item['metode_bayar'] === 'transfer') {
                                                         if ($item['bukti_bayar'] !== null) {
-                                                            echo '<img src="/assets/img/barang/' . htmlspecialchars($item['bukti_bayar']) . '" alt="bukti_bayar" width="50px">';
+                                                            echo '<img src="/assets/img/bukti/' . htmlspecialchars($item['bukti_bayar']) . '" alt="bukti_bayar" width="50px">';
                                                             
                                                         } else {
                                                             echo '<span class="badge badge-danger">Belum Upload</span>';

@@ -47,7 +47,7 @@
                                             <!-- foto Bukti -->
                                             <div class="my-4">
                                             <?php if($detailTagihan['bukti_bayar'] !== null) {
-                                                echo '<img src="/assets/img/barang/' . $detailTagihan['bukti_bayar'] . '"  alt="..." class="avatar-img rounded" style="max-width: 50%; height: auto; margin: 0 auto; object-fit: cover;">';
+                                                echo '<img src="/assets/img/bukti/' . $detailTagihan['bukti_bayar'] . '"  alt="..." class="avatar-img rounded" style="max-width: 50%; height: auto; margin: 0 auto; object-fit: cover;">';
                                             } else {
                                                 echo '<span class="badge badge-danger">Belum Upload</span>';
                                             }?>
