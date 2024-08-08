@@ -75,11 +75,50 @@
                                                 onclick="deleteBarang('<?php echo $item['id']; ?>','<?php echo $item['nama']; ?>')">
                                                     Hapus
                                                 </button>
+                                                <!-- tambah stok -->
+                                                <button href="" class="btn btn-sm btn-success m-1"
+                                                data-bs-toggle="modal" data-bs-target="#editModal"
+                                                data-bs-id="<?php echo $item['id']; ?>"
+                                                data-bs-nama="<?php echo $item['kategori_nama']; ?>"
+                                                data-bs-stok="<?php echo $item['stok']; ?>"
+                                                >
+                                                    Tambah Stok
+                                                </button>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                    <!-- Modal Edit -->
+                    <div class="modal fade" id="editModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <form action="" method="post" id="edit-Form">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">Tambah Stok Barang <span id="name"></span></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="stok" class="col-form-label">Jumlah Stok yang akan ditambahkan:</label>
+                                            <input type="number" class="form-control" id="stok" placeholder="...">
+                                            <small id="satuan" class="form-text text-muted text-success">
+                                                Stok Barang Saat Ini berjumlah: <span class="text-black">0</span> Buah
+                                            </small>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="totalStok" class="col-form-label">Total Jumlah Stok:</label>
+                                            <input type="number" name="stok" class="form-control" id="totalStok" placeholder="..." readonly>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                        <button type="submit" class="btn btn-primary">Tambah</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -88,6 +127,44 @@
     </div>
 </div>
 <script>
+        let editModal = document.getElementById('editModal');
+editModal.addEventListener('show.bs.modal', function (event) {
+    let button = event.relatedTarget;
+
+    let id = button.getAttribute('data-bs-id');
+    let name = button.getAttribute('data-bs-nama');
+    let currentStok = parseInt(button.getAttribute('data-bs-stok')); // Convert to integer
+
+    let modalTitle = this.querySelector('.modal-title #name');
+    let modalInputStok = this.querySelector('.modal-body #stok');
+    let modalCurrentStock = this.querySelector('.modal-body #satuan span');
+    let modalTotalStock = this.querySelector('.modal-body #totalStok');
+
+    modalTitle.textContent = name; // Update the title with the item name
+    modalInputStok.value = ''; // Reset the input for the new stock
+    modalCurrentStock.textContent = currentStok; // Update the current stock display
+    modalTotalStock.value = currentStok; // Initialize the total stock with current stock
+
+    // Event listener for input changes
+    modalInputStok.addEventListener('input', function () {
+        let addedStok = parseInt(modalInputStok.value) || 0; // Get the added stock
+
+        // Validate the input: must be greater than 0
+        if (addedStok < 1) {
+            modalInputStok.value = ''; // Clear invalid input
+            alert("Jumlah stok harus lebih besar dari 0!"); // Feedback message
+            return;
+        }
+
+        modalTotalStock.value = currentStok + addedStok; // Update total stock
+    });
+
+    const form = document.getElementById('edit-Form');
+    form.action = `/admin/barang/stok/${id}`;
+});
+
+
+
     function deleteBarang(id, name) {
         swal({
             title: `Yakin ingin menghapus barang ${name}?`,

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once '../controllers/admin/IndexAdminCtrl.php';
 require_once '../controllers/admin/KategoriAdminCtrl.php';
@@ -36,6 +36,7 @@ addRoute('GET', "/{$adminPath}/barang/create", $adminPath, 'BarangAdminCtrl', 'c
 addRoute('POST', "/{$adminPath}/barang/store", $adminPath, 'BarangAdminCtrl', 'store');
 addRoute('GET', "/{$adminPath}/barang/edit/:id", $adminPath, 'BarangAdminCtrl', 'edit');
 addRoute('POST', "/{$adminPath}/barang/update/:id", $adminPath, 'BarangAdminCtrl', 'update');
+addRoute('POST', "/{$adminPath}/barang/stok/:id", $adminPath, 'BarangAdminCtrl', 'updateStok');
 addRoute('GET', "/{$adminPath}/barang/delete/:id", $adminPath, 'BarangAdminCtrl', 'destroy');
 // transaksi
 addRoute('GET', "/{$adminPath}/transaksi/list", $adminPath, 'transactionController', 'list');

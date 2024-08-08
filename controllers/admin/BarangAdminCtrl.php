@@ -128,5 +128,25 @@ class BarangAdminCtrl {
             redirect('/admin/barang');
         }
     }
+
+    // tambah stok barang
+    public function updateStok($id) {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            try {
+                // Get the new stock value from POST request
+                $addedStok = filter_input(INPUT_POST, 'stok', FILTER_VALIDATE_INT);
+    
+                // Update the stock in the database
+                $this->barang->updateStok($id, $addedStok);
+    
+                setFlash('success', 'Stok barang berhasil diubah!');
+                redirect('/admin/barang');
+            } catch (\Exception $e) {
+                setFlash('error', 'Server error, gagal mengubah stok barang!');
+                redirect('/admin/barang');
+            }
+        }
+    }
+    
 }
 ?>
