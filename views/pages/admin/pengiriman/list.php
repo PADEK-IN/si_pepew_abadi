@@ -35,9 +35,9 @@
                                         <th>ID Pesanan</th>
                                         <th>Tanggal</th>
                                         <th>Alamat</th>
-                                        <th>Bukti</th>
+                                        <!-- <th>Bukti</th> -->
                                         <th>Status</th>
-                                        <th>Action</th>
+                                        <!-- <th>Action</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -53,27 +53,27 @@
                                                 <td><?php echo $item['id_pesanan']; ?></td>
                                                 <td><?php echo $item['tanggal']; ?></td>
                                                 <td><?php echo $item['alamat']; ?></td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($item['bukti'] == null) {?>
                                                         <span class="badge badge-danger">---</span>
                                                     <?php } else { ?>
                                                         <span class="badge badge-success">Fotonya</span>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
-                                                    <?php if($item['status'] == 'diproses') {?>
-                                                        <span class="badge badge-warning">Diproses</span>
+                                                    <?php if($item['status'] == 'terkirim') {?>
+                                                        <span class="badge badge-success">Terkirim</span>
                                                     <?php } else { ?>
-                                                        <span class="badge badge-success">Transaksi Selesai</span>
+                                                        <span class="badge badge-warning">Diproses</span>
                                                     <?php } ?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($item['status'] == 'diproses') {?>
                                                         <a href="/admin/pengiriman/<?= $item['id'] ?>/edit" class="btn btn-sm btn-primary">Validate</a>
                                                     <?php } else { ?>
                                                         <span class="badge badge-secondary">---</span>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                             </tr>
                                         <?php endforeach; ?>
                                     <?php } ?>

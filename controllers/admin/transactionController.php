@@ -14,6 +14,17 @@ class transactionController{
         $this->tagihan = new Tagihan($pdo);
         $this->pengiriman = new Pengiriman($pdo);
     }
+    public function list() {
+        try {
+            $listTagihan = $this->tagihan->getAllWithPesananAndPelangganAndPengiriman();
+
+            // console_log($listTagihan);
+            renderView('admin/tagihan/list', compact('listTagihan'));
+        } catch (\Exception $e) {
+            setFlash('error', 'Server Error, terjadi kesalahan saat mengambil data tagihan.'. $e->getMessage());
+            return redirect('/home');
+        }
+    }
 
     // pemesanan
         public function pemesanan() {
@@ -24,17 +35,6 @@ class transactionController{
         }
 
     // tagihan
-        public function tagihan() {
-            try {
-                $listTagihan = $this->tagihan->getAllWithPesananAndPelangganAndPengiriman();
-
-                // console_log($listTagihan);
-                renderView('admin/tagihan/list', compact('listTagihan'));
-            } catch (\Exception $e) {
-                setFlash('error', 'Server Error, terjadi kesalahan saat mengambil data tagihan.'. $e->getMessage());
-                return redirect('/home');
-            }
-        }
         public function detailTagihan($id) {
             try {
                 $detailTagihan = $this->tagihan->getByIdWithPesananAndPelanggan($id);
@@ -50,7 +50,7 @@ class transactionController{
             try {
                 $this->tagihan->validate($id, 'lunas', 1);
                 setFlash('success', 'Data Pesanan berhasil divalidasi!');
-                redirect('/admin/tagihan');
+                redirect('/admin/transaksi/list');
                 // renderView('admin/tagihan/validasi');
             } catch (\Exception $e) {
                 setFlash('error', 'Server Error, terjadi kesalahan saat mengambil data tagihan.'. $e->getMessage());
@@ -61,7 +61,7 @@ class transactionController{
             try {
                 $this->tagihan->reject($id, 'batal', 0);
                 setFlash('success', 'Data Pesanan berhasil ditolak!');
-                redirect('/admin/tagihan');
+                redirect('/admin/transaksi/list');
                 // renderView('admin/tagihan/validasi');
             } catch (\Exception $e) {
                 setFlash('error', 'Server Error, terjadi kesalahan saat mengambil data tagihan.'. $e->getMessage());

@@ -38,11 +38,11 @@ addRoute('GET', "/{$adminPath}/barang/edit/:id", $adminPath, 'BarangAdminCtrl', 
 addRoute('POST', "/{$adminPath}/barang/update/:id", $adminPath, 'BarangAdminCtrl', 'update');
 addRoute('GET', "/{$adminPath}/barang/delete/:id", $adminPath, 'BarangAdminCtrl', 'destroy');
 // transaksi
+addRoute('GET', "/{$adminPath}/transaksi/list", $adminPath, 'transactionController', 'list');
 // pesanan
 addRoute('GET', "/{$adminPath}/pemesanan", $adminPath, 'transactionController', 'pemesanan');
 addRoute('GET', "/{$adminPath}/pemesanan/:id", $adminPath, 'transactionController', 'detailPemesanan');
 // tagihan
-addRoute('GET', "/{$adminPath}/tagihan", $adminPath, 'transactionController', 'tagihan');
 addRoute('GET', "/{$adminPath}/tagihan/:id", $adminPath, 'transactionController', 'detailTagihan');
 addRoute('POST', "/{$adminPath}/tagihan-validasi/:id", $adminPath, 'transactionController', 'validasiTagihan');
 addRoute('POST', "/{$adminPath}/tagihan-reject/:id", $adminPath, 'transactionController', 'rejectTagihan');

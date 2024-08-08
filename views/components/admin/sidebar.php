@@ -70,14 +70,14 @@
                     </a>
                     <div class="collapse" id="transaksi">
                         <ul class="nav nav-collapse">
-                            <li>
+                            <!-- <li>
                                 <a href="/admin/pemesanan">
                                 <span class="sub-item">Pemesanan</span>
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
-                                <a href="/admin/tagihan">
-                                <span class="sub-item">Tagihan</span>
+                                <a href="/admin/transaksi/list">
+                                <span class="sub-item">List</span>
                                 </a>
                             </li>
                             <li>

@@ -11,15 +11,15 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/tagihan">
-                        Tagihan
+                    <a href="/admin/transaksi/list">
+                        List Transaksi
                     </a>
                 </li>
                 <li class="separator">
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <b>Detail Tagihan</b>
+                    <b>Detail Transaksi</b>
                 </li>
             </ul>
         </div>

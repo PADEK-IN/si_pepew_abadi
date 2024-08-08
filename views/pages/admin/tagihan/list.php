@@ -25,10 +25,10 @@
                                 <i class="fas fa-file-alt"></i>
                                 Print
                             </a>
-                            <a class="btn btn-sm btn-primary btn-round ms-auto" href="/admin/tagihan-validasi-list">
+                            <!-- <a class="btn btn-sm btn-primary btn-round ms-auto" href="/admin/tagihan-validasi-list">
                                 <i class="fas fa-file-import"></i>
                                 Request Validasi
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                     <div class="card-body">

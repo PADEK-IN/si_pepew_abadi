@@ -6,7 +6,7 @@ class Pengiriman extends BaseModel {
         parent::__construct($pdo, 'pengiriman');
     }
 
-    public function create($id_pesanan, $tanggal, $alamat, $bukti = null, $status = 'diproses') {
+    public function create($id_pesanan, $tanggal, $alamat, $bukti = null, $status = 'terkirim') {
         $stmt = $this->pdo->prepare("INSERT INTO pengiriman (id_pesanan, tanggal, alamat, bukti, status) VALUES (?, ?, ?, ?, ?)");
         return $stmt->execute([$id_pesanan, $tanggal, $alamat, $bukti, $status]);
     }
