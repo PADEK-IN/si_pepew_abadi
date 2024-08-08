@@ -10,6 +10,7 @@
                 <a href="#" class="btn btn-primary btn-round">Add Customer</a>
             </div> -->
         </div>
+        <!-- total pelanggan -->
         <div class="row">
             <div class="col-sm-6 col-md-3">
                 <div class="card card-stats card-round">
@@ -23,13 +24,16 @@
                             <div class="col col-stats ms-3 ms-sm-0">
                                 <div class="numbers">
                                     <p class="card-category">Pelanggan</p>
-                                    <h4 class="card-title">1,294</h4>
+                                    <h4 class="card-title">
+                                        <?= $totalPelanggan ?>
+                                    </h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- total admin -->
             <div class="col-sm-6 col-md-3">
                 <div class="card card-stats card-round">
                     <div class="card-body">
@@ -42,13 +46,16 @@
                             <div class="col col-stats ms-3 ms-sm-0">
                                 <div class="numbers">
                                     <p class="card-category">Admin</p>
-                                    <h4 class="card-title">1,303</h4>
+                                    <h4 class="card-title">
+                                        <?= $totalAdmin ?>
+                                    </h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- total income -->
             <div class="col-sm-6 col-md-3">
                 <div class="card card-stats card-round">
                     <div class="card-body">
@@ -61,13 +68,16 @@
                             <div class="col col-stats ms-3 ms-sm-0">
                                 <div class="numbers">
                                     <p class="card-category">Penjualan</p>
-                                    <h4 class="card-title">$ 1,345</h4>
+                                    <h4 class="card-title">
+                                        Rp. <?= number_format($totalPembayaranLunas, 0, ',', '.') ?>    
+                                    </h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- total transasksi -->
             <div class="col-sm-6 col-md-3">
                 <div class="card card-stats card-round">
                     <div class="card-body">
@@ -80,7 +90,9 @@
                             <div class="col col-stats ms-3 ms-sm-0">
                                 <div class="numbers">
                                     <p class="card-category">Transaksi</p>
-                                    <h4 class="card-title">576</h4>
+                                    <h4 class="card-title">
+                                        <?= $totalTransaksi ?>
+                                    </h4>
                                 </div>
                             </div>
                         </div>

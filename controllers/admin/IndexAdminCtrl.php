@@ -4,6 +4,7 @@ require_once '../models/User.php';
 require_once '../models/Admin.php';
 require_once '../models/Pelanggan.php';
 require_once '../helpers/ImageHandler.php';
+require_once '../models/Tagihan.php';
 
 class IndexAdminCtrl {
     private $isAuth;
@@ -11,6 +12,7 @@ class IndexAdminCtrl {
     private $admin;
     private $pelanggan;
     private $imageHelper;
+    private $tagihan; 
 
     public function __construct($pdo = null) {
         $this->isAuth = new MiddlewareAuth();
@@ -19,10 +21,16 @@ class IndexAdminCtrl {
         $this->user = new User($pdo);
         $this->admin = new Admin($pdo);
         $this->pelanggan = new Pelanggan($pdo);
+        $this->tagihan = new Tagihan($pdo);
     }
 
     public function dashboard() {
-        renderView('admin/dashboard/index');
+        $totalPelanggan = $this->pelanggan->count();
+        $totalAdmin = $this->admin->count();
+        $totalPembayaranLunas = $this->tagihan->qtyCountByStatus('lunas');
+        $totalTransaksi = $this->tagihan->count();
+
+        renderView('admin/dashboard/index', compact('totalPelanggan', 'totalAdmin', 'totalPembayaranLunas', 'totalTransaksi'));
     }
 
 // adminData

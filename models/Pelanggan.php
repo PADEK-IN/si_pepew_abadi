@@ -22,5 +22,11 @@ class Pelanggan extends BaseModel {
         return $stmt->fetch();
     }
 
+    public function count() {
+        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM pelanggan");
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }
+
 }
 ?>

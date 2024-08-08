@@ -21,5 +21,11 @@ class Admin extends BaseModel {
         $stmt->execute([$email]);
         return $stmt->fetch();
     }
+
+    public function count() {
+        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM admin");
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }
 }
 ?>

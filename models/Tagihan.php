@@ -117,6 +117,18 @@ class Tagihan extends BaseModel {
         $stmt = $this->pdo->prepare("UPDATE tagihan SET status = ?, isValid = ? WHERE id = ?");
         return $stmt->execute([$status, $isValid, $id]);
     }
+
+    public function qtyCountByStatus($status) {
+        $stmt = $this->pdo->prepare("SELECT SUM(jumlah_bayar) FROM tagihan WHERE status = ?");
+        $stmt->execute([$status]);
+        return $stmt->fetchColumn();
+    }
+
+    public function count() {
+        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM tagihan");
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }
 }
 ?>
     
