@@ -46,8 +46,9 @@
                                             <td colspan="7">Data pengiriman Masih Koosong</td>
                                         </tr>
                                     <?php } else { ?>
-                                        <?php foreach ($pengiriman as $index => $item): ?>
-                                            <tr>
+                                        <?php if(isset($pengiriman)): ?>
+                                            <?php foreach ($pengiriman as $index => $item): ?>
+                                                <tr>
                                                 <td><?php echo $index + 1; ?></td>
                                                 <td><?php echo $item['pelanggan']['nama']; ?></td>
                                                 <td><?php echo $item['id_pesanan']; ?></td>
@@ -75,7 +76,8 @@
                                                     <?php } ?>
                                                 </td> -->
                                             </tr>
-                                        <?php endforeach; ?>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                     <?php } ?>
                                 </tbody>
                             </table>

@@ -49,8 +49,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($listTagihan as $index => $item): ?>
-                                        <tr>
+                                    <?php if (isset($listTagihan)): ?>
+                                        <?php foreach ($listTagihan as $index => $item): ?>
+                                            <tr>
                                             <td><?php echo $index + 1; ?></td>
                                             <td>
                                                 <a href="/admin/tagihan/<?php echo $item['id']; ?>"><?php echo $item['id_pesanan']; ?></a>
@@ -126,7 +127,8 @@
                                                 ?>
                                             </td>
                                         </tr>
-                                    <?php endforeach; ?>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
                                 </tbody>
                             </table>
                         </div>

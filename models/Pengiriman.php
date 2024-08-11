@@ -16,6 +16,11 @@ class Pengiriman extends BaseModel {
         return $stmt->execute([$id_pesanan, $tanggal, $alamat, $bukti, $status, $id]);
     }
 
+    public function updateStatus($id, $status) {
+        $stmt = $this->pdo->prepare("UPDATE pengiriman SET status = ? WHERE id = ?");
+        return $stmt->execute([$status, $id]);
+    }
+
     public function getAllWithTagihanAndPesananAndPelanggan() {
         $stmt = $this->pdo->prepare("SELECT * FROM pengiriman ORDER BY created_at DESC");
         $stmt->execute();

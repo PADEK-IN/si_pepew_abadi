@@ -31,3 +31,4 @@ addRoute('POST', '/pesanan/store', $pelangganPath, 'PesananCtrl', 'store');
 // tagihan
 addRoute('GET', '/tagihan', $pelangganPath, 'TagihanCtrl', 'tagihan');
 addRoute('POST', '/tagihan/pembayaran', $pelangganPath, 'TagihanCtrl', 'pembayaran');
+addRoute('GET', '/tagihan/terima-barang/:id', $pelangganPath, 'TagihanCtrl', 'terimaBarang');

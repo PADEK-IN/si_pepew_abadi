@@ -27,11 +27,15 @@ class Tagihan extends BaseModel {
         $stmt->execute([$id_pelanggan]);
         $tagihan = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($tagihan as $key => $value) {
-            // Get the pesanan details
             $stmt = $this->pdo->prepare("SELECT metode_kirim, ppn, total FROM pesanan WHERE id = ?");
             $stmt->execute([$value['id_pesanan']]);
             $pesanan = $stmt->fetch(PDO::FETCH_ASSOC);
             $tagihan[$key]['pesanan'] = $pesanan;
+
+            $stmt = $this->pdo->prepare("SELECT id, tanggal, status FROM pengiriman WHERE id_pesanan = ?");
+            $stmt->execute([$value['id_pesanan']]);
+            $pengiriman = $stmt->fetch(PDO::FETCH_ASSOC);
+            $tagihan[$key]['pengiriman'] = $pengiriman;
 
             $stmt = $this->pdo->prepare("SELECT id_barang, jumlah FROM pesanan_items WHERE id_pesanan = ?");
             $stmt->execute([$value['id_pesanan']]);
