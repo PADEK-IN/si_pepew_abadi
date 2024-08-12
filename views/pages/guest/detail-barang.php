@@ -99,7 +99,8 @@
                             <h3 class="sidebar-title">Categories</h3>
                             <ul class="mt-3">
                                 <?php foreach($kategori as $item):?>
-                                    <li><a href="<?= $item['id'] ?>"><?= $item['nama'] ?> <span>(25)</span></a></li>
+                                    <li><a href=""><?= $item['nama'] ?></a></li>
+                                    <!-- <li><a href="<?= $item['id'] ?>"><?= $item['nama'] ?> <span>(25)</span></a></li> -->
                                 <?php endforeach ?>
                             </ul>
                         </div>
