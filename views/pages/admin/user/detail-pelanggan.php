@@ -11,13 +11,13 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/pelanggan-list">Pelanggan</a>
+                    <a href="/admin/pelanggan-list">Customer</a>
                 </li>
                 <li class="separator">
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <b>Detail Pelanggan</b>
+                    <b>Detail Customer</b>
                 </li>
             </ul>
         </div>
@@ -25,7 +25,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
-                        <h4 class="card-title">Detail Pelanggan</h4>
+                        <h4 class="card-title">Detail Customer</h4>
                         <a class="btn btn-sm btn-warning btn-round ms-auto" href="/admin/edit/pelanggan/<?php echo $pelanggan['id']; ?>">
                             Edit User
                         </a>

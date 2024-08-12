@@ -48,7 +48,7 @@
                             </li>
                             <li>
                                 <a href="/admin/pelanggan-list">
-                                <span class="sub-item">Pelanggan</span>
+                                <span class="sub-item">Customer</span>
                                 </a>
                             </li>
                         </ul>
@@ -61,14 +61,14 @@
                         <p>Barang</p>
                     </a>
                 </li>
-                <!-- transaksi -->
+                <!-- Laporan -->
                 <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#transaksi">
+                    <a data-bs-toggle="collapse" href="#laporan">
                         <i class="far fa-chart-bar"></i>
-                        <p>Transaksi</p>
+                        <p>Laporan</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="transaksi">
+                    <div class="collapse" id="laporan">
                         <ul class="nav nav-collapse">
                             <!-- <li>
                                 <a href="/admin/pemesanan">

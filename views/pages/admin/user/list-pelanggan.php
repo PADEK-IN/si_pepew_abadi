@@ -11,7 +11,7 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <b>Pelanggan</b>
+                    <b>Customer</b>
                 </li>
             </ul>
         </div>
@@ -19,7 +19,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
-                        <h4 class="card-title">Daftar List Pelanggan</h4>
+                        <h4 class="card-title">Daftar List Customer</h4>
                         <div>
                             <a class="btn btn-sm btn-warning btn-round ms-auto" href="" onclick="printReport()">
                                 <i class="fas fa-file-alt"></i>
@@ -27,7 +27,7 @@
                             </a>
                             <a class="btn btn-sm btn-primary btn-round ms-auto" href="/admin/create/pelanggan">
                                 <i class="fa fa-plus"></i>
-                                Tambah Pelanggan
+                                Tambah Customer
                             </a>
                         </div>
                     </div>
