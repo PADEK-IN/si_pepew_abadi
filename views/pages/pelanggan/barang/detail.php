@@ -41,7 +41,17 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="1.1em" height="1.1em" viewBox="0 0 16 16"><path fill="currentColor" d="m15.81 9l-2.47-4.93l.83-.15a.509.509 0 1 0-.183-.999l-.777.14a5.96 5.96 0 0 0-4.236-1.178a.958.958 0 0 0-.967-.882h-.008a1 1 0 0 0-1 1v.2a6.332 6.332 0 0 0-4.066 2.697l-.754.153a.503.503 0 1 0 .092 1h.088l.35-.05l-2.52 5h-.19c0 1.1 1.34 2 3 2s3-.9 3-2h-.19l-2.56-5.12h.1a.512.512 0 0 0 .379-.297c.021-.093.701-1.583 3.271-2.363v10.78h-1v1h-2v1h8v-1h-2v-1h-1V2.881a4.617 4.617 0 0 1 3.686 1.065l-.006-.005l-2.49 5.06h-.19c0 1.1 1.34 2 3 2s3-.9 3-2zM5 11H1l2-3.94zm6-2l2-3.94L15 9z"/></svg>
                                     <span><?= $barang['berat'] ?> gram</span>
                                 </a></li>
-                                <li class="d-flex align-items-center"><i class="bi bi-bucket"></i> <a href="#"><?= $barang['stok'] ?> <?= $barang['satuan'] ?></a></li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-bucket"></i> 
+                                    <?php 
+                                        if ($barang['stok'] == 0) {
+                                            echo '<span class="badge bg-danger">Kosong</span>';
+                                        } else {
+                                            echo sprintf('%s %s', $barang['stok'], $barang['satuan']);
+                                        }
+                                    ?>
+                                    <!-- <a href="#"><?= $barang['stok'] ?> <?= $barang['satuan'] ?></a> -->
+                                </li>
                                 <li class="d-flex align-items-center"><i class="bi bi-tags"></i> <a href="#">Rp. <?= number_format($barang['harga'], 2, ',', '.'); ?></a></li>
                             </ul>
                         </div>
@@ -58,12 +68,20 @@
                             </ul>
                             
                             <ul class="tags">
-                                <span 
-                                style="cursor: pointer;" class="btn btn-warning"
-                                data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="bi bi-bag"></i>
-                                    Beli Sekarang
-                                </span>
+                            <?php 
+                                if ($barang['stok'] == 0) {
+                                    echo '
+                                    <span style="cursor: pointer;" class="btn btn-danger">
+                                            <i class="bi bi-bag"></i>
+                                            Barang Kosong
+                                        </span>';
+                                } else {
+                                    echo '<span style="cursor: pointer;" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="bi bi-bag"></i>
+                                            Beli Sekarang
+                                        </span>';
+                                }
+                            ?>
                             </ul>
                         </div>
                     </article>

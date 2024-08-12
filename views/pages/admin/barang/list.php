@@ -49,17 +49,6 @@
                                             <th class="action-column no-print">Action</th>
                                         </tr>
                                     </thead>
-                                    <!-- <tfoot class="no-print">
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama Barang</th>
-                                            <th>Kategori</th>
-                                            <th>Harga</th>
-                                            <th>Stok</th>
-                                            <th>Image</th>
-                                            <th class="action-column no-print">Action</th>
-                                        </tr>
-                                    </tfoot> -->
                                     <tbody>
                                         <?php if (isset($barang) && (is_iterable($barang) || is_object($barang))): ?>
                                             <?php foreach ($barang as $index => $item): ?>
@@ -68,7 +57,16 @@
                                                 <td><a href="/admin/barang/detail/<?php echo $item['id']; ?>"><?php echo $item['nama']; ?></a></td>
                                                 <td><?php echo $item['kategori_nama']; ?></td>
                                                 <td>Rp. <?= number_format($item['harga'], 2, ',', '.'); ?></td>
-                                                <td><?php echo htmlspecialchars($item['stok']);  ?></td>
+                                                <td>
+                                                    <!-- <?php echo htmlspecialchars($item['stok']);  ?> -->
+                                                    <?php 
+                                                        if ($item['stok'] == 0) {
+                                                            echo '<span class="badge badge-danger">Barang habis</span>';
+                                                        } else {
+                                                            echo htmlspecialchars($item['stok']);
+                                                        }
+                                                    ?>
+                                                </td>
                                                 <td>
                                                     <img src="/assets/img/barang/<?php echo $item['gambar']; ?>" alt="barang1" width="50px">
                                                 </td>

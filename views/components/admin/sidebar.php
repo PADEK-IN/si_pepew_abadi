@@ -77,7 +77,7 @@
                             </li> -->
                             <li>
                                 <a href="/admin/transaksi/list">
-                                <span class="sub-item">List</span>
+                                <span class="sub-item">Penjualan</span>
                                 </a>
                             </li>
                             <li>

@@ -50,7 +50,16 @@
                                 <h5><a href="/barang/detail/<?= $barang['id'] ?>" title="More Details"><?= $barang['nama'] ?></a></h5>
                                 <div class="d-flex justify-content-between mt-4">
                                     <p style="padding: 0;" class="post-author-list">Kategori: <?= $barang['kategori_nama'] ?></p>
-                                    <p style="padding: 0;">Stok: <?= $barang['stok'] ?> <?= $barang['satuan'] ?></p>    
+                                    <!-- <p style="padding: 0;">Stok: <?= $barang['stok'] ?> <?= $barang['satuan'] ?></p>     -->
+                                    <div style="padding: 0;">Stok: 
+                                        <?php 
+                                        if ($barang['stok'] == 0) {
+                                            echo '<span class="badge bg-danger">Kosong</span>';
+                                        } else {
+                                            echo $barang['stok'] . ' ' . $barang['satuan'];
+                                        }
+                                        ?>
+                                    </div>   
                                 </div>
                                 <div class="d-flex justify-content-start mt-2">
                                     <p style="padding: 0;" class="text-limit"><?= $barang['deskripsi'] ?></p>
