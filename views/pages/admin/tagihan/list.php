@@ -19,7 +19,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
-                            <h4 class="card-title">List Tagihan</h4>
+                            <h4 class="card-title">Laporan Tagihan</h4>
                             <div>
                                 <a class="btn btn-sm btn-warning btn-round ms-auto no-print" href="#" onclick="printReport()">
                                     <i class="fas fa-file-alt"></i>

@@ -19,7 +19,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
-                        <h4 class="card-title">Daftar List Costumer</h4>
+                        <h4 class="card-title">Daftar Costumer</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
