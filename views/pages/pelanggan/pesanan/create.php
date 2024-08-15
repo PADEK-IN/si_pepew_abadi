@@ -49,7 +49,7 @@
                         <span class="fs-5 mx-1"><i class="bi bi-geo-alt"></i></span>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <div class="fs-5 gap-1"><?= $alamat ?></div>
+                        <div id="alamat" class="fs-5 gap-1"><?= $alamat ?></div>
                     </div>
                 </div>
             </div>
@@ -131,14 +131,38 @@
 </main>
 
 <script>
+    function checkLocation(address) {
+        // Daftar kata kunci untuk Kota Jambi
+        const kotaJambiKeywords = ["Kota Jambi", "kota jambi"];
+        
+        // Mengubah alamat menjadi huruf kecil untuk pencocokan yang tidak peka huruf besar/kecil
+        const addressLower = address.toLowerCase();
+        
+        // Mengecek apakah salah satu kata kunci ada dalam alamat
+        for (let keyword of kotaJambiKeywords) {
+            if (addressLower.includes(keyword.toLowerCase())) {
+                return true;  // Alamat dalam Kota Jambi
+            }
+        }
+        
+        return false;  // Alamat luar Kota Jambi
+    }
     document.getElementById('metode_kirim').addEventListener('change', function() {
         if (this.value === 'diantar') {
             let inputOngkir = document.getElementById('ongkir');
-            inputOngkir.value = 15000;
-
+            let divAlamat = document.getElementById('alamat');
+            
             let divTag = document.createElement('div');
             divTag.setAttribute('class', 'fs-6 gap-1 text-secondary');
-            divTag.textContent = 'Ongkir: Rp. 15.000,00';
+            
+
+            if (checkLocation(divAlamat.textContent)) {
+                inputOngkir.value = 20000;  // Ongkir dalam Kota Jambi
+                divTag.textContent = 'Ongkir: Rp. 20.000,00';
+            } else {
+                inputOngkir.value = 40000;  // Ongkir luar Kota Jambi
+                divTag.textContent = 'Ongkir: Rp. 40.000,00';
+            }
 
             let divInput = document.getElementById('div_input');
             divInput.appendChild(divTag);
