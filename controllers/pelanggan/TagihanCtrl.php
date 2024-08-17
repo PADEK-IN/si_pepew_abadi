@@ -33,7 +33,7 @@ class TagihanCtrl {
             return renderView('pelanggan/tagihan/list', compact('detailTagihan'));
         } catch (\Exception $e) {
             setFlash('error', 'Server Error, terjadi kesalahan saat mengambil data tagihan.'. $e->getMessage());
-            return redirect('/home');
+            return redirect('/barang');
         }
     }
 
