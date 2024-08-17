@@ -83,7 +83,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="/admin/barang/laporan">
                                 <span class="sub-item">Barang</span>
                                 </a>
                             </li>
@@ -95,13 +95,6 @@
                         </ul>
                     </div>
                 </li>
-                <!-- widgets -->
-                <!-- <li class="nav-item">
-                    <a href="/login">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <p>LogOut</p>
-                    </a>
-                </li> -->
             </ul>
         </div>
     </div>

@@ -16,6 +16,30 @@ class Barang extends BaseModel {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    // public function reportBarang() {
+    //     $stmt = $this->pdo->prepare("
+    //         SELECT b.*, k.nama AS kategori_nama
+    //         FROM barang b
+    //         JOIN kategori k ON b.id_kategori = k.id
+    //         LEFT JOIN pesanan_items pi ON b.id = pi.id_barang
+    //         GROUP BY b.id, k.nama
+    //     ");
+    //     $stmt->execute();
+    //     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // }
+
+    public function getAllWithCategoryAndQuantityAtPesananItems() {
+        $stmt = $this->pdo->prepare("
+            SELECT b.*, k.nama AS kategori_nama, SUM(pi.jumlah) AS jumlah_pesanan
+            FROM barang b
+            JOIN kategori k ON b.id_kategori = k.id
+            LEFT JOIN pesanan_items pi ON b.id = pi.id_barang
+            GROUP BY b.id, k.nama
+        ");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function getByIdWithCategory($id) {
         $stmt = $this->pdo->prepare("
             SELECT b.*, k.nama AS kategori_nama

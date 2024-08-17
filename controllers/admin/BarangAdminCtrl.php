@@ -24,6 +24,13 @@ class BarangAdminCtrl {
         renderView('admin/barang/list', compact('barang', 'kategori'));
     }
 
+    public function laporan() {
+        $kategori = $this->kategori->getAll();
+        $barang = $this->barang->getAllWithCategoryAndQuantityAtPesananItems();
+        console_log($barang);
+        renderView('admin/barang/laporan', compact('barang', 'kategori'));
+    }
+
     // Daftar barang
     public function detail($id) {
         $barang = $this->barang->getByIdWithCategory($id);
