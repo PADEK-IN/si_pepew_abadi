@@ -25,12 +25,23 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
-                            <h4 class="card-title">Laporan Penjualan</h4>
                             <div>
+                                <h4 class="card-title">Laporan Penjualan</h4>
                                 <a class="btn btn-sm btn-warning btn-round ms-auto no-print" href="#" onclick="printReport()">
                                     <i class="fas fa-file-alt"></i>
                                     Print
                                 </a>
+                            </div>
+                            <div class="d-flex">
+                                <form method="POST" action="/admin/transaksi/laporan/filter">
+                                    <label for="startDate">Start Date:</label>
+                                    <input type="date" id="startDate" name="startDate" value="">
+                                    
+                                    <label for="endDate">End Date:</label>
+                                    <input type="date" id="endDate" name="endDate" value="">
+                                    
+                                    <button type="submit">Filter</button>
+                                </form>
                             </div>
                         </div>
                         <div class="card-body">

@@ -38,6 +38,18 @@ class transactionController{
         }
     }
 
+    public function laporanByDateRange() {
+        $startDate = filter_input(INPUT_POST, 'startDate', FILTER_DEFAULT);
+        $endDate = filter_input(INPUT_POST, 'endDate', FILTER_DEFAULT);
+
+        if (!$startDate || !$endDate) {
+            return redirect('/admin/transaksi/laporan');
+        }
+        $listTagihan = $this->tagihan->getByDateRangeWithPesananAndPelangganAndPengiriman($startDate, $endDate);
+
+        renderView('admin/tagihan/laporan', compact('listTagihan'));
+    }
+
     // pemesanan
         public function pemesanan() {
             renderView('admin/pemesanan/list');

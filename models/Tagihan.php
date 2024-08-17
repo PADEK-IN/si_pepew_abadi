@@ -133,6 +133,39 @@ class Tagihan extends BaseModel {
         $stmt->execute();
         return $stmt->fetchColumn();
     }
+
+    public function getByDateRangeWithPesananAndPelangganAndPengiriman() {
+        $startDate = filter_input(INPUT_POST, 'startDate', FILTER_DEFAULT);
+        $endDate = filter_input(INPUT_POST, 'endDate', FILTER_DEFAULT);
+
+        $stmt = $this->pdo->prepare("SELECT * FROM tagihan WHERE created_at BETWEEN ? AND ? ORDER BY created_at DESC");
+        $stmt->execute([$startDate, $endDate]);
+        $tagihan = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($tagihan as $key => $value) {
+            // Get the pesanan details
+            $stmt = $this->pdo->prepare("SELECT metode_kirim, ppn, total FROM pesanan WHERE id = ?");
+            $stmt->execute([$value['id_pesanan']]);
+            $pesanan = $stmt->fetch(PDO::FETCH_ASSOC);
+            $tagihan[$key]['pesanan'] = $pesanan;
+
+            $stmt = $this->pdo->prepare("SELECT id_barang, jumlah FROM pesanan_items WHERE id_pesanan = ?");
+            $stmt->execute([$value['id_pesanan']]);
+            $item_pesanan = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // Get the pelanggan details
+            $stmt = $this->pdo->prepare("SELECT nama, email, alamat FROM pelanggan WHERE id = (SELECT id_pelanggan FROM pesanan WHERE id = ?)");
+            $stmt->execute([$value['id_pesanan']]);
+            $pelanggan = $stmt->fetch(PDO::FETCH_ASSOC);
+            $tagihan[$key]['pelanggan'] = $pelanggan;
+
+            // Get the pengiriman details
+            $stmt = $this->pdo->prepare("SELECT * FROM pengiriman WHERE id_pesanan = ?");
+            $stmt->execute([$value['id_pesanan']]);
+            $pengiriman = $stmt->fetch(PDO::FETCH_ASSOC);
+            $tagihan[$key]['pengiriman'] = $pengiriman;
+        }
+        return $tagihan;
+    }
 }
 ?>
     
