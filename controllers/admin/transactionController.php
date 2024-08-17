@@ -82,7 +82,7 @@ class transactionController{
         }
 
     // pengiriman
-        public function filterByDateRange() {
+        public function pengirimanByDateRange() {
             $startDate = filter_input(INPUT_POST, 'startDate', FILTER_DEFAULT);
             $endDate = filter_input(INPUT_POST, 'endDate', FILTER_DEFAULT);
 

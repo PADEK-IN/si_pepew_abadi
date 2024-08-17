@@ -71,7 +71,7 @@
                                                             <?php if($item['status'] == 'terkirim') {?>
                                                                 <span class="badge badge-success">Terkirim</span>
                                                             <?php } else { ?>
-                                                                <span class="badge badge-warning">Diproses</span>
+                                                                <span class="badge badge-warning">Di Perjalanan</span>
                                                             <?php } ?>
                                                         </td>
                                                     </tr>
