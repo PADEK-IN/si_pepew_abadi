@@ -28,6 +28,18 @@ class PesananCtrl {
         $this->tagihan = new Tagihan($pdo);
     }
 
+    public function pesananku() {
+        try {
+            $id_pelanggan = $this->pelanggan->getByUserEmail($_SESSION['user']['email'])['id'];
+            $detailPesanan = $this->tagihan->getByIdPelangganWithDetailPesanan($id_pelanggan);
+            // console_log($detailPesanan);
+            return renderView('pelanggan/pesanan/pesananku', compact('detailPesanan'));
+        } catch (\Exception $e) {
+            setFlash('error', 'Server Error, terjadi kesalahan saat mengambil data tagihan.'. $e->getMessage());
+            return redirect('/barang');
+        }
+    }
+
     public function create() {
         try {
             $id_barang = filter_input(INPUT_POST, 'id_barang', FILTER_DEFAULT);

@@ -61,7 +61,7 @@
                                         </div>
                                         <div id="tagihan-<?= $tagihan['id'] ?>" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                                             <div class="accordion-body d-flex align-items-center">
-                                                <div class="col-lg-3 text-center">
+                                                <div class="col-lg-4 text-center">
                                                     <!-- <img src="/assets/img/product/pupuk.jpeg" class="m-5" style="width: 100px;" alt="">
                                                     <br> -->
                                                     <?php if($tagihan['isValid']): ?>
@@ -70,7 +70,7 @@
                                                         <span class="alert alert-warning">Pembayaran Belum Valid</span>
                                                     <?php endif ?>
                                                 </div>
-                                                <div class="col-lg-9">
+                                                <div class="col-lg-8">
                                                     <table class="table">
                                                         <?php foreach($tagihan['item_pesanan'] as $item_pesanan): ?>
                                                         <tr>

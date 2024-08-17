@@ -23,6 +23,7 @@ addRoute('POST', '/keranjang/update/:id', $pelangganPath, 'KeranjangCtrl', 'upda
 addRoute('GET', '/keranjang/delete/:id', $pelangganPath, 'KeranjangCtrl', 'destroy');
 
 // pemesanan
+addRoute('GET', '/pesananku', $pelangganPath, 'PesananCtrl', 'pesananku');
 addRoute('POST', '/checkout', $pelangganPath, 'PesananCtrl', 'checkout');
 addRoute('POST', '/checkout/store', $pelangganPath, 'PesananCtrl', 'checkoutStore');
 addRoute('POST', '/pesanan/create', $pelangganPath, 'PesananCtrl', 'create');
