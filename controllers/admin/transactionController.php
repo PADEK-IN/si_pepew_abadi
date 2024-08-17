@@ -82,12 +82,23 @@ class transactionController{
         }
 
     // pengiriman
-        public function pengiriman() {
-            $pengiriman = $this->pengiriman->getAllWithTagihanAndPesananAndPelanggan();
-            // console_log($pengiriman);
+        public function filterByDateRange() {
+            $startDate = filter_input(INPUT_POST, 'startDate', FILTER_DEFAULT);
+            $endDate = filter_input(INPUT_POST, 'endDate', FILTER_DEFAULT);
+
+            if (!$startDate || !$endDate) {
+                return redirect('/admin/pengiriman');
+            }
+            $pengiriman = $this->pengiriman->getPengirimanByDateRange($startDate, $endDate);
 
             renderView('admin/pengiriman/list', compact('pengiriman'));
         }
+    
+        public function pengiriman() {
+            $pengiriman = $this->pengiriman->getAllWithTagihanAndPesananAndPelanggan();
+            renderView('admin/pengiriman/list', compact('pengiriman'));
+        }
+
 
         public function createPengiriman($id) {
             try {

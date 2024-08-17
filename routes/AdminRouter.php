@@ -50,6 +50,7 @@ addRoute('GET', "/{$adminPath}/tagihan/:id", $adminPath, 'transactionController'
 addRoute('POST', "/{$adminPath}/tagihan-validasi/:id", $adminPath, 'transactionController', 'validasiTagihan');
 addRoute('POST', "/{$adminPath}/tagihan-reject/:id", $adminPath, 'transactionController', 'rejectTagihan');
 // pengiriman
+addRoute('POST', "/{$adminPath}/pengiriman/filter", $adminPath, 'transactionController', 'filterByDateRange');
 addRoute('GET', "/{$adminPath}/pengiriman", $adminPath, 'transactionController', 'pengiriman');
 addRoute('GET', "/{$adminPath}/pengiriman/create/:id", $adminPath, 'transactionController', 'createPengiriman');
 addRoute('POST', "/{$adminPath}/pengiriman/store", $adminPath, 'transactionController', 'storePengiriman');
