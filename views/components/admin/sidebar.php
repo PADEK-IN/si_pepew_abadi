@@ -64,17 +64,39 @@
                 <!-- Laporan -->
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#laporan">
-                        <i class="far fa-chart-bar"></i>
+                        <i class="fas fa-file-invoice"></i>
                         <p>Laporan</p>
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="laporan">
                         <ul class="nav nav-collapse">
-                            <!-- <li>
+                            <li>
+                                <a href="/admin/transaksi/laporan">
+                                <span class="sub-item">Penjualan</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/pengiriman">
+                                <span class="sub-item">Pengiriman</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <!-- Transaksi -->
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#transaksi">
+                        <i class="far fa-chart-bar"></i>
+                        <p>Transaksi</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="transaksi">
+                        <ul class="nav nav-collapse">
+                            <li>
                                 <a href="/admin/pemesanan">
                                 <span class="sub-item">Pemesanan</span>
                                 </a>
-                            </li> -->
+                            </li>
                             <li>
                                 <a href="/admin/transaksi/list">
                                 <span class="sub-item">Penjualan</span>

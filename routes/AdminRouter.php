@@ -40,6 +40,7 @@ addRoute('POST', "/{$adminPath}/barang/stok/:id", $adminPath, 'BarangAdminCtrl',
 addRoute('GET', "/{$adminPath}/barang/delete/:id", $adminPath, 'BarangAdminCtrl', 'destroy');
 // transaksi
 addRoute('GET', "/{$adminPath}/transaksi/list", $adminPath, 'transactionController', 'list');
+addRoute('GET', "/{$adminPath}/transaksi/laporan", $adminPath, 'transactionController', 'laporan');
 // pesanan
 addRoute('GET', "/{$adminPath}/pemesanan", $adminPath, 'transactionController', 'pemesanan');
 addRoute('GET', "/{$adminPath}/pemesanan/:id", $adminPath, 'transactionController', 'detailPemesanan');
