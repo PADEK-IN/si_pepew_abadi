@@ -166,6 +166,12 @@ class Tagihan extends BaseModel {
         }
         return $tagihan;
     }
+
+    public function getTotalPendapatanPerBulan() {
+        $stmt = $this->pdo->prepare("SELECT MONTH(created_at) AS bulan, SUM(jumlah_bayar) AS total FROM tagihan WHERE status = 'lunas' AND YEAR(created_at) = YEAR(CURRENT_DATE()) GROUP BY MONTH(created_at)");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>
     

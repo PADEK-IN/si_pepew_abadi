@@ -30,7 +30,10 @@ class IndexAdminCtrl {
         $totalPembayaranLunas = $this->tagihan->qtyCountByStatus('lunas');
         $totalTransaksi = $this->tagihan->count();
 
-        renderView('admin/dashboard/index', compact('totalPelanggan', 'totalAdmin', 'totalPembayaranLunas', 'totalTransaksi'));
+        $penjualanPerBulan = $this->tagihan->getTotalPendapatanPerBulan();
+        // console_log($penjualanPerBulan);
+
+        renderView('admin/dashboard/index', compact('totalPelanggan', 'totalAdmin', 'totalPembayaranLunas', 'totalTransaksi', 'penjualanPerBulan'));
     }
 
 // adminData

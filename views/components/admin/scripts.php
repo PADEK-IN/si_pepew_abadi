@@ -7,7 +7,7 @@
 <script src="/assets/admin/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
 <!-- Chart JS -->
-<script src="/assets/admin/js/plugin/chart.js/chart.min.js"></script>
+<!-- <script src="/assets/admin/js/plugin/chart.js/chart.min.js"></script> -->
 
 <!-- jQuery Sparkline -->
 <script src="/assets/admin/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
@@ -19,7 +19,7 @@
 <script src="/assets/admin/js/plugin/datatables/datatables.min.js"></script>
 
 <!-- Bootstrap Notify -->
-<!-- <script src="/assets/admin/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script> -->
+<script src="/assets/admin/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
 
 <!-- jQuery Vector Maps -->
 <script src="/assets/admin/js/plugin/jsvectormap/jsvectormap.min.js"></script>
@@ -123,3 +123,4 @@
         });
     }
 </script>
+
