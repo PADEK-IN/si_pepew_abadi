@@ -29,9 +29,11 @@ addRoute('GET', "/{$adminPath}/kategori", $adminPath, 'KategoriAdminCtrl', 'list
 addRoute('POST', "/{$adminPath}/kategori/create", $adminPath, 'KategoriAdminCtrl', 'create');
 addRoute('POST', "/{$adminPath}/kategori/update/:id", $adminPath, 'KategoriAdminCtrl', 'update');
 addRoute('GET', "/{$adminPath}/kategori/delete/:id", $adminPath, 'KategoriAdminCtrl', 'destroy');
-// product
+// barang
 addRoute('GET', "/{$adminPath}/barang", $adminPath, 'BarangAdminCtrl', 'list');
 addRoute('GET', "/{$adminPath}/barang/laporan", $adminPath, 'BarangAdminCtrl', 'laporan');
+addRoute('GET', "/{$adminPath}/barang/in", $adminPath, 'BarangAdminCtrl', 'in');
+addRoute('GET', "/{$adminPath}/barang/out", $adminPath, 'BarangAdminCtrl', 'out');
 addRoute('GET', "/{$adminPath}/barang/detail/:id", $adminPath, 'BarangAdminCtrl', 'detail');
 addRoute('GET', "/{$adminPath}/barang/create", $adminPath, 'BarangAdminCtrl', 'create');
 addRoute('POST', "/{$adminPath}/barang/store", $adminPath, 'BarangAdminCtrl', 'store');

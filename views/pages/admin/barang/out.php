@@ -19,20 +19,20 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
-                            <h4 class="card-title">Daftar Stok Barang</h4>
+                            <h4 class="card-title">Barang Keluar</h4>
                             <div>
-                                <a class="btn btn-sm btn-success btn-round ms-auto" href="/admin/kategori">
+                                <!-- <a class="btn btn-sm btn-success btn-round ms-auto" href="/admin/kategori">
                                     <i class="fas fa-bars"></i>
                                     Kategori
-                                </a>
-                                <!-- <a class="btn btn-sm btn-warning btn-round ms-auto no-print" href="#" onclick="printReport()">
+                                </a> -->
+                                <a class="btn btn-sm btn-warning btn-round ms-auto no-print" href="#" onclick="printReport()">
                                     <i class="fas fa-file-alt"></i>
                                     Print
-                                </a> -->
-                                <a class="btn btn-primary btn-sm btn-round ms-auto" href="/admin/barang/create">
+                                </a>
+                                <!-- <a class="btn btn-primary btn-sm btn-round ms-auto" href="/admin/barang/create">
                                     <i class="fa fa-plus"></i>
                                     Tambah Barang
-                                </a>
+                                </a> -->
                             </div>
                         </div>
                         <div class="card-body">
@@ -44,9 +44,10 @@
                                             <th>Nama Barang</th>
                                             <th>Kategori</th>
                                             <th>Harga</th>
-                                            <th>Stok</th>
+                                            <th>Stok Keluar</th>
+                                            <th class="d-none no-print">Stok Masuk</th>
+                                            <th class="d-none no-print">Stok Sisa</th>
                                             <th>Image</th>
-                                            <th class="action-column no-print">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -58,7 +59,17 @@
                                                 <td><?php echo $item['kategori_nama']; ?></td>
                                                 <td>Rp. <?= number_format($item['harga'], 2, ',', '.'); ?></td>
                                                 <td>
-                                                    <!-- <?php echo htmlspecialchars($item['stok']);  ?> -->
+                                                    <!-- <?php echo $item['jumlah_pesanan']; ?> -->
+                                                    <?php 
+                                                        if ($item['jumlah_pesanan'] == 0) {
+                                                            echo '<span class="badge badge-danger">Belum Terjual</span>';
+                                                        } else {
+                                                            echo htmlspecialchars($item['jumlah_pesanan']);
+                                                        }
+                                                    ?>
+                                                </td>
+                                                <td class="d-none no-print"><?php echo $item['jumlah_pesanan']+$item['stok']; ?></td>
+                                                <td class="d-none no-print">
                                                     <?php 
                                                         if ($item['stok'] == 0) {
                                                             echo '<span class="badge badge-danger">Barang habis</span>';
@@ -70,24 +81,6 @@
                                                 <td>
                                                     <img src="/assets/img/barang/<?php echo $item['gambar']; ?>" alt="barang1" width="50px">
                                                 </td>
-                                                <td class="action-column no-print">
-                                                    <a href="/admin/barang/edit/<?php echo $item['id']; ?>" class="btn btn-sm btn-warning m-1">Edit</a>
-                                                    <button 
-                                                    type="button" 
-                                                    class="btn btn-sm btn-danger" 
-                                                    onclick="deleteBarang('<?php echo $item['id']; ?>','<?php echo $item['nama']; ?>')">
-                                                        Hapus
-                                                    </button>
-                                                    <!-- tambah stok -->
-                                                    <button href="" class="btn btn-sm btn-success m-1"
-                                                    data-bs-toggle="modal" data-bs-target="#editModal"
-                                                    data-bs-id="<?php echo $item['id']; ?>"
-                                                    data-bs-nama="<?php echo $item['kategori_nama']; ?>"
-                                                    data-bs-stok="<?php echo $item['stok']; ?>"
-                                                    >
-                                                        Tambah Stok
-                                                    </button>
-                                                </td>
                                             </tr>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
@@ -95,36 +88,8 @@
                                 </table>
                             </div>
                         </div>
-                        <!-- Modal Edit -->
-                        <div class="modal fade" id="editModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <form action="" method="post" id="edit-Form">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="staticBackdropLabel">Tambah Stok Barang <span id="name"></span></h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="mb-3">
-                                                <label for="stok" class="col-form-label">Jumlah Stok yang akan ditambahkan:</label>
-                                                <input type="number" class="form-control" id="stok" placeholder="...">
-                                                <small id="satuan" class="form-text text-muted text-success">
-                                                    Stok Barang Saat Ini berjumlah: <span class="text-black">0</span> Buah
-                                                </small>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="totalStok" class="col-form-label">Total Jumlah Stok:</label>
-                                                <input type="number" name="stok" class="form-control" id="totalStok" placeholder="..." readonly>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                            <button type="submit" class="btn btn-primary">Tambah</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
             </div>

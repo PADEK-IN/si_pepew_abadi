@@ -31,6 +31,20 @@ class BarangAdminCtrl {
         renderView('admin/barang/laporan', compact('barang', 'kategori'));
     }
 
+    public function in() {
+        $kategori = $this->kategori->getAll();
+        $barang = $this->barang->getAllWithCategoryAndQuantityAtPesananItems();
+        console_log($barang);
+        renderView('admin/barang/in', compact('barang', 'kategori'));
+    }
+
+    public function out() {
+        $kategori = $this->kategori->getAll();
+        $barang = $this->barang->getAllWithCategoryAndQuantityAtPesananItems();
+        console_log($barang);
+        renderView('admin/barang/out', compact('barang', 'kategori'));
+    }
+
     // Daftar barang
     public function detail($id) {
         $barang = $this->barang->getByIdWithCategory($id);

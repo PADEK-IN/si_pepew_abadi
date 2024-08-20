@@ -54,12 +54,32 @@
                         </ul>
                     </div>
                 </li>
-                <!-- Product -->
+                <!-- Barang -->
                 <li class="nav-item">
-                    <a href="/admin/barang">
-                        <i class="far fa-window-restore"></i>
+                    <a data-bs-toggle="collapse" href="#barang">
+                    <i class="far fa-window-restore"></i>
                         <p>Barang</p>
+                        <span class="caret"></span>
                     </a>
+                    <div class="collapse" id="barang">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="/admin/barang/in">
+                                    <span class="sub-item">Masuk</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/barang/out">
+                                    <span class="sub-item">Keluar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/barang">
+                                    <span class="sub-item">Sisa</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <!-- Transaksi -->
                 <li class="nav-item">
