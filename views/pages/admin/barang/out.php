@@ -48,7 +48,7 @@
                                             <th>Nilai Stok</th>
                                             <th class="d-none no-print">Stok Masuk</th>
                                             <th class="d-none no-print">Stok Sisa</th>
-                                            <th>Image</th>
+                                            <th class="d-none no-print">Image</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -80,7 +80,7 @@
                                                         }
                                                     ?>
                                                 </td>
-                                                <td>
+                                                <td class="d-none no-print">
                                                     <img src="/assets/img/barang/<?php echo $item['gambar']; ?>" alt="barang1" width="50px">
                                                 </td>
                                             </tr>
