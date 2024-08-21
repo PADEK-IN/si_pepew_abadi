@@ -45,7 +45,8 @@
                                             <th>Kategori</th>
                                             <th>Harga</th>
                                             <th>Stok</th>
-                                            <th>Image</th>
+                                            <th>Nilai Stok</th>
+                                            <th class="d-none no-print">Image</th>
                                             <th class="action-column no-print">Action</th>
                                         </tr>
                                     </thead>
@@ -56,7 +57,7 @@
                                                 <td><?php echo $index + 1; ?></td>
                                                 <td><a href="/admin/barang/detail/<?php echo $item['id']; ?>"><?php echo $item['nama']; ?></a></td>
                                                 <td><?php echo $item['kategori_nama']; ?></td>
-                                                <td>Rp. <?= number_format($item['harga'], 2, ',', '.'); ?></td>
+                                                <td>Rp. <?= number_format($item['harga'], 0, ',', '.'); ?></td>
                                                 <td>
                                                     <!-- <?php echo htmlspecialchars($item['stok']);  ?> -->
                                                     <?php 
@@ -68,6 +69,16 @@
                                                     ?>
                                                 </td>
                                                 <td>
+                                                    <!-- <?php echo htmlspecialchars($item['stok']);  ?> -->
+                                                    <?php 
+                                                        if ($item['stok'] == 0) {
+                                                            echo '<span class="badge badge-danger">Barang habis</span>';
+                                                        } else {
+                                                            echo 'Rp. ' . htmlspecialchars(number_format($item['harga']*$item['stok'], 0, ',', '.'));
+                                                        }
+                                                    ?>
+                                                </td>
+                                                <td class="d-none no-print">
                                                     <img src="/assets/img/barang/<?php echo $item['gambar']; ?>" alt="barang1" width="50px">
                                                 </td>
                                                 <td class="action-column no-print">
@@ -171,7 +182,7 @@
             printWindow.document.write('</div>');
             
             // Laporan
-            printWindow.document.write('<h2 style="text-align: center;">Laporan Barang</h2>');
+            printWindow.document.write('<h2 style="text-align: center;">Laporan Stok Barang Sisa</h2>');
             
             // Tabel Laporan
             printWindow.document.write(document.querySelector('.table-responsive').innerHTML);

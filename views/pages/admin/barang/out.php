@@ -45,6 +45,7 @@
                                             <th>Kategori</th>
                                             <th>Harga</th>
                                             <th>Stok Keluar</th>
+                                            <th>Nilai Stok</th>
                                             <th class="d-none no-print">Stok Masuk</th>
                                             <th class="d-none no-print">Stok Sisa</th>
                                             <th>Image</th>
@@ -57,7 +58,7 @@
                                                 <td><?php echo $index + 1; ?></td>
                                                 <td><a href="/admin/barang/detail/<?php echo $item['id']; ?>"><?php echo $item['nama']; ?></a></td>
                                                 <td><?php echo $item['kategori_nama']; ?></td>
-                                                <td>Rp. <?= number_format($item['harga'], 2, ',', '.'); ?></td>
+                                                <td>Rp. <?= number_format($item['harga'], 0, ',', '.'); ?></td>
                                                 <td>
                                                     <!-- <?php echo $item['jumlah_pesanan']; ?> -->
                                                     <?php 
@@ -68,6 +69,7 @@
                                                         }
                                                     ?>
                                                 </td>
+                                                <td><?= number_format(($item['jumlah_pesanan']+$item['stok'])*$item['harga'], 0, ',', '.'); ?></td>
                                                 <td class="d-none no-print"><?php echo $item['jumlah_pesanan']+$item['stok']; ?></td>
                                                 <td class="d-none no-print">
                                                     <?php 
@@ -136,7 +138,7 @@
             printWindow.document.write('</div>');
             
             // Laporan
-            printWindow.document.write('<h2 style="text-align: center;">Laporan Barang</h2>');
+            printWindow.document.write('<h2 style="text-align: center;">Laporan Stok Barang Keluar</h2>');
             
             // Tabel Laporan
             printWindow.document.write(document.querySelector('.table-responsive').innerHTML);

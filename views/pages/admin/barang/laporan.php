@@ -47,7 +47,8 @@
                                             <th>Stok Keluar</th>
                                             <th>Stok Masuk</th>
                                             <th>Stok Sisa</th>
-                                            <th>Image</th>
+                                            <th>Nilai Stok</th>
+                                            <th class="no-print">Image</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -79,6 +80,16 @@
                                                     ?>
                                                 </td>
                                                 <td>
+                                                    <!-- <?php echo htmlspecialchars($item['stok']);  ?> -->
+                                                    <?php 
+                                                        if ($item['stok'] == 0) {
+                                                            echo '<span class="badge badge-danger">Barang habis</span>';
+                                                        } else {
+                                                            echo 'Rp. ' . htmlspecialchars(number_format($item['harga']*$item['stok'], 0, ',', '.'));
+                                                        }
+                                                    ?>
+                                                </td>
+                                                <td class="no-print">
                                                     <img src="/assets/img/barang/<?php echo $item['gambar']; ?>" alt="barang1" width="50px">
                                                 </td>
                                             </tr>
@@ -136,7 +147,7 @@
             printWindow.document.write('</div>');
             
             // Laporan
-            printWindow.document.write('<h2 style="text-align: center;">Laporan Barang</h2>');
+            printWindow.document.write('<h2 style="text-align: center;">Laporan Stok Barang</h2>');
             
             // Tabel Laporan
             printWindow.document.write(document.querySelector('.table-responsive').innerHTML);
