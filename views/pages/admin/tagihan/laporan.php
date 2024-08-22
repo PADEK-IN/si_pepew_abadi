@@ -55,7 +55,7 @@
                                             <th>Methode</th>
                                             <th style="display: none;">Methode Pengiriman</th>
                                             <th>Sub Total</th>
-                                            <!-- <th>Ongkir</th> -->
+                                            <th>Ongkir</th>
                                             <th>PPn</th>
                                             <th>Total</th>
                                             <th>Jumlah Bayar</th>
@@ -86,7 +86,7 @@
                                                         }?>
                                                     </td>
                                                     <td>Rp. <?= number_format($item['pesanan']['total'], 0, ",", ".") ?></td>
-                                                    <!-- <td>Rp. <?= number_format($item['pesanan']['ppn'], 0, ",", ".") ?></td> -->
+                                                    <td>Rp. <?= number_format($item['pesanan']['ongkir'], 0, ",", ".") ?></td>
                                                     <td>Rp. <?= number_format($item['pesanan']['ppn'], 0, ",", ".") ?></td>
                                                     <td>Rp. <?= number_format($item['pesanan']['ppn']+$item['pesanan']['total'], 0, ",", ".") ?></td>
                                                     <td>Rp. <?= number_format($item['jumlah_bayar'], 0, ",", ".") ?></td>

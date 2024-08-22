@@ -65,6 +65,7 @@ class PesananCtrl {
         try {
             $id_barang = filter_input(INPUT_POST, 'id_barang', FILTER_SANITIZE_NUMBER_INT);
             $jumlah = filter_input(INPUT_POST, 'jumlah', FILTER_SANITIZE_NUMBER_INT);
+            $ongkir = filter_input(INPUT_POST, 'ongkir', FILTER_SANITIZE_NUMBER_INT);
             $metode_kirim = filter_input(INPUT_POST, 'metode_kirim', FILTER_DEFAULT);
             $metode_bayar = filter_input(INPUT_POST, 'metode_bayar', FILTER_DEFAULT);
             
@@ -77,11 +78,11 @@ class PesananCtrl {
 
             $total = $this->barang->getById($id_barang)['harga'] * $jumlah;
             $ppn = $total * 0.11;
-            $net = $total + $ppn;
+            $net = $total + $ppn + $ongkir;
 
             // buat pesanan
             $id_pelanggan = $this->pelanggan->getByUserEmail($_SESSION['user']['email'])['id'];
-            $pesananId = $this->pesanan->create($id_pelanggan, $metode_kirim, $ppn, $net);
+            $pesananId = $this->pesanan->create($id_pelanggan, $metode_kirim, $ppn, $net, $ongkir);
             $this->pesanan_item->create($pesananId, $id_barang, $jumlah);
             
             // kurangi stok barang
@@ -139,7 +140,7 @@ class PesananCtrl {
             $ids_keranjangs = explode(',', $id_keranjang);
 
             $ppn = $total * 0.11;
-            $net = $total + $ppn;
+            $net = $total + $ppn + $ongkir;
 
             $id_pelanggan = $this->pelanggan->getByUserEmail($_SESSION['user']['email'])['id'];
             
@@ -151,7 +152,7 @@ class PesananCtrl {
                 }
             }
 
-            $pesananId = $this->pesanan->create($id_pelanggan, $metode_kirim, $ppn, $net);
+            $pesananId = $this->pesanan->create($id_pelanggan, $metode_kirim, $ppn, $net, $ongkir);
 
             foreach($ids_keranjangs as $id){
                 $keranjang = $this->keranjang->getById($id);
