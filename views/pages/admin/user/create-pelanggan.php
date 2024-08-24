@@ -46,7 +46,7 @@
                                 <div class="form-group">
                                     <label for="nama">Email</label>
                                     <input type="email" name="email" class="form-control" placeholder="Masukan Email" required />
-                                    <small id="nama" class="form-text text-muted text-success">Silahkan Masukan Email Admin</small>
+                                    <small id="nama" class="form-text text-muted text-success">Silahkan Masukan Email Pelanggan</small>
                                 </div>
 
                                 <!-- password -->
@@ -69,14 +69,14 @@
                                 <div class="form-group">
                                     <label for="nama">Alamat Lengkap</label>
                                     <input type="text" name="alamat" class="form-control" required>
-                                    <small id="nama" class="form-text text-muted text-success">Silahkan Masukan Alamat Admin</small>
+                                    <small id="nama" class="form-text text-muted text-success">Silahkan Masukan Alamat Pelanggan</small>
                                 </div>
 
                                 <!-- Nomor Telepon -->
                                 <div class="form-group">
                                     <label for="nama">Nomor Telepon</label>
                                     <input type="number" name="no_telp" class="form-control" required>
-                                    <small id="nama" class="form-text text-muted text-success">Silahkan Masukan Nomot Telepon Admin</small>
+                                    <small id="nama" class="form-text text-muted text-success">Silahkan Masukan Nomot Telepon Pelanggan</small>
                                 </div>
 
                                 <!-- button -->
