@@ -34,6 +34,7 @@
                                 <th class="bg-info text-center">Metode Kirim</th>
                                 <th class="bg-info text-center">Sub Total</th>
                                 <th class="bg-info text-center">PPN</th>
+                                <th class="bg-info text-center">Ongkir</th>
                                 <th class="bg-info text-center">Total</th>
                                 <th class="bg-info text-center">Status Pengiriman</th>
                             </tr>
@@ -47,6 +48,7 @@
                                 <td><?= strtoupper($pesanan['metode_bayar'])=="COD"?"CASH":strtoupper($pesanan['metode_bayar']) ?></td>
                                 <td><?= ucfirst($pesanan['pesanan']['metode_kirim']) ?></td>
                                 <td class="text-left">Rp. <?= number_format($pesanan['pesanan']['total'], 0, ',', '.') ?></td>
+                                <td class="text-left"><?= $pesanan['pesanan']['ongkir']?"Rp.". number_format($pesanan['pesanan']['ongkir'], 0, ',', '.'):"-" ?></td>
                                 <td class="text-left">Rp. <?= number_format($pesanan['pesanan']['ppn'], 0, ',', '.') ?></td>
                                 <td class="text-left">Rp. <?= number_format($pesanan['pesanan']['ppn'] + $pesanan['pesanan']['total'], 0, ',', '.') ?></td>
                                 <?php if($pesanan['pengiriman']):?>

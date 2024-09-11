@@ -81,8 +81,18 @@
                                                         <?php endforeach ?>
                                                         <tr>
                                                             <th colspan="2">Total</th>
-                                                            <td><i class="bi bi-tags"></i>Rp. <?= number_format($tagihan['pesanan']['total']-$tagihan['pesanan']['ppn'], 2, ',', '.') ?></td>
+                                                            <?php if($tagihan['pesanan']['metode_kirim']== 'diantar'): ?>
+                                                                <td><i class="bi bi-tags"></i>Rp. <?= number_format($tagihan['pesanan']['total']-$tagihan['pesanan']['ppn']-$tagihan['pesanan']['ongkir'], 2, ',', '.') ?></td>
+                                                            <?php else: ?>
+                                                                <td><i class="bi bi-tags"></i>Rp. <?= number_format($tagihan['pesanan']['total']-$tagihan['pesanan']['ppn'], 2, ',', '.') ?></td>
+                                                            <?php endif ?>
                                                         </tr>
+                                                        <?php if($tagihan['pesanan']['metode_kirim']== 'diantar'): ?>   
+                                                            <tr>
+                                                                <th colspan="2">Ongkir</th>
+                                                                <td><i class="bi bi-tags"></i>Rp. <?= number_format($tagihan['pesanan']['ongkir'], 2, ',', '.') ?></td>
+                                                            </tr>
+                                                        <?php endif ?>
                                                         <tr>
                                                             <th colspan="2">PPN 11%</th>
                                                             <td><i class="bi bi-tags"></i>Rp. <?= number_format($tagihan['pesanan']['ppn'], 2, ',', '.') ?></td>
