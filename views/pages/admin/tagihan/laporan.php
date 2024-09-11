@@ -86,7 +86,7 @@
                                                         }?>
                                                     </td>
                                                     <td>Rp. <?= number_format($item['pesanan']['total'], 0, ",", ".") ?></td>
-                                                    <td>Rp. <?= number_format($item['pesanan']['ongkir'], 0, ",", ".") ?></td>
+                                                    <td><?= $item['pesanan']['ongkir']?"Rp.".  number_format($item['pesanan']['ongkir'], 0, ",", "."):"-" ?></td>
                                                     <td>Rp. <?= number_format($item['pesanan']['ppn'], 0, ",", ".") ?></td>
                                                     <td>Rp. <?= number_format($item['pesanan']['ppn']+$item['pesanan']['total'], 0, ",", ".") ?></td>
                                                     <td>Rp. <?= number_format($item['jumlah_bayar'], 0, ",", ".") ?></td>

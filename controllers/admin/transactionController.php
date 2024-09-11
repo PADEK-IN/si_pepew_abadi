@@ -17,7 +17,6 @@ class transactionController{
     public function list() {
         try {
             $listTagihan = $this->tagihan->getAllWithPesananAndPelangganAndPengiriman();
-
             // console_log($listTagihan);
             renderView('admin/tagihan/list', compact('listTagihan'));
         } catch (\Exception $e) {
@@ -29,7 +28,6 @@ class transactionController{
     public function laporan() {
         try {
             $listTagihan = $this->tagihan->getAllWithPesananAndPelangganAndPengiriman();
-
             // console_log($listTagihan);
             renderView('admin/tagihan/laporan', compact('listTagihan'));
         } catch (\Exception $e) {
